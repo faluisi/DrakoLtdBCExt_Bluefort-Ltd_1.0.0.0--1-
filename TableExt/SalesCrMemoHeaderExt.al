@@ -1,0 +1,49 @@
+tableextension 50007 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
+{
+    fields
+    {
+        field(50000; Site; Code[20])
+        {
+            TableRelation = "Cust-Op-Site"."Site Code";
+
+            trigger OnValidate()
+            begin
+                // CustSite.Reset();
+                // if CustSite.Get("Sell-to Customer No.", Site) then begin
+                //     if CustSite."Contract Code" <> '' then begin
+                //         Rec.Validate("Contract Code", CustSite."Contract Code");
+                //         Rec.Modify();
+                //     end;
+                // end;
+
+                // SalesLineRec.Reset();
+                // SalesLineRec.SetRange("Document No.", Rec."No.");
+                // SalesLineRec.SetRange(Type, Rec."Document Type");
+                // SalesLineRec.SetRange(Type, SalesLineRec.Type::Item);
+                // IF SalesLineRec.FindSet() THEN
+                //     repeat
+                //         SalesLineRec.Site := Rec.Site;
+                //         SalesLineRec.Modify();
+                //     until SalesLineRec.Next() = 0;
+            end;
+        }
+        //DevOps #619 -- begin
+        field(50001; "Contract Code"; Code[4])
+        {
+            TableRelation = "Customer-Site"."Contract Code" WHERE("Customer No." = field("Sell-to Customer No."));
+
+            trigger OnValidate()
+            begin
+            end;
+        }
+        //DevOps #619 -- end
+        //DEVOPS #622 -- begin
+        field(50003; "Period Start"; Date)
+        {
+        }
+        field(50004; "Period End"; Date)
+        {
+        }
+    }
+
+}

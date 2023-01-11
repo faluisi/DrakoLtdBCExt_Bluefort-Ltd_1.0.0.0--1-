@@ -1,0 +1,75 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+
+     {
+      "type": "al",
+      "request": "launch",
+      "name": "live",
+      "server": "http://localhost",
+      "serverInstance": "DevLive",
+      "port": 2005,
+      "authentication": "UserPassword",
+      "startupObjectId": 22,
+      "startupObjectType": "Page",
+      "breakOnError": true,
+      "launchBrowser": true,
+      "enableLongRunningSqlStatements": true,
+      "enableSqlInformationDebugger": true
+  }, 
+
+  {
+    "name": "test",
+    "type": "al",
+    "request": "launch",
+    "server": "http://localhost/devtest",
+    "serverInstance": "Dev",
+    "port": 4004,
+    "authentication": "UserPassword",
+    "startupObjectId": 22,
+    "breakOnError": true,
+    "breakOnRecordWrite": false,
+    "launchBrowser": true,
+    "enableSqlInformationDebugger": true,
+    "enableLongRunningSqlStatements": true,
+    "longRunningSqlStatementsThreshold": 500,
+    "numberOfSqlStatements": 10
+},
+
+    {
+      "name": "Debug",
+      "type": "al",
+      "request": "launch",
+      "server": "http://localhost:7845/BC200",
+      "serverInstance": "bc200",
+      "port": 7704,
+      "authentication": "UserPassword",
+      "startupObjectId": 22,
+      "breakOnError": true,
+      "breakOnRecordWrite": false,
+      "launchBrowser": true,
+      "enableSqlInformationDebugger": true,
+      "enableLongRunningSqlStatements": true,
+      "longRunningSqlStatementsThreshold": 500,
+      "numberOfSqlStatements": 10
+      
+  },
+    {
+      "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://localhost:1478",
+            "serverInstance": "BC150",
+            "authentication": "Windows",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "port": 5005,
+            "schemaUpdateMode": "ForceSync"
+    }
+  ]
+}
