@@ -21,12 +21,12 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>18.36648cm</Width>
+                      <Width>18.62931cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>15.78766cm</Height>
+                      <Height>19.0277cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -61,7 +61,7 @@
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>Particulars</Value>
+                                                        <Value>Description</Value>
                                                         <Style>
                                                           <FontWeight>Bold</FontWeight>
                                                           <Color>White</Color>
@@ -1964,11 +1964,12 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                         <Value>=Fields!nonvatsales.Value</Value>
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
+                                                          <Format>=Fields!AmtInclVAT_SalesInvLineFormat.Value</Format>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
                                                     <Style>
-                                                      <TextAlign>Center</TextAlign>
+                                                      <TextAlign>Right</TextAlign>
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
@@ -1978,6 +1979,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                     <Style>None</Style>
                                                   </Border>
                                                   <PaddingLeft>5pt</PaddingLeft>
+                                                  <PaddingRight>5pt</PaddingRight>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -3019,16 +3021,17 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
-                                              <Textbox Name="Textbox7">
+                                              <Textbox Name="Textbox18">
                                                 <CanGrow>true</CanGrow>
                                                 <KeepTogether>true</KeepTogether>
                                                 <Paragraphs>
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>PLEASE:</Value>
+                                                        <Value />
                                                         <Style>
-                                                          <FontSize>9pt</FontSize>
+                                                          <FontWeight>Bold</FontWeight>
+                                                          <TextDecoration>None</TextDecoration>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -3037,14 +3040,12 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
-                                                <rd:DefaultName>Textbox1</rd:DefaultName>
+                                                <rd:DefaultName>Textbox18</rd:DefaultName>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
                                                     <Style>None</Style>
                                                   </Border>
-                                                  <PaddingLeft>5pt</PaddingLeft>
-                                                  <PaddingRight>5pt</PaddingRight>
                                                 </Style>
                                               </Textbox>
                                             </CellContents>
@@ -3138,6 +3139,199 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                     <Style>None</Style>
                                                   </Border>
                                                   <PaddingLeft>5pt</PaddingLeft>
+                                                  <PaddingRight>5pt</PaddingRight>
+                                                </Style>
+                                              </Textbox>
+                                            </CellContents>
+                                          </TablixCell>
+                                        </TablixCells>
+                                      </TablixRow>
+                                      <TablixRow>
+                                        <Height>1.13132cm</Height>
+                                        <TablixCells>
+                                          <TablixCell>
+                                            <CellContents>
+                                              <Textbox Name="Textbox5">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value>Please note that starting April 01, 2022, we did not withhold the 5% franchise tax in compliance with the Bureau of Internal Revenue RMC 32-2022 dated April 13, 2022.</Value>
+                                                        <Style>
+                                                          <FontStyle>Italic</FontStyle>
+                                                          <FontFamily>Calibri</FontFamily>
+                                                          <FontWeight>Normal</FontWeight>
+                                                          <TextDecoration>None</TextDecoration>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Left</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <rd:DefaultName>Textbox5</rd:DefaultName>
+                                                <Style>
+                                                  <Border>
+                                                    <Style>Solid</Style>
+                                                  </Border>
+                                                  <TopBorder>
+                                                    <Color>Black</Color>
+                                                    <Style>Solid</Style>
+                                                    <Width>1pt</Width>
+                                                  </TopBorder>
+                                                  <BottomBorder>
+                                                    <Color>Black</Color>
+                                                    <Style>Solid</Style>
+                                                    <Width>1pt</Width>
+                                                  </BottomBorder>
+                                                  <LeftBorder>
+                                                    <Color>Black</Color>
+                                                    <Style>Solid</Style>
+                                                    <Width>1pt</Width>
+                                                  </LeftBorder>
+                                                  <RightBorder>
+                                                    <Color>Black</Color>
+                                                    <Style>Solid</Style>
+                                                    <Width>1pt</Width>
+                                                  </RightBorder>
+                                                </Style>
+                                              </Textbox>
+                                              <ColSpan>4</ColSpan>
+                                            </CellContents>
+                                          </TablixCell>
+                                          <TablixCell />
+                                          <TablixCell />
+                                          <TablixCell />
+                                        </TablixCells>
+                                      </TablixRow>
+                                      <TablixRow>
+                                        <Height>0.6cm</Height>
+                                        <TablixCells>
+                                          <TablixCell>
+                                            <CellContents>
+                                              <Textbox Name="Textbox7">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value>PLEASE:</Value>
+                                                        <Style>
+                                                          <FontSize>9pt</FontSize>
+                                                          <FontWeight>Bold</FontWeight>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Left</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <rd:DefaultName>Textbox1</rd:DefaultName>
+                                                <Style>
+                                                  <Border>
+                                                    <Color>LightGrey</Color>
+                                                    <Style>None</Style>
+                                                  </Border>
+                                                  <PaddingLeft>5pt</PaddingLeft>
+                                                  <PaddingRight>5pt</PaddingRight>
+                                                </Style>
+                                              </Textbox>
+                                              <rd:Selected>true</rd:Selected>
+                                            </CellContents>
+                                          </TablixCell>
+                                          <TablixCell>
+                                            <CellContents>
+                                              <Textbox Name="Textbox28">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value />
+                                                        <Style>
+                                                          <FontWeight>Bold</FontWeight>
+                                                          <TextDecoration>None</TextDecoration>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Left</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <rd:DefaultName>Textbox28</rd:DefaultName>
+                                                <Style>
+                                                  <Border>
+                                                    <Color>LightGrey</Color>
+                                                    <Style>None</Style>
+                                                  </Border>
+                                                </Style>
+                                              </Textbox>
+                                            </CellContents>
+                                          </TablixCell>
+                                          <TablixCell>
+                                            <CellContents>
+                                              <Textbox Name="Textbox33">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value />
+                                                        <Style>
+                                                          <FontSize>8pt</FontSize>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Right</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <rd:DefaultName>Textbox33</rd:DefaultName>
+                                                <Style>
+                                                  <Border>
+                                                    <Color>LightGrey</Color>
+                                                    <Style>None</Style>
+                                                  </Border>
+                                                  <PaddingLeft>5pt</PaddingLeft>
+                                                  <PaddingRight>5pt</PaddingRight>
+                                                </Style>
+                                              </Textbox>
+                                            </CellContents>
+                                          </TablixCell>
+                                          <TablixCell>
+                                            <CellContents>
+                                              <Textbox Name="Textbox34">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value />
+                                                        <Style />
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Right</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <rd:DefaultName>Textbox34</rd:DefaultName>
+                                                <Style>
+                                                  <Border>
+                                                    <Color>LightGrey</Color>
+                                                    <Style>None</Style>
+                                                  </Border>
+                                                  <PaddingLeft>1pt</PaddingLeft>
                                                   <PaddingRight>5pt</PaddingRight>
                                                 </Style>
                                               </Textbox>
@@ -3896,6 +4090,8 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                       <TablixMember />
                                       <TablixMember />
                                       <TablixMember />
+                                      <TablixMember />
+                                      <TablixMember />
                                     </TablixMembers>
                                   </TablixRowHierarchy>
                                   <DataSetName>DataSet_Result</DataSetName>
@@ -3910,8 +4106,8 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   </Filters>
                                   <Top>4.61773cm</Top>
                                   <Left>0.08331in</Left>
-                                  <Height>7.73228cm</Height>
-                                  <Width>18.12679cm</Width>
+                                  <Height>9.4636cm</Height>
+                                  <Width>18.12681cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
@@ -3935,15 +4131,15 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   <TablixBody>
                                     <TablixColumns>
                                       <TablixColumn>
-                                        <Width>1.94347cm</Width>
+                                        <Width>1.93017cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>16.18333cm</Width>
+                                        <Width>16.17003cm</Width>
                                       </TablixColumn>
                                     </TablixColumns>
                                     <TablixRows>
                                       <TablixRow>
-                                        <Height>0.49742cm</Height>
+                                        <Height>0.49624cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -3980,7 +4176,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.48683cm</Height>
+                                        <Height>0.48565cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -4017,7 +4213,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.36188cm</Height>
+                                        <Height>0.3607cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -4053,7 +4249,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>1.25664cm</Height>
+                                        <Height>1.25546cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -4070,7 +4266,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                         </Style>
                                                       </TextRun>
                                                       <TextRun>
-                                                        <Value>Email:  </Value>
+                                                        <Value>Email:    </Value>
                                                         <Style />
                                                       </TextRun>
                                                       <TextRun>
@@ -4120,7 +4316,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.23488cm</Height>
+                                        <Height>0.2337cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -4147,50 +4343,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Border>
                                                   <PaddingLeft>2pt</PaddingLeft>
                                                   <PaddingRight>2pt</PaddingRight>
-                                                  <PaddingTop>2pt</PaddingTop>
-                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                </Style>
-                                              </Textbox>
-                                              <ColSpan>2</ColSpan>
-                                            </CellContents>
-                                          </TablixCell>
-                                          <TablixCell />
-                                        </TablixCells>
-                                      </TablixRow>
-                                      <TablixRow>
-                                        <Height>0.6cm</Height>
-                                        <TablixCells>
-                                          <TablixCell>
-                                            <CellContents>
-                                              <Textbox Name="Textbox109">
-                                                <CanGrow>true</CanGrow>
-                                                <KeepTogether>true</KeepTogether>
-                                                <Paragraphs>
-                                                  <Paragraph>
-                                                    <TextRuns>
-                                                      <TextRun>
-                                                        <Value>Authorized Signature						
-</Value>
-                                                        <Style>
-                                                          <FontSize>8pt</FontSize>
-                                                        </Style>
-                                                      </TextRun>
-                                                    </TextRuns>
-                                                    <Style />
-                                                  </Paragraph>
-                                                </Paragraphs>
-                                                <rd:DefaultName>Textbox109</rd:DefaultName>
-                                                <Style>
-                                                  <Border>
-                                                    <Style>None</Style>
-                                                  </Border>
-                                                  <TopBorder>
-                                                    <Color>Black</Color>
-                                                    <Style>Solid</Style>
-                                                    <Width>0.5pt</Width>
-                                                  </TopBorder>
-                                                  <PaddingLeft>5pt</PaddingLeft>
-                                                  <PaddingRight>5pt</PaddingRight>
                                                   <PaddingTop>2pt</PaddingTop>
                                                   <PaddingBottom>2pt</PaddingBottom>
                                                 </Style>
@@ -4229,16 +4381,18 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                       <TablixMember>
                                         <KeepWithGroup>Before</KeepWithGroup>
                                       </TablixMember>
-                                      <TablixMember>
-                                        <KeepWithGroup>Before</KeepWithGroup>
-                                      </TablixMember>
                                     </TablixMembers>
                                   </TablixRowHierarchy>
                                   <DataSetName>DataSet_Result</DataSetName>
-                                  <Top>12.35001cm</Top>
+                                  <SortExpressions>
+                                    <SortExpression>
+                                      <Value>=Fields!termslineno.Value</Value>
+                                    </SortExpression>
+                                  </SortExpressions>
+                                  <Top>14.08133cm</Top>
                                   <Left>0.08331in</Left>
-                                  <Height>3.43765cm</Height>
-                                  <Width>18.12679cm</Width>
+                                  <Height>2.83175cm</Height>
+                                  <Width>18.1002cm</Width>
                                   <ZIndex>3</ZIndex>
                                   <Style>
                                     <Border>
@@ -4258,6 +4412,154 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                     </RightBorder>
                                   </Style>
                                 </Tablix>
+                                <Line Name="Line3">
+                                  <Top>18.2372cm</Top>
+                                  <Left>0.73668cm</Left>
+                                  <Height>0cm</Height>
+                                  <Width>5.2705cm</Width>
+                                  <ZIndex>4</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Line>
+                                <Textbox Name="Textbox12">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Prepared by</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox12</rd:DefaultName>
+                                  <Top>18.41359cm</Top>
+                                  <Left>2.17601cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>2.5cm</Width>
+                                  <ZIndex>5</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Line Name="Line6">
+                                  <Top>18.2372cm</Top>
+                                  <Left>10.75973cm</Left>
+                                  <Height>0cm</Height>
+                                  <Width>5.2705cm</Width>
+                                  <ZIndex>6</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Line>
+                                <Textbox Name="Textbox13">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Reviewed/Approved By:</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox12</rd:DefaultName>
+                                  <Top>18.27248cm</Top>
+                                  <Left>11.62066cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>4.40957cm</Width>
+                                  <ZIndex>7</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox15">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!PreparedBy.Value</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox15</rd:DefaultName>
+                                  <Top>17.49609cm</Top>
+                                  <Left>0.73668cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>5.2705cm</Width>
+                                  <ZIndex>8</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox35">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!ApprovedBy.Value</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox35</rd:DefaultName>
+                                  <Top>17.62337cm</Top>
+                                  <Left>10.87551cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>5.15471cm</Width>
+                                  <ZIndex>9</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Style>
@@ -4311,10 +4613,8 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                   </TablixMembers>
                 </TablixRowHierarchy>
                 <DataSetName>DataSet_Result</DataSetName>
-                <Top>0cm</Top>
-                <Left>0cm</Left>
-                <Height>15.78766cm</Height>
-                <Width>18.36648cm</Width>
+                <Height>19.0277cm</Height>
+                <Width>18.62931cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -4325,10 +4625,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>0cm</Top>
             <Left>0.41902cm</Left>
-            <Height>15.78766cm</Height>
-            <Width>18.36648cm</Width>
+            <Height>19.0277cm</Height>
+            <Width>18.62931cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -4336,10 +4635,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>15.78766cm</Height>
+        <Height>19.0277cm</Height>
         <Style />
       </Body>
-      <Width>18.96694cm</Width>
+      <Width>19.04833cm</Width>
       <Page>
         <PageHeader>
           <Height>7.9375cm</Height>
@@ -4351,10 +4650,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               <Value>=Convert.ToBase64String(Fields!CompanyInfo3Picture.Value)</Value>
               <MIMEType>image/bmp</MIMEType>
               <Sizing>FitProportional</Sizing>
-              <Top>0.88404in</Top>
-              <Left>0.75in</Left>
-              <Height>16.17611mm</Height>
-              <Width>41.88421mm</Width>
+              <Top>0.56232in</Top>
+              <Left>0.2517in</Left>
+              <Height>29.88366mm</Height>
+              <Width>62.04283mm</Width>
               <Visibility>
                 <Hidden>=iif(IsNothing(Fields!CompanyInfo3Picture.Value) = TRUE,TRUE,FALSE)</Hidden>
               </Visibility>
@@ -5616,6 +5915,12 @@ End Function
         <Field Name="PricesInclVAT_SalesInvHdrCaption">
           <DataField>PricesInclVAT_SalesInvHdrCaption</DataField>
         </Field>
+        <Field Name="PreparedBy">
+          <DataField>PreparedBy</DataField>
+        </Field>
+        <Field Name="ApprovedBy">
+          <DataField>ApprovedBy</DataField>
+        </Field>
         <Field Name="ContractCode">
           <DataField>ContractCode</DataField>
         </Field>
@@ -6249,14 +6554,14 @@ End Function
         <Field Name="SelltoCustNo_SalesInvHdrCaption">
           <DataField>SelltoCustNo_SalesInvHdrCaption</DataField>
         </Field>
-        <Field Name="LineFeeCaptionLbl">
-          <DataField>LineFeeCaptionLbl</DataField>
-        </Field>
         <Field Name="TermsConditions">
           <DataField>TermsConditions</DataField>
         </Field>
         <Field Name="termslineno">
           <DataField>termslineno</DataField>
+        </Field>
+        <Field Name="LineFeeCaptionLbl">
+          <DataField>LineFeeCaptionLbl</DataField>
         </Field>
       </Fields>
       <Query>

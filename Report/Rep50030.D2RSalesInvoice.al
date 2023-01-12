@@ -316,6 +316,14 @@ report 50030 "D2R Sales - Invoice"
                     "Sales Invoice Header".FieldCaption("Prices Including VAT"))
                     {
                     }
+                    column(PreparedBy;
+                    "Sales Invoice Header"."User ID")
+                    {
+                    }
+                    column(ApprovedBy;
+                    glentry."User ID")
+                    {
+                    }
                     //BFT-001 -- begin
                     column(ContractCode;
                     "Sales Invoice Header"."Contract Code")
@@ -1322,6 +1330,31 @@ report 50030 "D2R Sales - Invoice"
                             if not ShowShippingAddr then CurrReport.Break;
                         end;
                     }
+                    //BFT-001
+                    dataitem(TC;
+                    TermsConditions)
+                    {
+                        DataItemLinkReference = "Sales Invoice Header";
+                        DataItemLink = Country = field("Sell-to Country/Region code");
+                        column(TermsConditions;
+                        "Terms Conditions")
+                        {
+                        }
+                        column(termslineno;
+                        "Line No.")
+                        {
+                        }
+                        trigger OnAfterGetRecord()
+                        begin
+                            // if ((g_Customer."Country/Region Code" = 'MX') OR (g_Customer."Country/Region Code" = 'PH')) then begin
+                            //     if (TC.Country <> g_Customer."Country/Region Code") then CurrReport.Skip();
+                            // end
+                            // else
+                            //     if (TC.Country <> '') then CurrReport.Skip();
+                        end;
+                    }
+
+                    //BFT-001
                     dataitem(LineFee;
                     "Integer")
                     {
@@ -1375,6 +1408,8 @@ report 50030 "D2R Sales - Invoice"
             var
                 Handled: Boolean;
             begin
+                glentry.SetRange("Document No.", "Sales Invoice Header"."No.");
+                if glentry.FindFirst() then begin end;
                 CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
                 FormatSiteAddress("Sales Invoice Header");
                 FormatAddressFields("Sales Invoice Header");
@@ -1403,30 +1438,7 @@ report 50030 "D2R Sales - Invoice"
                 OnAfterPostDataItem("Sales Invoice Header");
             end;
         }
-        //BFT-001
-        dataitem(TermsConditions;
-        TermsConditions)
-        {
-            DataItemLinkReference = "Sales Invoice Header";
 
-            column(TermsConditions;
-            "Terms Conditions")
-            {
-            }
-            column(termslineno;
-            "Line No.")
-            {
-            }
-            trigger OnAfterGetRecord()
-            begin
-                if ((g_Customer."Country/Region Code" = 'MX') OR (g_Customer."Country/Region Code" = 'PH')) then begin
-                    if (TermsConditions.Country <> g_Customer."Country/Region Code") then CurrReport.Skip();
-                end
-                else
-                    if (TermsConditions.Country <> '') then CurrReport.Skip();
-            end;
-        }
-        //BFT-001
     }
     requestpage
     {
@@ -1688,6 +1700,7 @@ report 50030 "D2R Sales - Invoice"
 
         nonvatsales: Decimal;
         vatsales: Decimal;
+        glentry: record "G/L Entry";
     //BFT-001 -- end
     procedure InitLogInteraction()
     begin
