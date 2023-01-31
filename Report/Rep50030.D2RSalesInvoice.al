@@ -317,11 +317,11 @@ report 50030 "D2R Sales - Invoice"
                     {
                     }
                     column(PreparedBy;
-                    "Sales Invoice Header"."User ID")
+                    prepby)
                     {
                     }
                     column(ApprovedBy;
-                    glentry."User ID")
+                    apprby)
                     {
                     }
                     //BFT-001 -- begin
@@ -1020,6 +1020,7 @@ report 50030 "D2R Sales - Invoice"
                         }
                         trigger OnAfterGetRecord()
                         begin
+
                             InitializeShipmentBuffer;
                             if (Type = Type::"G/L Account") and (not ShowInternalInfo) then "No." := '';
                             VATAmountLine.Init;
@@ -1377,6 +1378,12 @@ report 50030 "D2R Sales - Invoice"
                 }
                 trigger OnAfterGetRecord()
                 begin
+                    user.setrange("User Name", glentry."User ID");
+                    if user.FindFirst() then
+                        apprby := user."Full Name";
+                    user.SetRange("User Name", "Sales Invoice Header"."User ID");
+                    if user.FindFirst() then
+                        prepby := user."Full Name";
                     if Number > 1 then begin
                         CopyText := FormatDocument.GetCOPYText;
                         OutputNo += 1;
@@ -1701,6 +1708,9 @@ report 50030 "D2R Sales - Invoice"
         nonvatsales: Decimal;
         vatsales: Decimal;
         glentry: record "G/L Entry";
+        user: record User;
+        prepby: Text;
+        apprby: Text;
     //BFT-001 -- end
     procedure InitLogInteraction()
     begin

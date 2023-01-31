@@ -1,0 +1,61 @@
+page 50032 editprepmt
+{
+    Caption = 'Edit Prepayment';
+    PageType = Card;
+    ApplicationArea = All;
+    UsageCategory = Administration;
+    SourceTable = "Purchase Header";
+
+    layout
+    {
+        area(Content)
+        {
+            group(Edit)
+            {
+                field("Prepayment %"; rec."Prepayment %")
+                {
+                    ApplicationArea = All;
+                }
+                field(PrepaymentAmount; PrepaymentAmount)
+                {
+                    ApplicationArea = all;
+                    Caption = 'Prepayment Amount';
+                    trigger OnValidate()
+                    var
+                        pl: Record "Purchase Line";
+                        DocumentTotals: Codeunit "Document Totals";
+                        TotalPurchLine: Record "Purchase Line";
+                        VATAmount: Decimal;
+                    begin
+
+                        pl.SETRANGE("Document Type", rec."Document Type");
+                        pl.SETRANGE("Document No.", rec."No.");
+                        IF pl.FINDFIRST THEN
+                            DocumentTotals.CalculatePurchaseTotals(TotalPurchLine, VATAmount, pl);
+                        rec.VALIDATE("Prepayment %", PrepaymentAmount / TotalPurchLine."Line Amount" * 100);
+                        CurrPage.UPDATE(FALSE);
+                    end;
+                }
+
+            }
+        }
+    }
+    trigger
+     OnAfterGetRecord()
+    var
+        pl: Record "Purchase Line";
+        DocumentTotals: Codeunit "Document Totals";
+        TotalPurchLine: Record "Purchase Line";
+        VATAmount: Decimal;
+    begin
+        pl.SETRANGE("Document Type", rec."Document Type");
+        pl.SETRANGE("Document No.", rec."No.");
+        IF pl.FINDFIRST THEN
+            DocumentTotals.CalculatePurchaseTotals(TotalPurchLine, VATAmount, pl);
+        PrepaymentAmount := TotalPurchLine."Line Amount" * rec."Prepayment %" / 100;
+    end;
+
+    var
+        PrepaymentAmount: Decimal;
+
+}

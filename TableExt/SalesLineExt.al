@@ -49,22 +49,26 @@ tableextension 50008 SalesLineExt extends "Sales Line"
             var
                 SalesHeaderRec: Record "Sales Header";
             begin
-                // if rec.Type = Rec.Type::"G/L Account" then begin
-                //if GlAccount.Get("No.") then begin
-                //  if GlAccount."Periods Required" then begin
-                //get sales header
-                // Message(Format("Line No."));
-                if ("Line No." <> 0) then begin
-                    if SalesHeader.get("Document Type", "Document No.") then begin
-                        if SalesHeader."Period Start" <> 0D then
-                            Rec.Validate("Period Start", SalesHeader."Period Start");
-                        if SalesHeader."Period End" <> 0D then
-                            Rec.Validate("Period End", SalesHeader."Period End");
-                        rec.Modify(false);
+                if rec.Type = Rec.Type::"G/L Account" then begin
+                    if GlAccount.Get("No.") then begin
+                        if GlAccount."Periods Required" then begin
+                            // get sales header
+                            // Message(Format("Line No."));
+                            if ("Line No." <> 0) then begin
+                                if SalesHeader.get("Document Type", "Document No.") then begin
+                                    if SalesHeader."Period Start" <> 0D then
+                                        Rec.Validate("Period Start", SalesHeader."Period Start");
+                                    if SalesHeader."Period End" <> 0D then
+                                        Rec.Validate("Period End", SalesHeader."Period End");
+                                    //rec.Modify(false);
+                                end;
+                            end;
+                        end;
                     end;
-
-
                 end;
+
+
+                // end;
                 //if SalesHeader.get("Document Type", "Document No.") then begin
                 //  Rec.Validate("Period Start", SalesHeader."Period Start");
                 //  Rec.Validate("Period End", SalesHeader."Period End");
@@ -76,7 +80,7 @@ tableextension 50008 SalesLineExt extends "Sales Line"
                 begin
                     if SalesHeaderRec.Get(Rec."Document Type", Rec."Document No.") then
                         Validate(Rec.Site, SalesHeaderRec.Site);
-                end
+                end;
             end;
 
         }
