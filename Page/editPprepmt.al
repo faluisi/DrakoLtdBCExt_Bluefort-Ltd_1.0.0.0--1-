@@ -5,7 +5,8 @@ page 50032 editprepmt
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Purchase Header";
-
+    DeleteAllowed = false;
+    InsertAllowed = false;
     layout
     {
         area(Content)
@@ -40,6 +41,8 @@ page 50032 editprepmt
             }
         }
     }
+
+
     trigger
      OnAfterGetRecord()
     var
@@ -53,6 +56,14 @@ page 50032 editprepmt
         IF pl.FINDFIRST THEN
             DocumentTotals.CalculatePurchaseTotals(TotalPurchLine, VATAmount, pl);
         PrepaymentAmount := TotalPurchLine."Line Amount" * rec."Prepayment %" / 100;
+    end;
+
+    trigger
+    OnOpenPage()
+    begin
+        rec.SetRange("Document Type", rec."Document Type");
+        rec.SetRange("No.", rec."No.");
+
     end;
 
     var

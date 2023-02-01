@@ -5,6 +5,8 @@ page 50031 editpostingdate
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Purchase Header";
+    DeleteAllowed = false;
+    InsertAllowed = false;
 
     layout
     {
@@ -21,5 +23,12 @@ page 50031 editpostingdate
         }
     }
 
+
+    trigger
+    OnOpenPage()
+    begin
+        rec.SetRange("Document Type", rec."Document Type");
+        rec.SetRange("No.", rec."No.");
+    end;
 
 }
