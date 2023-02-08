@@ -16,6 +16,19 @@ page 50032 editprepmt
                 field("Prepayment %"; rec."Prepayment %")
                 {
                     ApplicationArea = All;
+                    trigger OnValidate()
+                    var
+                        pl: Record "Purchase Line";
+                        DocumentTotals: Codeunit "Document Totals";
+                        TotalPurchLine: Record "Purchase Line";
+                        VATAmount: Decimal;
+                    begin
+                        pl.SETRANGE("Document Type", rec."Document Type");
+                        pl.SETRANGE("Document No.", rec."No.");
+                        IF pl.FINDFIRST THEN
+                            DocumentTotals.CalculatePurchaseTotals(TotalPurchLine, VATAmount, pl);
+                        PrepaymentAmount := TotalPurchLine."Line Amount" * rec."Prepayment %" / 100;
+                    end;
                 }
                 field(PrepaymentAmount; PrepaymentAmount)
                 {
