@@ -2232,6 +2232,8 @@ report 50000 "Drako Sales - Invoice"
     var
         PaymentBank: Record "Payment Bank Accounts";
     begin
+        CompanyInfo.Get();
+        GLSetup.Get();
         if (Cust."Payment Bank Code" <> '') then begin
             PaymentBank.SetFilter("Bank Code", Cust."Payment Bank Code");
             if (PaymentBank.FindFirst()) then begin
@@ -2249,8 +2251,17 @@ report 50000 "Drako Sales - Invoice"
                 else
                     HasIntBank := true;
             end
-            else
+            else begin
+                // BankDetails[1] := CompanyInfo."Intermediary Bank";
+                // BankDetails[2] := CompanyInfo."Intermediary SWIFT";
+                BankDetails[3] := CompanyInfo."Bank Name";
+                BankDetails[4] := CompanyInfo."SWIFT Code";
+                BankDetails[5] := CompanyInfo.IBAN;
+                BankDetails[6] := GLSetup."LCY Code";
+                BankDetails[7] := CompanyInfo."Bank Address";
+                //BankDetails[8] := CompanyInfo."Bank Address 2"
                 HasBank := false;
+            end;
         end
         else
             HasBank := false;

@@ -13,7 +13,7 @@ report 50025 "EPS Sales - Invoice"
         {
             DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
-            RequestFilterHeading = 'Posted Sales Invoice';
+            RequestFilterHeading = 'Facturas Registradas';
 
             column(CustomerNo;
             g_Customer."No.")
@@ -1425,7 +1425,7 @@ report 50025 "EPS Sales - Invoice"
             {
                 group(Options)
                 {
-                    Caption = 'Options';
+                    Caption = 'Opciones';
 
                     /*
                               field(NoOfCopies; NoOfCopies)
@@ -1438,26 +1438,26 @@ report 50025 "EPS Sales - Invoice"
                     field(ShowInternalInfo; ShowInternalInfo)
                     {
                         ApplicationArea = Basic, Suite;
-                        Caption = 'Show Internal Information';
+                        Caption = 'Muestra informacciones internas';
                         ToolTip = 'Specifies if you want the printed report to show information that is only for internal use.';
                     }
                     field(LogInteraction; LogInteraction)
                     {
                         ApplicationArea = Basic, Suite;
-                        Caption = 'Log Interaction';
+                        Caption = 'Log Interacción';
                         Enabled = LogInteractionEnable;
                         ToolTip = 'Specifies that interactions with the contact are logged.';
                     }
                     field(DisplayAsmInformation; DisplayAssemblyInformation)
                     {
                         ApplicationArea = Assembly;
-                        Caption = 'Show Assembly Components';
+                        Caption = 'Muestra componentes de ensemblaje';
                         ToolTip = 'Specifies if you want the report to include information about components that were used in linked assembly orders that supplied the item(s) being sold.';
                     }
                     field(DisplayAdditionalFeeNote; DisplayAdditionalFeeNote)
                     {
                         ApplicationArea = Basic, Suite;
-                        Caption = 'Show Additional Fee Note';
+                        Caption = 'Muestra notas de cargos adicionales';
                         ToolTip = 'Specifies that any notes about additional fees are included on the document.';
                     }
                 }

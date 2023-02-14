@@ -14,7 +14,7 @@ report 50026 "EPS Sales - Credit Memo"
         {
             DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
-            RequestFilterHeading = 'Posted Sales Credit Memo';
+            RequestFilterHeading = 'Notas de crédito Registradas';
 
             column(CustomerNo;
             g_Customer."No.")
@@ -1429,7 +1429,7 @@ report 50026 "EPS Sales - Credit Memo"
                         PrintTIN := true;
                     end
                     else begin
-                        RFCCaption := 'VAT:';
+                        RFCCaption := 'IVA:';
                         InqEmail := 'collections@fbm.mt' //Probably needs changing
                     end;
                 FormatBankInfo(g_Customer);
@@ -1455,7 +1455,7 @@ report 50026 "EPS Sales - Credit Memo"
             {
                 group(Options)
                 {
-                    Caption = 'Options';
+                    Caption = 'Opciones';
 
                     /*
                               field(NoOfCopies; NoOfCopies)
@@ -1468,26 +1468,26 @@ report 50026 "EPS Sales - Credit Memo"
                     field(ShowInternalInfo; ShowInternalInfo)
                     {
                         ApplicationArea = Basic, Suite;
-                        Caption = 'Show Internal Information';
+                        Caption = 'Muestra informacciones internas';
                         ToolTip = 'Specifies if you want the printed report to show information that is only for internal use.';
                     }
                     field(LogInteraction; LogInteraction)
                     {
                         ApplicationArea = Basic, Suite;
-                        Caption = 'Log Interaction';
+                        Caption = 'Log Interacción';
                         Enabled = LogInteractionEnable;
                         ToolTip = 'Specifies that interactions with the contact are logged.';
                     }
                     field(DisplayAsmInformation; DisplayAssemblyInformation)
                     {
                         ApplicationArea = Assembly;
-                        Caption = 'Show Assembly Components';
+                        Caption = 'Muestra componentes de ensemblaje';
                         ToolTip = 'Specifies if you want the report to include information about components that were used in linked assembly orders that supplied the item(s) being sold.';
                     }
                     field(DisplayAdditionalFeeNote; DisplayAdditionalFeeNote)
                     {
                         ApplicationArea = Basic, Suite;
-                        Caption = 'Show Additional Fee Note';
+                        Caption = 'Muestra notas de cargos adicionales';
                         ToolTip = 'Specifies that any notes about additional fees are included on the document.';
                     }
                 }
@@ -1537,8 +1537,8 @@ report 50026 "EPS Sales - Credit Memo"
     end;
 
     var
-        Text004: Label 'INVOICE %1', Comment = '%1 = Document No.';
-        PageCaptionCap: Label 'Page %1 of %2';
+        Text004: Label 'NOTA DE CRÉDITO %1', Comment = '%1 = Document No.';
+        PageCaptionCap: Label 'Página %1 de %2';
         GLSetup: Record "General Ledger Setup";
         ShipmentMethod: Record "Shipment Method";
         PaymentTerms: Record "Payment Terms";
@@ -1604,19 +1604,19 @@ report 50026 "EPS Sales - Credit Memo"
         [InDataSet]
         LogInteractionEnable: Boolean;
         DisplayAssemblyInformation: Boolean;
-        CompanyInfoPhoneNoCaptionLbl: Label 'Phone No.';
-        CompanyInfoVATRegNoCptnLbl: Label 'VAT Reg. No.';
+        CompanyInfoPhoneNoCaptionLbl: Label 'Tél No.';
+        CompanyInfoVATRegNoCptnLbl: Label 'C.I.F. No.';
         CompanyInfoGiroNoCaptionLbl: Label 'Giro No.';
-        CompanyInfoBankNameCptnLbl: Label 'Bank: ';
+        CompanyInfoBankNameCptnLbl: Label 'Banco: ';
         CompanyInfoBankAccNoCptnLbl: Label 'IBAN: ';
-        SalesInvDueDateCaptionLbl: Label 'Due Date:';
-        InvNoCaptionLbl: Label 'Invoice No.';
-        SalesInvPostingDateCptnLbl: Label 'Posting Date';
+        SalesInvDueDateCaptionLbl: Label 'Fecha vencimiento:';
+        InvNoCaptionLbl: Label 'Nota de Crédito No.';
+        SalesInvPostingDateCptnLbl: Label 'Fecha registro';
         HeaderDimCaptionLbl: Label 'Header Dimensions';
-        UnitPriceCaptionLbl: Label 'Unit Price';
-        SalesInvLineDiscCaptionLbl: Label 'Discount %';
-        AmountCaptionLbl: Label 'Amount';
-        VATClausesCap: Label 'VAT Clause';
+        UnitPriceCaptionLbl: Label 'PVP';
+        SalesInvLineDiscCaptionLbl: Label '% Descuento';
+        AmountCaptionLbl: Label 'Importe';
+        VATClausesCap: Label 'Cláusula IVA';
         PostedShipmentDateCaptionLbl: Label 'Posted Shipment Date';
         SubtotalCaptionLbl: Label 'SUBTOTAL';
         LineAmtAfterInvDiscCptnLbl: Label 'Payment Discount on VAT';
@@ -1628,12 +1628,12 @@ report 50026 "EPS Sales - Credit Memo"
         ShiptoAddrCaptionLbl: Label 'Ship-to Address';
         InvDiscountAmtCaptionLbl: Label 'Invoice Discount Amount';
         DocumentDateCaptionLbl: Label 'Document Date';
-        PaymentTermsDescCaptionLbl: Label 'Payment Terms';
-        ShptMethodDescCaptionLbl: Label 'Shipment Method';
-        VATPercentageCaptionLbl: Label 'VAT %';
+        PaymentTermsDescCaptionLbl: Label 'Modalidad Pago';
+        ShptMethodDescCaptionLbl: Label 'Modalidad envío';
+        VATPercentageCaptionLbl: Label 'IVA %';
         TotalCaptionLbl: Label 'TOTAL';
-        VATBaseCaptionLbl: Label 'VAT Base';
-        VATAmtCaptionLbl: Label 'VAT @';
+        VATBaseCaptionLbl: Label 'IVA Base';
+        VATAmtCaptionLbl: Label 'IVA @';
         VATIdentifierCaptionLbl: Label 'VAT Identifier';
         HomePageCaptionLbl: Label 'Home Page';
         EMailCaptionLbl: Label 'Email';
@@ -1644,10 +1644,10 @@ report 50026 "EPS Sales - Credit Memo"
         //BFT-001 -- begin
         RFCCaption: Text[30];
         CustomerRefCaption: Label 'Customer Reference:';
-        CustomerCaption: Label 'Customer:';
-        AddressCaption: Label 'Address:';
-        InvoiceNumberCaption: Label 'Invoice Number:';
-        DateCaption: Label 'Invoice Date:';
+        CustomerCaption: Label 'Cliente:';
+        AddressCaption: Label 'Dirección:';
+        InvoiceNumberCaption: Label 'Nota crédito No:';
+        DateCaption: Label 'Fecha:';
         VATRateCaption: Label 'VAT Rate';
         InquiriesCaption: Label 'DIRECT ALL INQUIRIES TO:';
         EmailCaption: Label 'Email';

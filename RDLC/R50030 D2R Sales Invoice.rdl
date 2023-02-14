@@ -4413,7 +4413,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                 </Tablix>
                                 <Line Name="Line3">
                                   <Top>20.11398cm</Top>
-                                  <Left>0.6209cm</Left>
+                                  <Left>5.87972cm</Left>
                                   <Height>0cm</Height>
                                   <Width>5.2705cm</Width>
                                   <ZIndex>4</ZIndex>
@@ -4439,7 +4439,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox12</rd:DefaultName>
                                   <Top>20.29037cm</Top>
-                                  <Left>2.06023cm</Left>
+                                  <Left>7.31905cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>2.5cm</Width>
                                   <ZIndex>5</ZIndex>
@@ -4459,6 +4459,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   <Height>0cm</Height>
                                   <Width>5.2705cm</Width>
                                   <ZIndex>6</ZIndex>
+                                  <Visibility>
+                                    <Hidden>true</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>Solid</Style>
@@ -4485,6 +4488,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   <Height>0.6cm</Height>
                                   <Width>4.40957cm</Width>
                                   <ZIndex>7</ZIndex>
+                                  <Visibility>
+                                    <Hidden>true</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -4513,7 +4519,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox15</rd:DefaultName>
                                   <Top>19.37287cm</Top>
-                                  <Left>0.6209cm</Left>
+                                  <Left>5.87972cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>5.2705cm</Width>
                                   <ZIndex>8</ZIndex>
@@ -4544,11 +4550,14 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                     </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox35</rd:DefaultName>
-                                  <Top>19.50015cm</Top>
+                                  <Top>19.4787cm</Top>
                                   <Left>10.75973cm</Left>
                                   <Height>0.6cm</Height>
                                   <Width>5.15471cm</Width>
                                   <ZIndex>9</ZIndex>
+                                  <Visibility>
+                                    <Hidden>true</Hidden>
+                                  </Visibility>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
