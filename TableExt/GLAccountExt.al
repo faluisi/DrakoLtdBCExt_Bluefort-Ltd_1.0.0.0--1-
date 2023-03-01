@@ -5,7 +5,7 @@ tableextension 50009 GLAccountExt extends "G/L Account"
         field(50000; "Periods Required"; Boolean)
         {
         }
-        field(60045; "Gen. Prod. Posting Group2"; Code[20])
+        field(60045; "Gen. Prod. Posting Group2"; Code[20])//no
         {
             Caption = 'Gen. Prod. Posting Group';
             TableRelation = "Gen. Product Posting Group";

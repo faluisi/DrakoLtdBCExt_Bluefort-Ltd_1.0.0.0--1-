@@ -16,13 +16,13 @@ tableextension 50016 FixedAssetExt extends "Fixed Asset"
         {
             Caption = 'Date Prepared';
         }
-        field(50003; Brand; Option)
+        field(50003; Brand; Option)//no
         {
             Caption = 'Brand';
             OptionCaption = ' ,FBM,DINGO';
             OptionMembers = " ",FBM,DINGO;
         }
-        field(50004; Lessee; Option)
+        field(50004; Lessee; Option)//no
         {
             Caption = 'Lessee';
             OptionCaption = ' ,NTT PH,D2R PH';

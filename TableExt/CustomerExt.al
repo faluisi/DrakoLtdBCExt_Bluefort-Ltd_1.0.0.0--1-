@@ -2,7 +2,7 @@ tableextension 50001 CustomerExt extends Customer
 {
     fields
     {
-        field(50000; "Corporate Name"; Text[150])
+        field(50000; "Corporate Name"; Text[150])//no
         {
             Caption = 'Corporate Name';
         }
@@ -17,7 +17,7 @@ tableextension 50001 CustomerExt extends Customer
         field(50003; "No. 2"; Code[20])
         {
         }
-        field(50004; "Payment Bank Code"; Code[20])
+        field(50004; "Payment Bank Code"; Code[20])//no
         {
             DataClassification = ToBeClassified;
             TableRelation = "Payment Bank Accounts"."Bank Code";

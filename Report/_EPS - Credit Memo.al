@@ -2,7 +2,7 @@ report 50026 "EPS Sales - Credit Memo"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './RDLC/R50026 EPS SalesCreditMemo.rdl';
-    Caption = 'Sales Credit Memo';
+    Caption = 'Factura Rectificativa de Ventas';
 
     Permissions = TableData "Sales Shipment Buffer" = rimd;
     PreviewMode = PrintLayout;
@@ -917,11 +917,11 @@ report 50026 "EPS Sales - Credit Memo"
                         {
                         }
                         column(Period_Start;
-                        Format("Period Start", 0, '<Day,2>-<Month Text,3>-<Year4>'))
+                        Format("Period Start", 0, '<Day,2>/<Month,2>/<Year,2>'))
                         {
                         }
                         column(Period_End;
-                        Format("Period End", 0, '<Day,2>-<Month Text,3>-<Year4>'))
+                        Format("Period End", 0, '<Day,2>/<Month,2>/<Year,2>'))
                         {
                         }
                         //BFT-001 -- end
@@ -2069,6 +2069,8 @@ report 50026 "EPS Sales - Credit Memo"
     Currency2: Code[10])
     var
         GLSetup: Record "General Ledger Setup";
+        country: Record "Country/Region";
+        eu: Boolean;
     begin
         GLSetup.get();
         if ((Currency1 = GLSetup."LCY Code") AND (Currency2 = '')) then begin
@@ -2086,7 +2088,9 @@ report 50026 "EPS Sales - Credit Memo"
                 //calculate FCY & LCY
                 CalcFCYLCY(SIHeader);
             end;
-        CalcVATEUR(SIHeader."Posting Date");
+        if country.get(SIHeader."Sell-to Country/Region Code") then
+            eu := (country."EU Country/Region Code" <> '') and (country."EU Country/Region Code" <> 'ES');
+        CalcVATEUR(SIHeader."Posting Date", eu);
     end;
 
     local procedure CalcLCY()
@@ -2132,12 +2136,14 @@ report 50026 "EPS Sales - Credit Memo"
         TotalPaymentDiscOnVATC2 := TotalPaymentDiscOnVAT * exchRate;
     end;
 
-    local procedure CalcVATEUR(PostingDate: Date)
+    local procedure CalcVATEUR(PostingDate: Date; eu: boolean)
     var
         exchrate: Decimal;
         CurrencyExchangeRate: Record "Currency Exchange Rate";
     begin
-        if (not HasVAT) then VATText := 'No VAT is chargeable as the service is deemed to be provided outside Malta in terms of the Third Schedule, Part 2, Item 2(1) to the Value Added Tax Act.';
+        VATText := '';
+        if (not HasVAT) and eu then VATText := 'Factura expedida de conformidad con la DIRECTIVA 2008/08/CE del Consejo, de 12 de Febrero del 2008';
+        if (not HasVAT) and not eu then VATText := 'Operación exenta por exportación en virtud del art. 21 de la Ley 37/1992, del IVA';
         //get exchange rate
         CurrencyExchangeRate.Reset();
         CurrencyExchangeRate.setfilter(CurrencyExchangeRate."Currency Code", 'EUR');

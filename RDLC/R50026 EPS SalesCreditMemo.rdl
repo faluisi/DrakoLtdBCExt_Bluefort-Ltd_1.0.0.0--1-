@@ -21,7 +21,7 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>20.06908cm</Width>
+                      <Width>20.10436cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -3177,7 +3177,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         <Width>14.74114cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>5.23552cm</Width>
+                                        <Width>5.32286cm</Width>
                                       </TablixColumn>
                                     </TablixColumns>
                                     <TablixRows>
@@ -3269,10 +3269,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                 <TablixBody>
                                                   <TablixColumns>
                                                     <TablixColumn>
-                                                      <Width>3.21737cm</Width>
+                                                      <Width>3.26104cm</Width>
                                                     </TablixColumn>
                                                     <TablixColumn>
-                                                      <Width>2.01814cm</Width>
+                                                      <Width>2.06181cm</Width>
                                                     </TablixColumn>
                                                   </TablixColumns>
                                                   <TablixRows>
@@ -3549,7 +3549,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   <Top>11.5592cm</Top>
                                   <Left>0.00508cm</Left>
                                   <Height>2.90759cm</Height>
-                                  <Width>19.97666cm</Width>
+                                  <Width>20.064cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
@@ -3564,7 +3564,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         <Width>1.3518cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>18.71728cm</Width>
+                                        <Width>18.75256cm</Width>
                                       </TablixColumn>
                                     </TablixColumns>
                                     <TablixRows>
@@ -3831,7 +3831,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   </TablixRowHierarchy>
                                   <Top>14.64318cm</Top>
                                   <Height>4.01545cm</Height>
-                                  <Width>20.06908cm</Width>
+                                  <Width>20.10436cm</Width>
                                   <ZIndex>3</ZIndex>
                                   <Style>
                                     <Border>
@@ -3890,7 +3890,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 </TablixRowHierarchy>
                 <DataSetName>DataSet_Result</DataSetName>
                 <Height>18.65863cm</Height>
-                <Width>20.06908cm</Width>
+                <Width>20.10436cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -3910,7 +3910,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
             <Top>0.01411cm</Top>
             <Left>0.31886cm</Left>
             <Height>19.12431cm</Height>
-            <Width>20.06908cm</Width>
+            <Width>20.10436cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3932,28 +3932,25 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.42689in</Width>
+                  <Width>0.43153in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.33099in</Width>
+                  <Width>3.33563in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.69512in</Width>
+                  <Width>0.88032in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.60484in</Width>
+                  <Width>0.82476in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.68473in</Width>
+                  <Width>0.90442in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.68818in</Width>
+                  <Width>0.77843in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.65282in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.74217in</Width>
+                  <Width>0.74683in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -4126,48 +4123,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>5pt</PaddingLeft>
-                            <PaddingRight>5pt</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox112">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Tahoma</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox112</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <TopBorder>
-                              <Style>Solid</Style>
-                            </TopBorder>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -4470,44 +4425,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox118">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Un.</Value>
-                                  <Style>
-                                    <FontSize>9pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox118</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>1pt</PaddingLeft>
-                            <PaddingRight>1pt</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox71">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -4790,47 +4707,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <VerticalAlign>Bottom</VerticalAlign>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox119">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox119</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -5147,45 +5023,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox152">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox152</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>None</Style>
-                            </TopBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <VerticalAlign>Bottom</VerticalAlign>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox16">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -5459,41 +5296,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox121">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox121</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingLeft>5pt</PaddingLeft>
-                            <PaddingRight>5pt</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox84">
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -5686,6 +5488,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   <Value>=Fields!Period_Start.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
+                                    <Format>d</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -5726,6 +5529,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   <Value>=Fields!Period_End.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
+                                    <Format>d</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -5751,42 +5555,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                             </RightBorder>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Qty_SalesInvLine">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Qty_SalesInvLine.Value</Value>
-                                  <Style>
-                                    <FontSize>9pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Qty_SalesInvLine</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingLeft>1pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -6047,42 +5815,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>5pt</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox123">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox123</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -6360,44 +6092,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox124">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox124</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -6696,44 +6390,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox127">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox127</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox278">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -7008,44 +6664,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox128">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox128</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -7344,44 +6962,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox131">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox131</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox243">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -7656,44 +7236,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox132">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox132</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -7992,44 +7534,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox133">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox133</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox196">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -8304,44 +7808,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox135">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox135</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -8640,44 +8106,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox138">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox138</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox215">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -8952,44 +8380,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox142">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox142</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <RightBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
@@ -9292,45 +8682,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox150">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox150</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox229">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -9603,43 +8954,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox151">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox151</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingRight>0.0625in</PaddingRight>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox320">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -9751,7 +9065,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
-                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -9916,9 +9229,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 </FilterValues>
               </Filter>
             </Filters>
-            <Left>0.15734in</Left>
+            <Left>0.12483in</Left>
             <Height>6.34448cm</Height>
-            <Width>7.82574in</Width>
+            <Width>7.90192in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -9950,10 +9263,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
           </Border>
         </Style>
       </Body>
-      <Width>20.38794cm</Width>
+      <Width>20.42322cm</Width>
       <Page>
         <PageHeader>
-          <Height>8.32133cm</Height>
+          <Height>8.40635cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -10053,7 +9366,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               <Top>3.97933cm</Top>
               <Left>0.35901cm</Left>
               <Height>0cm</Height>
-              <Width>19.9365cm</Width>
+              <Width>20.02893cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -10427,7 +9740,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Credit Memo</Value>
+                      <Value>Factura Rectificativa</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -10441,10 +9754,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.10266cm</Top>
-              <Left>14.48998cm</Left>
+              <Top>0.07056cm</Top>
+              <Left>12.44388cm</Left>
               <Height>0.89342cm</Height>
-              <Width>5.59069cm</Width>
+              <Width>7.6368cm</Width>
               <ZIndex>18</ZIndex>
               <Style>
                 <Border>
@@ -10462,7 +9775,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Cr Memo Número</Value>
+                      <Value>Factura Número</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -10650,8 +9963,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               </Style>
             </Textbox>
             <Line Name="Line3">
-              <Left>20.27708cm</Left>
-              <Height>8.28605cm</Height>
+              <Top>0.03528cm</Top>
+              <Left>20.39708cm</Left>
+              <Height>8.32133cm</Height>
               <Width>0cm</Width>
               <ZIndex>26</ZIndex>
               <Style>
