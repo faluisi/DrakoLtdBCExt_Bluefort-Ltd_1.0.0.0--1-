@@ -127,7 +127,16 @@ pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
 
 pageextension 50070 "Purchase Inv Ext" extends "Purchase Invoice"
 {
-
+    layout
+    {
+        addlast(General)
+        {
+            field("Posting No."; rec."Posting No.")
+            {
+                ApplicationArea = all;
+            }
+        }
+    }
     actions
     {
         addfirst(processing)
