@@ -27,7 +27,9 @@ report 50030 "D2R Sales - Invoice"
             InvDiscountAmtCaptionLbl)
             {
             }
-
+            column(External_Document_No_; "External Document No.")
+            {
+            }
             column(nonvatsales;
             nonvatsales)
             {

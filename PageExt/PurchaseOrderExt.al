@@ -1,6 +1,85 @@
 pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
 {
+    layout
+    {
+        addfirst(Control99)
+        {
+            field(Consignee; rec.consignee)
+            {
+                ApplicationArea = all;
+            }
+            group(Control198)
+            {
+                ShowCaption = false;
+                Visible = ShipToOptions2 = ShipToOptions2::Site;
+                field(Site; rec.Site)
+                {
+                    ApplicationArea = all;
+                    Importance = Promoted;
+                    ToolTip = 'Specifies a code for the Site where you want the items to be placed when they are received.';
+                    trigger
+                    OnValidate()
+                    var
+                        cs: record "Customer-Site";
+                    begin
+                        cs.SetRange("Site Code", rec.Site);
+                        if cs.FindFirst() then begin
+                            rec."Ship-to Address" := cs.Address;
+                            rec."Ship-to Address 2" := cs."Address 2";
+                            rec."Ship-to Name" := cs."Site Name";
+                            rec."Ship-to City" := cs.City;
+                        end;
+                    end;
+                }
+                field("Site Name"; rec."Ship-to Name")
+                {
+                    ApplicationArea = all;
+                    Importance = Promoted;
 
+                }
+                field("Site Address"; rec."Ship-to Address")
+                {
+                    ApplicationArea = all;
+                    Importance = Promoted;
+
+                }
+                field("Site Address 2"; rec."Ship-to Address 2")
+                {
+                    ApplicationArea = all;
+                    Importance = Promoted;
+
+                }
+                field("Site City"; rec."Ship-to City")
+                {
+                    ApplicationArea = all;
+                    Importance = Promoted;
+
+                }
+            }
+        }
+        addfirst("Shipping and Payment")
+        {
+            field(ShippingOption; ShipToOptions2)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Ship-to';
+
+                OptionCaption = 'Default (Company Address),Location,Customer Address,Custom Address,Site';
+                ToolTip = 'Specifies the address that the products on the purchase document are shipped to. Default (Company Address): The same as the company address specified in the Company Information window. Location: One of the company''s location addresses. Customer Address: Used in connection with drop shipment. Custom Address: Any ship-to address that you specify in the fields below.';
+
+                trigger OnValidate()
+                begin
+                    ValidateShippingOption2;
+                end;
+            }
+
+        }
+
+        modify(ShippingOptionWithLocation)
+        {
+            Visible = false;
+        }
+    }
     actions
     {
         addfirst(processing)
@@ -122,7 +201,29 @@ pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
         TotalPurchLine: record "Purchase Line";
         pl: record "Purchase Line";
         VATAmount: Decimal;
+        ShipToOptions2: Option "Default (Company Address)",Location,"Customer Address","Custom Address",Site;
 
+    local procedure ValidateShippingOption2()
+    begin
+        case ShipToOptions of
+            ShipToOptions::"Default (Company Address)",
+            ShipToOptions::"Custom Address":
+                begin
+                    Validate("Sell-to Customer No.", '');
+                    Validate("Location Code", '');
+                end;
+            ShipToOptions::Location:
+                begin
+                    Validate("Sell-to Customer No.", '');
+                    Validate("Location Code");
+                end;
+            ShipToOptions::"Customer Address":
+                begin
+                    Validate("Sell-to Customer No.");
+                    Validate("Location Code", '');
+                end;
+        end;
+    end;
 }
 
 pageextension 50070 "Purchase Inv Ext" extends "Purchase Invoice"
@@ -132,6 +233,10 @@ pageextension 50070 "Purchase Inv Ext" extends "Purchase Invoice"
         addlast(General)
         {
             field("Posting No."; rec."Posting No.")
+            {
+                ApplicationArea = all;
+            }
+            field("Receiving No."; rec."Receiving No.")
             {
                 ApplicationArea = all;
             }

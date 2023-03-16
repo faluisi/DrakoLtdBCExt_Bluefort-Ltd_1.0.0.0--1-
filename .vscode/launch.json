@@ -16,7 +16,8 @@
       "breakOnError": true,
       "launchBrowser": true,
       "enableLongRunningSqlStatements": true,
-      "enableSqlInformationDebugger": true
+      "enableSqlInformationDebugger": true,
+      "schemaUpdateMode": "ForceSync"
   }, 
 
   {
@@ -34,7 +35,8 @@
     "enableSqlInformationDebugger": true,
     "enableLongRunningSqlStatements": true,
     "longRunningSqlStatementsThreshold": 500,
-    "numberOfSqlStatements": 10
+    "numberOfSqlStatements": 10,
+    "schemaUpdateMode": "ForceSync"
 },
 
     {
@@ -52,7 +54,8 @@
       "enableSqlInformationDebugger": true,
       "enableLongRunningSqlStatements": true,
       "longRunningSqlStatementsThreshold": 500,
-      "numberOfSqlStatements": 10
+      "numberOfSqlStatements": 10,
+      "schemaUpdateMode": "ForceSync"
       
   },
     {

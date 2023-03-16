@@ -85,6 +85,12 @@ page 50030 "Approval Request Entries New"
                     ApplicationArea = Suite;
                     ToolTip = 'Specifies the approval status for the entry:';
                 }
+                field(Details; RecordDetails2)
+                {
+                    ApplicationArea = Suite;
+                    Caption = 'Details';
+                    ToolTip = 'Specifies the record that the approval is related to.';
+                }
                 field("Date-Time Sent for Approval"; "Date-Time Sent for Approval")
                 {
                     ApplicationArea = Suite;
@@ -351,5 +357,56 @@ page 50030 "Approval Request Entries New"
             exit(false);
         end;
     end;
+
+    procedure RecordDetails2() Details: Text
+    var
+        SalesHeader: Record "Sales Header";
+        PurchHeader: Record "Purchase Header";
+        RecRef: RecordRef;
+        ChangeRecordDetails: Text;
+        IsHandled: Boolean;
+        RecNotExistTxt: Label 'The record does not exist.';
+    begin
+        IsHandled := false;
+
+        if IsHandled then
+            exit(Details);
+
+        if not GetRecordToApprove(RecRef) then
+            exit(RecNotExistTxt);
+
+        ChangeRecordDetails := GetChangeRecordDetails;
+
+        case RecRef.Number of
+            DATABASE::"Sales Header":
+                begin
+                    RecRef.SetTable(SalesHeader);
+                    SalesHeader.CalcFields(Amount);
+                    Details :=
+                      StrSubstNo(
+                        '%1 ; %2: %3', SalesHeader."Sell-to Customer Name", SalesHeader.FieldCaption(Amount), SalesHeader.Amount);
+                end;
+            DATABASE::"Purchase Header":
+                begin
+                    RecRef.SetTable(PurchHeader);
+                    PurchHeader.CalcFields(Amount);
+                    Details :=
+                      StrSubstNo(
+                        '%1 ; %2: %3', PurchHeader."Buy-from Vendor Name", PurchHeader.FieldCaption(Amount), PurchHeader.Amount);
+                end;
+            else
+                Details := Format(rec."Record ID to Approve", 0, 1) + ChangeRecordDetails;
+        end;
+
+
+    end;
+
+    local procedure GetRecordToApprove(var RecRef: RecordRef) Result: Boolean
+    begin
+        Result := RecRef.Get(rec."Record ID to Approve");
+
+    end;
+
+
 
 }

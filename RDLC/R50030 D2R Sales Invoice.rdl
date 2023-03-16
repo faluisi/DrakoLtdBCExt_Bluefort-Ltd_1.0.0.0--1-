@@ -1802,7 +1802,7 @@ Cstr(Fields!CustomerCaption.Value)  + Chr(177) +
 Cstr(Fields!AddressCaption.Value)  + Chr(177) + 
 Cstr(Fields!InvoiceNumberCaption.Value)  + Chr(177) + 
 Cstr(Fields!DateCaption.Value)  + Chr(177) + 
-Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr(177) + Cstr(Fields!SiteAddr2.Value) + Chr(177) + Cstr(Fields!SiteAddr3.Value) + Chr(177) + Cstr(Fields!SiteAddr4.Value) + Chr(177) + Cstr(Fields!SiteAddr5.Value) + Chr(177) + Cstr(Fields!SiteAddr6.Value)  + Chr(177) + Cstr(Fields!TitleCaption.Value) + Chr(177) + Cstr(Fields!SiteCaption.Value)  + Chr(177) + Cstr(Fields!CustomerNo.Value), 1)</Hidden>
+Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr(177) + Cstr(Fields!SiteAddr2.Value) + Chr(177) + Cstr(Fields!SiteAddr3.Value) + Chr(177) + Cstr(Fields!SiteAddr4.Value) + Chr(177) + Cstr(Fields!SiteAddr5.Value) + Chr(177) + Cstr(Fields!SiteAddr6.Value)  + Chr(177) + Cstr(Fields!TitleCaption.Value) + Chr(177) + Cstr(Fields!SiteCaption.Value)  +  Chr(177) + Cstr(Fields!CustomerNo.Value) + Chr(177) +Cstr(Fields!External_Document_No_.Value), 1)</Hidden>
                                                 </Visibility>
                                                 <Style>
                                                   <Border />
@@ -1812,6 +1812,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <PaddingBottom>2pt</PaddingBottom>
                                                 </Style>
                                               </Textbox>
+                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                         </TablixCells>
@@ -4696,7 +4697,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               <Top>0.0519cm</Top>
               <Left>0.6099cm</Left>
               <Height>1.2cm</Height>
-              <Width>7.35934cm</Width>
+              <Width>5.69964cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -4728,9 +4729,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 </Paragraph>
               </Paragraphs>
               <Top>0.05364cm</Top>
-              <Left>3.1375in</Left>
+              <Left>3.51944in</Left>
               <Height>14pt</Height>
-              <Width>3.6cm</Width>
+              <Width>2.62986cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -4758,10 +4759,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.54753cm</Top>
-              <Left>7.96924cm</Left>
+              <Top>0.54405cm</Top>
+              <Left>8.93939cm</Left>
               <Height>20.06507pt</Height>
-              <Width>3.6cm</Width>
+              <Width>2.62985cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -5591,6 +5592,67 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Textbox Name="SalesInvoiceNoCaption4">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>REF.</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.05364cm</Top>
+              <Left>2.48407in</Left>
+              <Height>14pt</Height>
+              <Width>2.62986cm</Width>
+              <ZIndex>30</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="SalesInvoiceNo4">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(71,1)</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.54753cm</Top>
+              <Left>6.30954cm</Left>
+              <Height>20.06507pt</Height>
+              <Width>2.62985cm</Width>
+              <ZIndex>31</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>5pt</PaddingLeft>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -5712,6 +5774,9 @@ End Function
         </Field>
         <Field Name="InvDiscountAmtCaption">
           <DataField>InvDiscountAmtCaption</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
         </Field>
         <Field Name="nonvatsales">
           <DataField>nonvatsales</DataField>

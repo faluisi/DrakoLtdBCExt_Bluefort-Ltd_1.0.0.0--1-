@@ -76,7 +76,7 @@ pageextension 50021 CashRecJnlExt extends "Cash Receipt Journal"
         FASetup: Record "FA Setup";
         SD3: Code[20];
         SD4: Code[20];
-        ParentChild: Record "Parent Child Relation";
+        //ParentChild: Record "Parent Child Relation";
         Dimset: Record "Dimension Set Entry";
         Text000: Label 'You need to choose an operator first';
         Contract_CS: Record "Customer-Site";

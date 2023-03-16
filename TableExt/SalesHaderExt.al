@@ -91,6 +91,7 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
 
 
         }
+
     }
     var
         Cust: Record Customer;
