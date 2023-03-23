@@ -11,33 +11,33 @@ page 50001 "Customer - Site"
     {
       repeater(GroupName)
       {
-        field("Site Code";"Site Code")
+        field("Site Code";rec."Site Code")
         {
           ApplicationArea = All;
           Caption = 'Site Code';
         }
-        field("Site Name";"Site Name")
+        field("Site Name";rec."Site Name")
         {
           ApplicationArea = All;
           Caption = 'Site Name';
         }
-        field(Address;Address)
+        field(Address;rec.Address)
         {
           ApplicationArea = All;
         }
-        field("Address 2";"Address 2")
+        field("Address 2";rec."Address 2")
         {
           ApplicationArea = All;
         }
-        field(City;City)
+        field(City;rec.City)
         {
           ApplicationArea = All;
         }
-        field("Post Code";"Post Code")
+        field("Post Code";rec."Post Code")
         {
           ApplicationArea = All;
         }
-        field("Country/Region Code";"Country/Region Code")
+        field("Country/Region Code";rec."Country/Region Code")
         {
           ApplicationArea = All;
         }
@@ -61,7 +61,12 @@ page 50001 "Customer - Site"
                     end;
                 }*/
         //DevOps #619 -- begin
-        field("Contract Code";"Contract Code")
+        
+        field(Contact;rec.Contact)
+        {
+          ApplicationArea = all;
+        }
+        field("Contract Code";rec."Contract Code")
         {
           ApplicationArea = all;
         }

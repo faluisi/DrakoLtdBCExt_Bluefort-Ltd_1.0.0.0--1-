@@ -4,7 +4,11 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
     {
         addafter("External Document No.")
         {
-            field(Site; Site)
+            field("Posting No."; rec."Posting No.")
+            {
+                ApplicationArea = All;
+            }
+            field(Site; rec.Site)
             {
                 ApplicationArea = All;
 
