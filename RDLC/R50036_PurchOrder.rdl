@@ -112,7 +112,8 @@ Cstr(Fields!HomePage.Value) + Chr(177) +
 Cstr(Fields!PaymentTermsDescCaption.Value) + Chr(177) + 
 Cstr(Fields!ShipmentMethodDescCaption.Value) + Chr(177) + 
 Cstr(Fields!DocumentDateCaption.Value) + Chr(177) + 
-Cstr(Fields!DocDate_PurchHeader.Value) + Chr(177) + Cstr(Fields!consname.Value) + Chr(177) + Cstr(Fields!consaddress.Value) + Chr(177) + Cstr(Fields!consaddress2.Value) + Chr(177) + Cstr(Fields!conscity.Value) + Chr(177) + Cstr(Fields!conscounty.Value) + Chr(177) + Cstr(Fields!conspostcode.Value) + Chr(177) + Cstr(Fields!conscountry.Value) + Chr(177) + Cstr(Fields!conscontact.Value) + Chr(177) + Cstr(Fields!ShipToAddr1.Value) + Chr(177) + Cstr(Fields!ShipToAddr2.Value) + Chr(177) + Cstr(Fields!ShipToAddr3.Value) + Chr(177) + Cstr(Fields!ShipToAddr4.Value) + Chr(177) + Cstr(Fields!ShipToAddr5.Value) + Chr(177)  + Cstr(Fields!ciname.Value) + Chr(177) + Cstr(Fields!ciaddress.Value) + Chr(177) + Cstr(Fields!ciaddress2.Value) + Chr(177) + Cstr(Fields!cicity.Value) + Chr(177) + Cstr(Fields!cicounty.Value) + Chr(177) + Cstr(Fields!cipostcode.Value) + Chr(177) + Cstr(Fields!cicountry.Value) + Chr(177) + Cstr(Fields!cicontact.Value), 1)</Hidden>
+Cstr(Fields!DocDate_PurchHeader.Value) + Chr(177) + Cstr(Fields!consname.Value) + Chr(177) + Cstr(Fields!consaddress.Value) + Chr(177) + Cstr(Fields!consaddress2.Value) + Chr(177) + Cstr(Fields!conscity.Value) + Chr(177) + Cstr(Fields!conscounty.Value) + Chr(177) + Cstr(Fields!conspostcode.Value) + Chr(177) + Cstr(Fields!conscountry.Value) + Chr(177) + Cstr(Fields!conscontact.Value) + Chr(177) + Cstr(Fields!ShipToAddr1.Value) + Chr(177) + Cstr(Fields!ShipToAddr2.Value) + Chr(177) + Cstr(Fields!ShipToAddr3.Value) + Chr(177) + Cstr(Fields!ShipToAddr4.Value) + Chr(177) + Cstr(Fields!ShipToAddr5.Value) + Chr(177)  + Cstr(Fields!ciname.Value) + Chr(177) + Cstr(Fields!ciaddress.Value) + Chr(177) + Cstr(Fields!ciaddress2.Value) + Chr(177) + Cstr(Fields!cicity.Value) + Chr(177) + Cstr(Fields!cicounty.Value) + Chr(177) + Cstr(Fields!cipostcode.Value) + Chr(177) + Cstr(Fields!cicountry.Value) + Chr(177) + Cstr(Fields!cicontact.Value) + Chr(177) + Cstr(Fields!Transport_Method.Value) + Chr(177) +
+Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.Value) + Chr(177) +Cstr(Fields!PaymentTerms.Value) + Chr(177) +Cstr(Fields!Currency_Code.Value), 1)</Hidden>
                                             </Visibility>
                                             <Style>
                                               <Border>
@@ -9622,7 +9623,7 @@ Cstr(Fields!DocDate_PurchHeader.Value) + Chr(177) + Cstr(Fields!consname.Value) 
       <Width>18.05836cm</Width>
       <Page>
         <PageHeader>
-          <Height>10.1099cm</Height>
+          <Height>11.59157cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -9815,9 +9816,8 @@ Cstr(Fields!DocDate_PurchHeader.Value) + Chr(177) + Cstr(Fields!consname.Value) 
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox145</rd:DefaultName>
-                  <Left>0.05045cm</Left>
                   <Height>0.6cm</Height>
-                  <Width>7.75707cm</Width>
+                  <Width>7.80752cm</Width>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -9864,9 +9864,8 @@ Cstr(Fields!DocDate_PurchHeader.Value) + Chr(177) + Cstr(Fields!consname.Value) 
                   </Paragraphs>
                   <rd:DefaultName>Textbox145</rd:DefaultName>
                   <Top>2.875cm</Top>
-                  <Left>0.05045cm</Left>
                   <Height>0.6cm</Height>
-                  <Width>7.75707cm</Width>
+                  <Width>7.81671cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -10183,7 +10182,7 @@ Cstr(Fields!DocDate_PurchHeader.Value) + Chr(177) + Cstr(Fields!consname.Value) 
               <Top>4.27144cm</Top>
               <Left>0.63735cm</Left>
               <Height>5.66208cm</Height>
-              <Width>7.80752cm</Width>
+              <Width>7.81671cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
                 <Border>
@@ -10618,6 +10617,491 @@ Cstr(Fields!DocDate_PurchHeader.Value) + Chr(177) + Cstr(Fields!consname.Value) 
                 </RightBorder>
               </Style>
             </Rectangle>
+            <Textbox Name="Textbox159">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Ship Via</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox159</rd:DefaultName>
+              <Top>10.35967cm</Top>
+              <Left>0.65828cm</Left>
+              <Height>0.52634cm</Height>
+              <Width>2.85524cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+                <BackgroundColor>LightGrey</BackgroundColor>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox161">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(71,1)</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox161</rd:DefaultName>
+              <Top>10.88601cm</Top>
+              <Left>0.65828cm</Left>
+              <Height>0.45578cm</Height>
+              <Width>2.85195cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox162">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Incoterms</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox159</rd:DefaultName>
+              <Top>10.35967cm</Top>
+              <Left>3.51023cm</Left>
+              <Height>0.52634cm</Height>
+              <Width>2.85524cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+                <BackgroundColor>LightGrey</BackgroundColor>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox164">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(72,1)</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox161</rd:DefaultName>
+              <Top>10.88601cm</Top>
+              <Left>3.51352cm</Left>
+              <Height>0.45578cm</Height>
+              <Width>2.78139cm</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox165">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Delivery Date</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox159</rd:DefaultName>
+              <Top>10.35967cm</Top>
+              <Left>6.29491cm</Left>
+              <Height>0.52634cm</Height>
+              <Width>2.85524cm</Width>
+              <ZIndex>12</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+                <BackgroundColor>LightGrey</BackgroundColor>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox166">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(73,1)</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox161</rd:DefaultName>
+              <Top>10.88601cm</Top>
+              <Left>6.29491cm</Left>
+              <Height>0.45578cm</Height>
+              <Width>2.85524cm</Width>
+              <ZIndex>13</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox167">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Payment Terms</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox159</rd:DefaultName>
+              <Top>10.3625cm</Top>
+              <Left>9.12594cm</Left>
+              <Height>0.52634cm</Height>
+              <Width>5.9652cm</Width>
+              <ZIndex>14</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+                <BackgroundColor>LightGrey</BackgroundColor>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox168">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(74,1)</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox161</rd:DefaultName>
+              <Top>10.88884cm</Top>
+              <Left>9.15016cm</Left>
+              <Height>0.45578cm</Height>
+              <Width>5.94098cm</Width>
+              <ZIndex>15</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox169">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Currency</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox159</rd:DefaultName>
+              <Top>10.3625cm</Top>
+              <Left>15.09114cm</Left>
+              <Height>0.52634cm</Height>
+              <Width>2.87617cm</Width>
+              <ZIndex>16</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+                <BackgroundColor>LightGrey</BackgroundColor>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox170">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(75,1)</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox161</rd:DefaultName>
+              <Top>10.88601cm</Top>
+              <Left>15.09114cm</Left>
+              <Height>0.45578cm</Height>
+              <Width>2.87617cm</Width>
+              <ZIndex>17</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style />
         </PageHeader>
@@ -10833,6 +11317,21 @@ End Function</Code>
         </Field>
         <Field Name="PayToContactEmail">
           <DataField>PayToContactEmail</DataField>
+        </Field>
+        <Field Name="Transport_Method">
+          <DataField>Transport_Method</DataField>
+        </Field>
+        <Field Name="ShipmentMethod">
+          <DataField>ShipmentMethod</DataField>
+        </Field>
+        <Field Name="Expected_Receipt_Date">
+          <DataField>Expected_Receipt_Date</DataField>
+        </Field>
+        <Field Name="PaymentTerms">
+          <DataField>PaymentTerms</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
         </Field>
         <Field Name="ReportTitleCopyText">
           <DataField>ReportTitleCopyText</DataField>

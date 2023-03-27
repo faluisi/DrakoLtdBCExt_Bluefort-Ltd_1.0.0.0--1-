@@ -5,12 +5,14 @@ tableextension 50025 PurchheaderExt extends "Purchase Header"
         field(50000; Site; code[20])
         {
             TableRelation = "Cust-Op-Site"."Site Code";
+            ValidateTableRelation = false;
         }
 
         field(50020; "Consignee"; code[20])
         {
             Caption = 'Consignee';
             TableRelation = Customer;
+            ValidateTableRelation = false;
 
         }
         field(50021; "Consignee Name"; Text[100])
@@ -48,7 +50,7 @@ tableextension 50025 PurchheaderExt extends "Purchase Header"
             Caption = 'Consignee Country';
 
         }
-         field(50029; "Consignee County"; Text[30])
+        field(50029; "Consignee County"; Text[30])
         {
             Caption = 'Consignee County';
 

@@ -105,6 +105,21 @@ report 50036 "PurchaseOrder"
             column(PayToContactEmail; PayToContact."E-Mail")
             {
             }
+            column(Transport_Method; "Transport Method")
+            {
+            }
+            column(ShipmentMethod; ShipmentMethod.Description)
+            {
+            }
+            column(Expected_Receipt_Date; "Expected Receipt Date")
+            {
+            }
+            column(PaymentTerms; PaymentTerms.Description)
+            {
+            }
+            column(Currency_Code; "Currency Code")
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);

@@ -18,6 +18,14 @@ pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
                     rec."Consignee Post Code" := compinfo."Post Code";
                     rec."Consignee Country" := compinfo."Country/Region Code";
                     rec."Consignee County" := compinfo.County;
+                    rec."Ship-to Address" := compinfo.Address;
+                    rec."Ship-to Address 2" := compinfo."Address 2";
+                    rec."Ship-to Name" := compinfo."Name";
+                    rec."Ship-to City" := compinfo.City;
+                    rec."Ship-to Contact" := compinfo."Name 2";
+                    rec."Ship-to Post Code" := compinfo."Post Code";
+                    rec."Ship-to Country/Region Code" := compinfo."Country/Region Code";
+                    rec."Ship-to County" := compinfo.County;
                 end;
 
 
@@ -50,6 +58,8 @@ pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
                             rec."Ship-to Post Code" := cs."Post Code";
                             rec."Ship-to Country/Region Code" := cs."Country/Region Code";
                             rec."Ship-to County" := cs.County;
+                            rec."Ship-to Contact" := cs.Contact;
+                            rec.Modify();
                         end
                         else begin
                             rec."Ship-to Address" := compinfo.Address;
@@ -60,61 +70,104 @@ pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
                             rec."Ship-to Post Code" := compinfo."Post Code";
                             rec."Ship-to Country/Region Code" := compinfo."Country/Region Code";
                             rec."Ship-to County" := compinfo.County;
+                            rec."Ship-to Contact" := compinfo."Name 2";
+                            rec.Modify();
                         end;
 
                     end;
                 }
-                field("Site Name"; rec."Ship-to Name")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
 
-                }
-                field("Site Address"; rec."Ship-to Address")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
+                // field("Site Name"; rec."Ship-to Name")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
 
-                }
-                field("Site Address 2"; rec."Ship-to Address 2")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
+                // }
+                // field("Site Address"; rec."Ship-to Address")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
 
-                }
-                field("Site City"; rec."Ship-to City")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
+                // }
+                // field("Site Address 2"; rec."Ship-to Address 2")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
 
-                }
-                field("Site Post Code"; rec."Ship-to Post Code")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
+                // }
+                // field("Site City"; rec."Ship-to City")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
 
-                }
-                field("Site County"; rec."Ship-to County")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
+                // }
+                // field("Site Post Code"; rec."Ship-to Post Code")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
 
-                }
-                field("Site Country"; rec."Ship-to Country/Region Code")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
+                // }
+                // field("Site County"; rec."Ship-to County")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
 
-                }
-                field("Site Contact"; rec."Ship-to Contact")
-                {
-                    ApplicationArea = all;
-                    Importance = Promoted;
+                // }
+                // field("Site Country"; rec."Ship-to Country/Region Code")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
 
-                }
+                // }
+                // field("Site Contact"; rec."Ship-to Contact")
+                // {
+                //     ApplicationArea = all;
+                //     Importance = Promoted;
+
+                // }
             }
         }
-        addfirst(Control99)
+        modify("Ship-to Name")
+        {
+            Caption = 'Ship-to Name';
+
+        }
+        modify("Ship-to Address")
+        {
+            Caption = 'Ship-to Address';
+
+        }
+        modify("Ship-to Address 2")
+        {
+            Caption = 'Ship-to Address 2';
+
+        }
+        modify("Ship-to City")
+        {
+            Caption = 'Ship-to City';
+
+        }
+        modify("Ship-to Post Code")
+        {
+            Caption = 'Ship-to Post Code';
+
+        }
+        modify("Ship-to County")
+        {
+            Caption = 'Ship-to County';
+
+        }
+        modify("Ship-to Country/Region Code")
+        {
+            Caption = 'Ship-to Country';
+
+        }
+        modify("Ship-to Contact")
+        {
+            Caption = 'Ship-to Contact';
+
+        }
+        addlast(Control99)
         {
             field(Consignee; rec.consignee)
             {
@@ -350,7 +403,20 @@ pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
             rec."Consignee Post Code" := compinfo."Post Code";
             rec."Consignee Country" := compinfo."Country/Region Code";
             rec."Consignee County" := compinfo.County;
+            //rec.Modify();
         end;
+        if rec."Ship-to Name" = '' then begin
+            rec."Ship-to Address" := compinfo.Address;
+            rec."Ship-to Address 2" := compinfo."Address 2";
+            rec."Ship-to Name" := compinfo."Name";
+            rec."Ship-to City" := compinfo.City;
+            rec."Ship-to Contact" := compinfo."Name 2";
+            rec."Ship-to Post Code" := compinfo."Post Code";
+            rec."Ship-to Country/Region Code" := compinfo."Country/Region Code";
+            rec."Ship-to County" := compinfo.County;
+            //rec.Modify();
+        end;
+
 
 
     end;

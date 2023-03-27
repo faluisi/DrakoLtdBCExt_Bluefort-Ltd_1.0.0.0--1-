@@ -68,7 +68,7 @@ table 50001 "Customer-Site"
 
             trigger OnValidate()
             begin
-                //    if "Contract Code" <> '' then FADimMgt.ContractDimension(Rec);
+                //if "Contract Code" <> '' then FADimMgt.ContractDimension(Rec);
             end;
         }
         field(12; Contact; Text[250])
@@ -78,6 +78,13 @@ table 50001 "Customer-Site"
         field(13; County; text[30])
         {
             DataClassification = ToBeClassified;
+        }
+    }
+    keys
+    {
+        key(PK; "Customer No.", "Site Code")
+        {
+            Clustered = true;
         }
     }
 
@@ -95,7 +102,7 @@ table 50001 "Customer-Site"
         //check for unique site code
         CheckUniqueSite(Rec."Site Code");
         //FADimMgt.CreateSiteDim(Rec);
-        UpdateCustOpSite(Rec);
+        //UpdateCustOpSite(Rec);
     end;
 
     trigger OnModify()
