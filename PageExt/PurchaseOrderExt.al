@@ -10,26 +10,39 @@ pageextension 50060 "Purchase Order Ext" extends "Purchase Order"
             begin
                 compinfo.get();
                 begin
-                    rec."Consignee Address" := compinfo.Address;
-                    rec."Consignee Address 2" := compinfo."Address 2";
-                    rec."Consignee Name" := compinfo.Name;
-                    rec."Consignee City" := compinfo.City;
-                    rec."Consignee Contact" := compinfo."Name 2";
-                    rec."Consignee Post Code" := compinfo."Post Code";
-                    rec."Consignee Country" := compinfo."Country/Region Code";
-                    rec."Consignee County" := compinfo.County;
-                    rec."Ship-to Address" := compinfo.Address;
-                    rec."Ship-to Address 2" := compinfo."Address 2";
-                    rec."Ship-to Name" := compinfo."Name";
-                    rec."Ship-to City" := compinfo.City;
-                    rec."Ship-to Contact" := compinfo."Name 2";
-                    rec."Ship-to Post Code" := compinfo."Post Code";
-                    rec."Ship-to Country/Region Code" := compinfo."Country/Region Code";
-                    rec."Ship-to County" := compinfo.County;
+                    if rec."Consignee Name" = '' then begin
+                        rec."Consignee Address" := compinfo.Address;
+                        rec."Consignee Address 2" := compinfo."Address 2";
+                        rec."Consignee Name" := compinfo.Name;
+                        rec."Consignee City" := compinfo.City;
+                        rec."Consignee Contact" := compinfo."Name 2";
+                        rec."Consignee Post Code" := compinfo."Post Code";
+                        rec."Consignee Country" := compinfo."Country/Region Code";
+                        rec."Consignee County" := compinfo.County;
+                        rec.Modify();
+                    END;
+                    if rec."Ship-to Name" = '' then begin
+                        rec."Ship-to Address" := compinfo.Address;
+                        rec."Ship-to Address 2" := compinfo."Address 2";
+                        rec."Ship-to Name" := compinfo."Name";
+                        rec."Ship-to City" := compinfo.City;
+                        rec."Ship-to Contact" := compinfo."Name 2";
+                        rec."Ship-to Post Code" := compinfo."Post Code";
+                        rec."Ship-to Country/Region Code" := compinfo."Country/Region Code";
+                        rec."Ship-to County" := compinfo.County;
+                        rec.Modify();
+                    END;
                 end;
 
 
             end;
+        }
+        addlast(General)
+        {
+            field(Requisition; rec.Requisition)
+            {
+                ApplicationArea = all;
+            }
         }
         addafter(ShippingOptionWithLocation)
         {

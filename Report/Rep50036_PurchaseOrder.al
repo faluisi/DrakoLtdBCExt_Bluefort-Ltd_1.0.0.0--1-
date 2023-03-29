@@ -120,6 +120,9 @@ report 50036 "PurchaseOrder"
             column(Currency_Code; "Currency Code")
             {
             }
+            column(Requisition; Requisition)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -348,6 +351,31 @@ report 50036 "PurchaseOrder"
                     column(cicontact; CompanyInfo."Name 2")
                     {
                     }
+                    column(ShipToAddr1; ShipToAddr[1])
+                    {
+                    }
+                    column(ShipToAddr2; ShipToAddr[2])
+                    {
+                    }
+                    column(ShipToAddr3; ShipToAddr[3])
+                    {
+                    }
+                    column(ShipToAddr4; ShipToAddr[4])
+                    {
+                    }
+                    column(ShipToAddr5; ShipToAddr[5])
+                    {
+                    }
+                    column(ShipToAddr6; ShipToAddr[6])
+                    {
+                    }
+                    column(ShipToAddr7; ShipToAddr[7])
+                    {
+                    }
+                    column(ShipToAddr8; ShipToAddr[8])
+                    {
+                    }
+
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Purchase Header";
@@ -767,30 +795,7 @@ report 50036 "PurchaseOrder"
                         column(SellToCustNo_PurchHeader; "Purchase Header"."Sell-to Customer No.")
                         {
                         }
-                        column(ShipToAddr1; ShipToAddr[1])
-                        {
-                        }
-                        column(ShipToAddr2; ShipToAddr[2])
-                        {
-                        }
-                        column(ShipToAddr3; ShipToAddr[3])
-                        {
-                        }
-                        column(ShipToAddr4; ShipToAddr[4])
-                        {
-                        }
-                        column(ShipToAddr5; ShipToAddr[5])
-                        {
-                        }
-                        column(ShipToAddr6; ShipToAddr[6])
-                        {
-                        }
-                        column(ShipToAddr7; ShipToAddr[7])
-                        {
-                        }
-                        column(ShipToAddr8; ShipToAddr[8])
-                        {
-                        }
+
                         column(ShiptoAddressCaption; ShiptoAddressCaptionLbl)
                         {
                         }

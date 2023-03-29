@@ -55,6 +55,11 @@ tableextension 50025 PurchheaderExt extends "Purchase Header"
             Caption = 'Consignee County';
 
         }
+        field(50030; "Requisition"; Text[30])
+        {
+            Caption = 'Requisition Nr.';
+
+        }
     }
 
 }
