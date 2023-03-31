@@ -1088,14 +1088,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Vendor_Invoice_No_1">
+                        <Textbox Name="Vendor_Cr__Memo_No_">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Vendor_Invoice_No_.Value</Value>
+                                  <Value>=Fields!Vendor_Cr__Memo_No_.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -1104,7 +1104,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Vendor_Invoice_No_1</rd:DefaultName>
+                          <rd:DefaultName>Vendor_Cr__Memo_No_</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -3504,7 +3504,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>FACTURAS DE COMPRA</Value>
+                    <Value>FACTURAS RECTIFICADIVAS DE COMPRA</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -3515,7 +3515,7 @@
             <Top>0.07167in</Top>
             <Left>3.05778in</Left>
             <Height>0.25in</Height>
-            <Width>2.22222in</Width>
+            <Width>3.38194in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -3600,8 +3600,8 @@ End Function
         <Field Name="No_">
           <DataField>No_</DataField>
         </Field>
-        <Field Name="Vendor_Invoice_No_">
-          <DataField>Vendor_Invoice_No_</DataField>
+        <Field Name="Vendor_Cr__Memo_No_">
+          <DataField>Vendor_Cr__Memo_No_</DataField>
         </Field>
         <Field Name="Posting_Date">
           <DataField>Posting_Date</DataField>

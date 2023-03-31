@@ -10,11 +10,20 @@ report 50037 EPS_PurchInvoiceBook
     {
         dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
         {
+            DataItemTableView = sorting("No.");
+            column(datefrom; datefrom)
+            {
+
+            }
+            column(dateto; dateto)
+            {
+
+            }
             column(classinvoice; format(classinvoice))
             {
 
             }
-            column(Order_No_; "Order No.")
+            column(Order_No_; ordenno)
             {
 
             }
@@ -53,6 +62,7 @@ report 50037 EPS_PurchInvoiceBook
 
             dataitem("Purch. Inv. Line"; "Purch. Inv. Line")
             {
+                DataItemTableView = sorting("Document No.", "Line No.");
                 DataItemLink = "Document No." = field("No.");
                 column(Line_Amount; "Line Amount")
                 {
@@ -87,6 +97,11 @@ report 50037 EPS_PurchInvoiceBook
                 begin
                     if copystr("Purch. Inv. Line"."No.", 1, 4) = '4751' then
                         Retencion += "Purch. Inv. Line"."Line Amount";
+                    if classinvoice <> oldclass then
+                        ordenno := 1
+                    else
+                        ordenno += 1;
+                    oldclass := classinvoice;
                 end;
             }
             trigger
@@ -105,10 +120,11 @@ report 50037 EPS_PurchInvoiceBook
                     classinvoice := classinvoice::FACN
                 else
                     if country.get("Purch. Inv. Header"."Buy-from Country/Region Code") then
-                        if country."EU Country/Region Code" <> '' then
+                        if country."EU Country/Region Code" = '' then
                             classinvoice := classinvoice::SUJP
                         else
                             classinvoice := classinvoice::IMPO;
+
 
 
             end;
@@ -126,11 +142,13 @@ report 50037 EPS_PurchInvoiceBook
                 {
                     field(datefrom; datefrom)
                     {
+                        Caption = 'Fecha Inicio';
                         ApplicationArea = All;
 
                     }
                     field(dateto; dateto)
                     {
+                        Caption = 'Fecha Fin';
                         ApplicationArea = All;
 
                     }
@@ -143,4 +161,6 @@ report 50037 EPS_PurchInvoiceBook
         classinvoice: option " ",FACN,SUJP,IMPO;
         datefrom: Date;
         dateto: Date;
+        OrdenNo: integer;
+        oldclass: option " ",FACN,SUJP,IMPO;
 }

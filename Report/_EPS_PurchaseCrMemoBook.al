@@ -1,14 +1,14 @@
-report 50039 EPS_SalesInvoiceBook
+report 50038 EPS_PurchCrMemoBook
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './RDLC/R50039_EPS_SalesInvoiceBook.rdl';
-    Caption = 'Libro Ventas';
+    RDLCLayout = './RDLC/R50038_EPS_PurchCrMemoBook.rdl';
+    Caption = 'Libro Compras - Rectificaciones';
     UsageCategory = Administration;
     ApplicationArea = All;
 
     dataset
     {
-        dataitem("Sales Invoice Header"; "Sales Invoice Header")
+        dataitem("Purch. Cr. Memo Hdr."; "Purch. Cr. Memo Hdr.")
         {
             DataItemTableView = sorting("No.");
             column(datefrom; datefrom)
@@ -31,7 +31,10 @@ report 50039 EPS_SalesInvoiceBook
             {
 
             }
+            column(Vendor_Cr__Memo_No_; "Vendor Cr. Memo No.")
+            {
 
+            }
             column(Posting_Date; "Posting Date")
             {
 
@@ -48,7 +51,7 @@ report 50039 EPS_SalesInvoiceBook
             {
 
             }
-            column(Sell_to_Customer_Name; "Sell-to Customer Name")
+            column(Buy_from_Vendor_Name; "Buy-from Vendor Name")
             {
 
             }
@@ -57,7 +60,7 @@ report 50039 EPS_SalesInvoiceBook
 
 
 
-            dataitem("Sales Invoice Line"; "Sales Invoice Line")
+            dataitem("Purch. Cr. Memo Line"; "Purch. Cr. Memo Line")
             {
                 DataItemTableView = sorting("Document No.", "Line No.");
                 DataItemLink = "Document No." = field("No.");
@@ -92,7 +95,8 @@ report 50039 EPS_SalesInvoiceBook
                 trigger
                 OnAfterGetRecord()
                 begin
-
+                    if copystr("Purch. Cr. Memo Line"."No.", 1, 4) = '4751' then
+                        Retencion += "Purch. Cr. Memo Line"."Line Amount";
                     if classinvoice <> oldclass then
                         ordenno := 1
                     else
@@ -103,7 +107,7 @@ report 50039 EPS_SalesInvoiceBook
             trigger
             OnPreDataItem()
             begin
-                "Sales Invoice Header".SetRange("Posting Date", datefrom, dateto);
+                "Purch. Cr. Memo Hdr.".SetRange("Posting Date", datefrom, dateto);
             end;
 
             trigger
@@ -112,14 +116,14 @@ report 50039 EPS_SalesInvoiceBook
                 country: record "Country/Region";
             begin
                 classinvoice := classinvoice::" ";
-                if ("Sell-to Country/Region Code" = 'ES') or ("Sell-to Country/Region Code" = '') then
+                if ("Buy-from Country/Region Code" = 'ES') or ("Buy-from Country/Region Code" = '') then
                     classinvoice := classinvoice::FACN
                 else
-                    if country.get("Sales Invoice Header"."Sell-to Country/Region Code") then
+                    if country.get("Purch. Cr. Memo Hdr."."Buy-from Country/Region Code") then
                         if country."EU Country/Region Code" = '' then
-                            classinvoice := classinvoice::EXUE
+                            classinvoice := classinvoice::SUJP
                         else
-                            classinvoice := classinvoice::INUE;
+                            classinvoice := classinvoice::IMPO;
 
 
 
@@ -154,9 +158,9 @@ report 50039 EPS_SalesInvoiceBook
     }
     var
         Retencion: Decimal;
-        classinvoice: option " ",FACN,EXUE,INUE;
+        classinvoice: option " ",FACN,SUJP,IMPO;
         datefrom: Date;
         dateto: Date;
         OrdenNo: integer;
-        oldclass: option " ",FACN,EXUE,INUE;
+        oldclass: option " ",FACN,SUJP,IMPO;
 }

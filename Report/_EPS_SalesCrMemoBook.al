@@ -1,14 +1,14 @@
-report 50039 EPS_SalesInvoiceBook
+report 50040 EPS_SalesCrMemoBook
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './RDLC/R50039_EPS_SalesInvoiceBook.rdl';
-    Caption = 'Libro Ventas';
+    RDLCLayout = './RDLC/R50040_EPS_SalesCrMemoBook.rdl';
+    Caption = 'Libro Ventas - Rectificaciones';
     UsageCategory = Administration;
     ApplicationArea = All;
 
     dataset
     {
-        dataitem("Sales Invoice Header"; "Sales Invoice Header")
+        dataitem("Sales Cr.Memo Header"; "Sales Cr.Memo Header")
         {
             DataItemTableView = sorting("No.");
             column(datefrom; datefrom)
@@ -57,9 +57,10 @@ report 50039 EPS_SalesInvoiceBook
 
 
 
-            dataitem("Sales Invoice Line"; "Sales Invoice Line")
+            dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
             {
                 DataItemTableView = sorting("Document No.", "Line No.");
+
                 DataItemLink = "Document No." = field("No.");
                 column(Line_Amount; "Line Amount")
                 {
@@ -103,7 +104,7 @@ report 50039 EPS_SalesInvoiceBook
             trigger
             OnPreDataItem()
             begin
-                "Sales Invoice Header".SetRange("Posting Date", datefrom, dateto);
+                "Sales Cr.Memo Header".SetRange("Posting Date", datefrom, dateto);
             end;
 
             trigger
@@ -115,7 +116,7 @@ report 50039 EPS_SalesInvoiceBook
                 if ("Sell-to Country/Region Code" = 'ES') or ("Sell-to Country/Region Code" = '') then
                     classinvoice := classinvoice::FACN
                 else
-                    if country.get("Sales Invoice Header"."Sell-to Country/Region Code") then
+                    if country.get("Sales Cr.Memo Header"."Sell-to Country/Region Code") then
                         if country."EU Country/Region Code" = '' then
                             classinvoice := classinvoice::EXUE
                         else
@@ -130,6 +131,7 @@ report 50039 EPS_SalesInvoiceBook
 
     requestpage
     {
+
         layout
         {
             area(Content)
