@@ -1,4 +1,4 @@
-pageextension 50064 PostedPurchInvsExt extends "Posted Purchase Invoices"
+pageextension 50065 PostedPurchInvsExt extends "Posted Purchase Invoices"
 {
     layout
     {

@@ -240,13 +240,29 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Textbox6</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Style>None</Style>
+                                                <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1.5pt</Width>
+                                                <Width>1pt</Width>
                                               </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <BackgroundColor>LightGrey</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -277,13 +293,29 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Textbox9</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Style>None</Style>
+                                                <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1.5pt</Width>
+                                                <Width>1pt</Width>
                                               </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <BackgroundColor>LightGrey</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -316,13 +348,29 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Textbox11</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Style>None</Style>
+                                                <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1.5pt</Width>
+                                                <Width>1pt</Width>
                                               </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <BackgroundColor>LightGrey</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -355,13 +403,29 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Textbox13</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Style>None</Style>
+                                                <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1.5pt</Width>
+                                                <Width>1pt</Width>
                                               </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <BackgroundColor>LightGrey</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -393,13 +457,29 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Textbox15</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Style>None</Style>
+                                                <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
                                               <BottomBorder>
                                                 <Color>Black</Color>
                                                 <Style>Solid</Style>
-                                                <Width>1.5pt</Width>
+                                                <Width>1pt</Width>
                                               </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <BackgroundColor>LightGrey</BackgroundColor>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -436,9 +516,28 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Qty_PurchLine</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Color>LightGrey</Color>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -468,9 +567,28 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Desc_PurchLine</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Color>LightGrey</Color>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -502,9 +620,28 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>No_PurchLine</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Color>LightGrey</Color>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -537,9 +674,28 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>DirUnitCost_PurchLine</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Color>LightGrey</Color>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -570,9 +726,28 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>LineAmt_PurchLine</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Color>LightGrey</Color>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -710,9 +885,28 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>Textbox17</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Color>LightGrey</Color>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -734,6 +928,7 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                                     <Style>
                                                       <FontSize>9pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
+                                                      <Format>n2</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -745,9 +940,28 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                                             <rd:DefaultName>TotalAmount</rd:DefaultName>
                                             <Style>
                                               <Border>
-                                                <Color>LightGrey</Color>
                                                 <Style>Solid</Style>
                                               </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
                                               <PaddingLeft>2pt</PaddingLeft>
                                               <PaddingRight>2pt</PaddingRight>
                                               <PaddingTop>2pt</PaddingTop>
@@ -807,6 +1021,7 @@ Cstr(Fields!ShipmentMethod.Value) + Chr(177) +Cstr(Fields!Expected_Receipt_Date.
                           <KeepTogether>true</KeepTogether>
                           <Style />
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

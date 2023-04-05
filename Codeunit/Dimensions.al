@@ -1,5 +1,6 @@
 codeunit 50005 Dimensions
 {
+    Permissions = tabledata "G/L Entry" = rimd;
     trigger OnRun()
     begin
         /* //create customer dimensions ---------------------------------------------------------------------------------------------------------------------------
@@ -485,8 +486,241 @@ codeunit 50005 Dimensions
             PSCRM.MODIFY;
         END;
     end;
-
+    //DEV008 START
+    //[EventSubscriber(ObjectType::codeunit, 12, 'OnBeforeInsertVATForGLEntry', '', true, true)]
+    local procedure OnBeforeInsertVATForGLEntry(var GenJnlLine: Record "Gen. Journal Line"; VATPostingSetup: Record "VAT Posting Setup"; GLEntryVATAmount: Decimal; SrcCurrGLEntryVATAmt: Decimal; UnrealizedVAT: Boolean; var IsHandled: Boolean; var VATEntry: Record "VAT Entry"; TaxJurisdiction: Record "Tax Jurisdiction"; SrcCurrCode: Code[10])
     var
+        TmpDimensionSetEntry: record "Dimension Set Entry" temporary;
+    begin
+        AccountNo := GenJnlLine."Account No.";
+        IF dimdefault.get(15, AccountNo, 'BUDGET_ACCOUNT') then
+            DIM1 := dimdefault."Dimension Value Code";
+        //GLEntry.Validate("Global Dimension 1 Code", DIM1);
+        IF dimdefault.get(15, AccountNo, 'BUDGET_PROJECT') then
+            DIM2 := dimdefault."Dimension Value Code";
+        //GLEntry.Validate("Global Dimension 2 Code", DIM2);
+        IF dimdefault.get(15, AccountNo, 'BUDGET_GROUP') then
+            DIM3 := dimdefault."Dimension Value Code";
+
+
+        IF DimValue.GET('BUDGET_ACCOUNT', DIM1) then begin
+            TmpDimensionSetEntry.INIT;
+            TmpDimensionSetEntry."Dimension Set ID" := -1;
+            TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_ACCOUNT');
+            TmpDimensionSetEntry.validate("Dimension Value Code", DIM1);
+            TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+            if not TmpDimensionSetEntry.INSERT then
+                TmpDimensionSetEntry.Modify;
+        END;
+        IF DimValue.GET('BUDGET_PROJECT', DIM2) then begin
+            TmpDimensionSetEntry.INIT;
+            TmpDimensionSetEntry."Dimension Set ID" := -1;
+            TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_PROJECT');
+            TmpDimensionSetEntry.validate("Dimension Value Code", DIM2);
+            TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+            if not TmpDimensionSetEntry.INSERT then
+                TmpDimensionSetEntry.Modify;
+        END;
+
+        IF DimValue.GET('BUDGET_GROUP', DIM3) then begin
+            TmpDimensionSetEntry.INIT;
+            TmpDimensionSetEntry."Dimension Set ID" := -1;
+            TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_GROUP');
+            TmpDimensionSetEntry.validate("Dimension Value Code", DIM3);
+            TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+            if not TmpDimensionSetEntry.INSERT then
+                TmpDimensionSetEntry.Modify;
+
+        end;
+
+
+        GenJnlLine."Dimension Set ID" := DimMgMt.GetDimensionSetID(TmpDimensionSetEntry);
+        //GLEntry.Modify();
+        GenJnlLine.Modify();
+        TmpDimensionSetEntry.DeleteAll();
+        CLEAR(TmpDimensionSetEntry);
+    END;
+
+    [EventSubscriber(ObjectType::codeunit, 80, 'OnAfterPostSalesDoc', '', true, true)]
+    procedure OnAfterPostSalesDoc(var SalesHeader: Record "Sales Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; SalesShptHdrNo: Code[20]; RetRcpHdrNo: Code[20]; SalesInvHdrNo: Code[20]; SalesCrMemoHdrNo: Code[20]; CommitIsSuppressed: Boolean; InvtPickPutaway: Boolean; var CustLedgerEntry: Record "Cust. Ledger Entry"; WhseShip: Boolean; WhseReceiv: Boolean)
+    var
+        glentry: record "G/L Entry";
+        vatps: record "VAT Posting Setup";
+        salesinvline: record "Sales Invoice Line";
+        salescrmemoline: record "Sales Cr.Memo Line";
+        TmpDimensionSetEntry: record "Dimension Set Entry" temporary;
+
+        customer: record Customer;
+        custpg: record "Customer Posting Group";
+    begin
+        if SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice then begin
+            salesinvline.SetRange("Document No.", SalesInvHdrNo);
+            salesinvline.SetFilter("No.", '<>%1', '');
+            salesinvline.FindFirst();
+            if vatps.get(salesinvline."VAT Bus. Posting Group", salesinvline."VAT Prod. Posting Group") then begin
+                glentry.SetRange("Document No.", SalesInvHdrNo);
+                glentry.SetRange("G/L Account No.", vatps."Sales VAT Account");
+            end;
+        end
+        else begin
+            salescrmemoline.SetRange("Document No.", SalesCrMemoHdrNo);
+            salescrmemoline.SetFilter("No.", '<>%1', '');
+            salescrmemoline.FindFirst();
+            if vatps.get(salescrmemoline."VAT Bus. Posting Group", salescrmemoline."VAT Prod. Posting Group") then begin
+                glentry.SetRange("Document No.", SalesCrMemoHdrNo);
+                glentry.SetRange("G/L Account No.", vatps."Sales VAT Account");
+            end;
+        end;
+
+        if glentry.FindFirst() then begin
+            AccountNo := glentry."G/L Account No.";
+            // IF dimdefault.get(15, AccountNo, 'BUDGET_ACCOUNT') then
+            //     DIM1 := dimdefault."Dimension Value Code";
+            if customer.get(SalesHeader."Sell-to Customer No.") then
+                if custpg.get(customer."Customer Posting Group") then
+                    dim1 := custpg.BudgetAccount;
+            GLEntry.Validate("Global Dimension 1 Code", DIM1);
+            IF dimdefault.get(15, AccountNo, 'BUDGET_PROJECT') then
+                DIM2 := dimdefault."Dimension Value Code";
+            GLEntry.Validate("Global Dimension 2 Code", DIM2);
+            IF dimdefault.get(15, AccountNo, 'BUDGET_GROUP') then
+                DIM3 := dimdefault."Dimension Value Code";
+
+
+            IF DimValue.GET('BUDGET_ACCOUNT', DIM1) then begin
+                TmpDimensionSetEntry.INIT;
+                TmpDimensionSetEntry."Dimension Set ID" := -1;
+                TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_ACCOUNT');
+                TmpDimensionSetEntry.validate("Dimension Value Code", DIM1);
+                TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                if not TmpDimensionSetEntry.INSERT then
+                    TmpDimensionSetEntry.Modify;
+            END;
+            IF DimValue.GET('BUDGET_PROJECT', DIM2) then begin
+                TmpDimensionSetEntry.INIT;
+                TmpDimensionSetEntry."Dimension Set ID" := -1;
+                TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_PROJECT');
+                TmpDimensionSetEntry.validate("Dimension Value Code", DIM2);
+                TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                if not TmpDimensionSetEntry.INSERT then
+                    TmpDimensionSetEntry.Modify;
+            END;
+
+            IF DimValue.GET('BUDGET_GROUP', DIM3) then begin
+                TmpDimensionSetEntry.INIT;
+                TmpDimensionSetEntry."Dimension Set ID" := -1;
+                TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_GROUP');
+                TmpDimensionSetEntry.validate("Dimension Value Code", DIM3);
+                TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                if not TmpDimensionSetEntry.INSERT then
+                    TmpDimensionSetEntry.Modify;
+
+            end;
+
+
+            glentry.validate("Dimension Set ID", DimMgMt.GetDimensionSetID(TmpDimensionSetEntry));
+            GLEntry.Modify();
+
+            TmpDimensionSetEntry.DeleteAll();
+            CLEAR(TmpDimensionSetEntry);
+        end;
+    end;
+
+    [EventSubscriber(ObjectType::codeunit, 90, 'OnAfterPostPurchaseDoc', '', true, true)]
+    procedure OnAfterPostPurchaseDoc(var PurchaseHeader: Record "Purchase Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PurchRcpHdrNo: Code[20]; RetShptHdrNo: Code[20]; PurchInvHdrNo: Code[20]; PurchCrMemoHdrNo: Code[20]; CommitIsSupressed: Boolean)
+    var
+        glentry: record "G/L Entry";
+        vatps: record "VAT Posting Setup";
+        purchinvline: record "Purch. Inv. Line";
+        purchcrmemoline: record "Purch. Cr. Memo Line";
+        TmpDimensionSetEntry: record "Dimension Set Entry" temporary;
+        vendor: record Vendor;
+        vendpg: record "Vendor Posting Group";
+    begin
+        if PurchaseHeader."Document Type" = PurchaseHeader."Document Type"::Invoice then begin
+            purchinvline.SetRange("Document No.", purchInvHdrNo);
+            purchinvline.SetFilter("No.", '<>%1', '');
+            purchinvline.FindFirst();
+            if vatps.get(purchinvline."VAT Bus. Posting Group", purchinvline."VAT Prod. Posting Group") then begin
+                glentry.SetRange("Document No.", purchInvHdrNo);
+                glentry.SetRange("G/L Account No.", vatps."Purchase VAT Account");
+            end;
+        end
+        else begin
+            purchcrmemoline.SetRange("Document No.", PurchCrMemoHdrNo);
+            purchcrmemoline.SetFilter("No.", '<>%1', '');
+            purchcrmemoline.FindFirst();
+            if vatps.get(purchcrmemoline."VAT Bus. Posting Group", purchcrmemoline."VAT Prod. Posting Group") then begin
+                glentry.SetRange("Document No.", PurchCrMemoHdrNo);
+                glentry.SetRange("G/L Account No.", vatps."Purchase VAT Account");
+            end;
+        end;
+
+        if glentry.FindFirst() then begin
+            AccountNo := glentry."G/L Account No.";
+            // IF dimdefault.get(15, AccountNo, 'BUDGET_ACCOUNT') then
+            //     DIM1 := dimdefault."Dimension Value Code";
+            if vendor.get(purchaseHeader."Buy-from Vendor No.") then
+                if vendpg.get(vendor."Vendor Posting Group") then
+                    dim1 := vendpg.BudgetAccount;
+            GLEntry.Validate("Global Dimension 1 Code", DIM1);
+            IF dimdefault.get(15, AccountNo, 'BUDGET_PROJECT') then
+                DIM2 := dimdefault."Dimension Value Code";
+            GLEntry.Validate("Global Dimension 2 Code", DIM2);
+            IF dimdefault.get(15, AccountNo, 'BUDGET_GROUP') then
+                DIM3 := dimdefault."Dimension Value Code";
+
+
+            IF DimValue.GET('BUDGET_ACCOUNT', DIM1) then begin
+                TmpDimensionSetEntry.INIT;
+                TmpDimensionSetEntry."Dimension Set ID" := -1;
+                TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_ACCOUNT');
+                TmpDimensionSetEntry.validate("Dimension Value Code", DIM1);
+                TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                if not TmpDimensionSetEntry.INSERT then
+                    TmpDimensionSetEntry.Modify;
+            END;
+            IF DimValue.GET('BUDGET_PROJECT', DIM2) then begin
+                TmpDimensionSetEntry.INIT;
+                TmpDimensionSetEntry."Dimension Set ID" := -1;
+                TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_PROJECT');
+                TmpDimensionSetEntry.validate("Dimension Value Code", DIM2);
+                TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                if not TmpDimensionSetEntry.INSERT then
+                    TmpDimensionSetEntry.Modify;
+            END;
+
+            IF DimValue.GET('BUDGET_GROUP', DIM3) then begin
+                TmpDimensionSetEntry.INIT;
+                TmpDimensionSetEntry."Dimension Set ID" := -1;
+                TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_GROUP');
+                TmpDimensionSetEntry.validate("Dimension Value Code", DIM3);
+                TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                if not TmpDimensionSetEntry.INSERT then
+                    TmpDimensionSetEntry.Modify;
+
+            end;
+
+
+            glentry.validate("Dimension Set ID", DimMgMt.GetDimensionSetID(TmpDimensionSetEntry));
+            GLEntry.Modify();
+
+            TmpDimensionSetEntry.DeleteAll();
+            CLEAR(TmpDimensionSetEntry);
+        end;
+    end;
+
+    //DEV008 END
+    var
+        // DEV008 START
+        AccountNo: code[20];
+        dimdefault: record "Default Dimension";
+        DIM1: CODE[20];
+        DIM2: CODE[20];
+        DIM3: CODE[20];
+        GLSetup: Record "General Ledger Setup";
+
+        // DEV008 END
         DimMgmt: codeunit DimensionManagement;
         Customer: Record Customer;
         DimValue: Record "Dimension Value";

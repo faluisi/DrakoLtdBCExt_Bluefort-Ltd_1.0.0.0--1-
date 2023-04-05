@@ -1,5 +1,6 @@
 codeunit 50001 "Format Addr"
 {
+    Permissions = tabledata "Sales Cr.Memo Header" = rimd;
     trigger OnRun()
     begin
     end;
