@@ -1339,6 +1339,7 @@ report 50030 "D2R Sales - Invoice"
                     {
                         DataItemLinkReference = "Sales Invoice Header";
                         DataItemLink = Country = field("Sell-to Country/Region code");
+
                         column(TermsConditions;
                         "Terms Conditions")
                         {
@@ -1347,6 +1348,12 @@ report 50030 "D2R Sales - Invoice"
                         "Line No.")
                         {
                         }
+                        trigger
+                        OnPreDataItem()
+                        begin
+                            SetRange(DocType, DocType::SI);
+                        end;
+
                         trigger OnAfterGetRecord()
                         begin
                             // if ((g_Customer."Country/Region Code" = 'MX') OR (g_Customer."Country/Region Code" = 'PH')) then begin

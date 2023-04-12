@@ -11168,12 +11168,18 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>7.83802cm</Top>
+              <Top>7.80627cm</Top>
               <Left>0.82894in</Left>
               <Height>14.69991pt</Height>
               <Width>7.85484cm</Width>
               <ZIndex>11</ZIndex>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
               <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </Textbox>

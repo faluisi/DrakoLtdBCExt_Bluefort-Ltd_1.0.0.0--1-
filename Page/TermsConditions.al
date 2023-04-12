@@ -12,20 +12,26 @@ page 50000 TermsConditions
         {
             repeater(GroupName)
             {
-                field(Country; Country)
+                field(Country; rec.Country)
                 {
                     ApplicationArea = All;
                     Caption = 'Country';
                 }
-                field("Line No."; "Line No.")
+                field(DocType; rec.DocType)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Doc. Type';
+                }
+
+                field("Line No."; rec."Line No.")
                 {
                     ApplicationArea = All;
                     Caption = 'Line No.';
                 }
-                field("Terms Conditions"; "Terms Conditions")
+                field("Terms Conditions"; rec."Terms Conditions")
                 {
                     ApplicationArea = All;
-                    Caption = 'Terms & consditions';
+                    Caption = 'Terms & conditions';
                 }
             }
         }

@@ -123,6 +123,8 @@ report 50036 "PurchaseOrder"
             column(Requisition; Requisition)
             {
             }
+
+
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -142,6 +144,9 @@ report 50036 "PurchaseOrder"
                     {
                     }
                     column(CompanyAddr4; CompanyAddr[4])
+                    {
+                    }
+                    column(CompanyInfoEmail; CompanyInfo."E-Mail")
                     {
                     }
                     column(CompanyInfoPhoneNo; CompanyInfo."Phone No.")
@@ -647,6 +652,27 @@ report 50036 "PurchaseOrder"
                             PurchLine.SetRange("Line No.", 0, PurchLine."Line No.");
                             SetRange(Number, 1, PurchLine.Count);
                         end;
+                    }
+                    dataitem(TC;
+                    TermsConditions)
+                    {
+                        DataItemLinkReference = "Purchase Header";
+                        DataItemLink = Country = field("Buy-from Country/Region Code");
+
+                        column(TermsConditions;
+                        "Terms Conditions")
+                        {
+                        }
+                        column(termslineno;
+                        "Line No.")
+                        {
+                        }
+                        trigger
+                        OnPreDataItem()
+                        begin
+                            SetRange(DocType, DocType::PO);
+                        end;
+
                     }
                     dataitem(VATCounter; "Integer")
                     {

@@ -549,29 +549,44 @@ codeunit 50005 Dimensions
         salesinvline: record "Sales Invoice Line";
         salescrmemoline: record "Sales Cr.Memo Line";
         TmpDimensionSetEntry: record "Dimension Set Entry" temporary;
-
         customer: record Customer;
         custpg: record "Customer Posting Group";
+        vat: code[20];
+        nvat: Integer;
     begin
         if SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice then begin
             salesinvline.SetRange("Document No.", SalesInvHdrNo);
             salesinvline.SetFilter("No.", '<>%1', '');
-            salesinvline.FindFirst();
-            if vatps.get(salesinvline."VAT Bus. Posting Group", salesinvline."VAT Prod. Posting Group") then begin
-                glentry.SetRange("Document No.", SalesInvHdrNo);
-                glentry.SetRange("G/L Account No.", vatps."Sales VAT Account");
-            end;
+            nvat := 0;
+            if salesinvline.FindFirst() then
+                repeat
+                    if vatps.get(salesinvline."VAT Bus. Posting Group", salesinvline."VAT Prod. Posting Group") then begin
+                        if vat <> vatps."Sales VAT Account" then
+                            nvat += 1;
+                        glentry.SetRange("Document No.", SalesInvHdrNo);
+                        glentry.SetRange("G/L Account No.", vatps."Sales VAT Account");
+                        vat := vatps."Sales VAT Account";
+                    end;
+                until salesinvline.Next() = 0;
         end
         else begin
             salescrmemoline.SetRange("Document No.", SalesCrMemoHdrNo);
             salescrmemoline.SetFilter("No.", '<>%1', '');
-            salescrmemoline.FindFirst();
-            if vatps.get(salescrmemoline."VAT Bus. Posting Group", salescrmemoline."VAT Prod. Posting Group") then begin
-                glentry.SetRange("Document No.", SalesCrMemoHdrNo);
-                glentry.SetRange("G/L Account No.", vatps."Sales VAT Account");
-            end;
-        end;
+            nvat := 0;
+            if salescrmemoline.FindFirst() then
+                repeat
 
+                    if vatps.get(salescrmemoline."VAT Bus. Posting Group", salescrmemoline."VAT Prod. Posting Group") then begin
+                        if vat <> vatps."Sales VAT Account" then
+                            nvat += 1;
+                        glentry.SetRange("Document No.", SalesCrMemoHdrNo);
+                        glentry.SetRange("G/L Account No.", vatps."Sales VAT Account");
+                        vat := vatps."Sales VAT Account";
+                    end;
+                until salescrmemoline.Next() = 0;
+        end;
+        if nvat > 1 then
+            error('The document %1 has more than one %2 Vat Account, Use Correction Dimensions', SalesCrMemoHdrNo + SalesInvHdrNo, 'Sales');
         if glentry.FindFirst() then begin
             AccountNo := glentry."G/L Account No.";
             // IF dimdefault.get(15, AccountNo, 'BUDGET_ACCOUNT') then
@@ -636,25 +651,42 @@ codeunit 50005 Dimensions
         TmpDimensionSetEntry: record "Dimension Set Entry" temporary;
         vendor: record Vendor;
         vendpg: record "Vendor Posting Group";
+        vat: code[20];
+        nvat: Integer;
     begin
         if PurchaseHeader."Document Type" = PurchaseHeader."Document Type"::Invoice then begin
             purchinvline.SetRange("Document No.", purchInvHdrNo);
             purchinvline.SetFilter("No.", '<>%1', '');
-            purchinvline.FindFirst();
-            if vatps.get(purchinvline."VAT Bus. Posting Group", purchinvline."VAT Prod. Posting Group") then begin
-                glentry.SetRange("Document No.", purchInvHdrNo);
-                glentry.SetRange("G/L Account No.", vatps."Purchase VAT Account");
-            end;
+            nvat := 0;
+            if purchinvline.FindFirst() then
+                repeat
+
+                    if vatps.get(purchinvline."VAT Bus. Posting Group", purchinvline."VAT Prod. Posting Group") then begin
+                        if vat <> vatps."Purchase VAT Account" then
+                            nvat += 1;
+                        glentry.SetRange("Document No.", purchInvHdrNo);
+                        glentry.SetRange("G/L Account No.", vatps."Purchase VAT Account");
+                        vat := vatps."Purchase VAT Account";
+                    end;
+                until purchinvline.Next() = 0;
         end
         else begin
             purchcrmemoline.SetRange("Document No.", PurchCrMemoHdrNo);
             purchcrmemoline.SetFilter("No.", '<>%1', '');
-            purchcrmemoline.FindFirst();
-            if vatps.get(purchcrmemoline."VAT Bus. Posting Group", purchcrmemoline."VAT Prod. Posting Group") then begin
-                glentry.SetRange("Document No.", PurchCrMemoHdrNo);
-                glentry.SetRange("G/L Account No.", vatps."Purchase VAT Account");
-            end;
+            nvat := 0;
+            if purchcrmemoline.FindFirst() then
+                repeat
+                    if vatps.get(purchcrmemoline."VAT Bus. Posting Group", purchcrmemoline."VAT Prod. Posting Group") then begin
+                        if vat <> vatps."Purchase VAT Account" then
+                            nvat += 1;
+                        glentry.SetRange("Document No.", PurchCrMemoHdrNo);
+                        glentry.SetRange("G/L Account No.", vatps."Purchase VAT Account");
+                        vat := vatps."Purchase VAT Account";
+                    end;
+                until purchcrmemoline.Next() = 0;
         end;
+        if nvat > 1 then
+            error('The document %1 has more than one %2 Vat Account, Use Correction Dimensions', PurchCrMemoHdrNo + PurchInvHdrNo, 'Purchase');
 
         if glentry.FindFirst() then begin
             AccountNo := glentry."G/L Account No.";
@@ -701,15 +733,112 @@ codeunit 50005 Dimensions
 
             end;
 
-
-            glentry.validate("Dimension Set ID", DimMgMt.GetDimensionSetID(TmpDimensionSetEntry));
-            GLEntry.Modify();
-
+            GLEntry.validate("Dimension Set ID", DimMgMt.GetDimensionSetID(TmpDimensionSetEntry));
+            glentry.Modify();
             TmpDimensionSetEntry.DeleteAll();
             CLEAR(TmpDimensionSetEntry);
         end;
     end;
 
+    [EventSubscriber(ObjectType::codeunit, 241, 'OnCodeOnAfterItemJnlPostBatchRun', '', true, true)]
+    procedure OnCodeOnAfterItemJnlPostBatchRun(var ItemJournalLine: Record "Item Journal Line"; var HideDialog: Boolean; SuppressCommit: Boolean)
+    var
+        genps: record "General Posting Setup";
+        glentry: record "G/L Entry";
+        TmpDimensionSetEntry: record "Dimension Set Entry" temporary;
+    begin
+        if genps.get(ItemJournalLine."Gen. Bus. Posting Group", ItemJournalLine."Gen. Prod. Posting Group") then begin
+            glentry.SetRange("G/L Account No.", genps."Inventory Adjmt. Account");
+            glentry.SetRange("Document No.", ItemJournalLine."Document No.");
+            glentry.SetRange("Posting Date", ItemJournalLine."Posting Date");
+            if glentry.FindFirst() then
+                repeat
+                    AccountNo := glentry."G/L Account No.";
+                    IF dimdefault.get(15, AccountNo, 'BUDGET_ACCOUNT') then
+                        DIM1 := dimdefault."Dimension Value Code";
+
+                    GLEntry.Validate("Global Dimension 1 Code", DIM1);
+                    IF dimdefault.get(15, AccountNo, 'BUDGET_PROJECT') then
+                        DIM2 := dimdefault."Dimension Value Code";
+                    GLEntry.Validate("Global Dimension 2 Code", DIM2);
+                    IF dimdefault.get(15, AccountNo, 'BUDGET_GROUP') then
+                        DIM3 := dimdefault."Dimension Value Code";
+
+
+                    IF DimValue.GET('BUDGET_ACCOUNT', DIM1) then begin
+                        TmpDimensionSetEntry.INIT;
+                        TmpDimensionSetEntry."Dimension Set ID" := -1;
+                        TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_ACCOUNT');
+                        TmpDimensionSetEntry.validate("Dimension Value Code", DIM1);
+                        TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                        if not TmpDimensionSetEntry.INSERT then
+                            TmpDimensionSetEntry.Modify;
+                    END;
+                    IF DimValue.GET('BUDGET_PROJECT', DIM2) then begin
+                        TmpDimensionSetEntry.INIT;
+                        TmpDimensionSetEntry."Dimension Set ID" := -1;
+                        TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_PROJECT');
+                        TmpDimensionSetEntry.validate("Dimension Value Code", DIM2);
+                        TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                        if not TmpDimensionSetEntry.INSERT then
+                            TmpDimensionSetEntry.Modify;
+                    END;
+
+                    IF DimValue.GET('BUDGET_GROUP', DIM3) then begin
+                        TmpDimensionSetEntry.INIT;
+                        TmpDimensionSetEntry."Dimension Set ID" := -1;
+                        TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_GROUP');
+                        TmpDimensionSetEntry.validate("Dimension Value Code", DIM3);
+                        TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                        if not TmpDimensionSetEntry.INSERT then
+                            TmpDimensionSetEntry.Modify;
+                    end;
+
+
+                    GLEntry.validate("Dimension Set ID", DimMgMt.GetDimensionSetID(TmpDimensionSetEntry));
+                    glentry.Modify();
+                    TmpDimensionSetEntry.DeleteAll();
+                    CLEAR(TmpDimensionSetEntry);
+                until glentry.Next() = 0;
+        end;
+    end;
+
+
+    [EventSubscriber(ObjectType::codeunit, 5633, 'OnPostLinesOnAfterFAJnlPostLine', '', true, true)]
+    procedure OnPostLinesOnAfterFAJnlPostLine(var FAJnlLine: Record "FA Journal Line")
+    var
+        faps: record "FA Posting Group";
+        glentry: record "G/L Entry";
+        TmpDimensionSetEntry: record "Dimension Set Entry" temporary;
+    begin
+        if faps.get(FAJnlLine."FA Posting Group") then begin
+            glentry.SetRange("G/L Account No.", faps."Depreciation Expense Acc.");
+            glentry.SetRange("Document No.", FAJnlLine."Document No.");
+            glentry.SetRange("Posting Date", FAJnlLine."Posting Date");
+            if glentry.FindFirst() then
+                repeat
+                    AccountNo := glentry."G/L Account No.";
+                    IF dimdefault.get(15, AccountNo, 'BUDGET_ACCOUNT') then
+                        DIM1 := dimdefault."Dimension Value Code";
+
+                    GLEntry.Validate("Global Dimension 1 Code", DIM1);
+                    IF DimValue.GET('BUDGET_ACCOUNT', DIM1) then begin
+                        TmpDimensionSetEntry.INIT;
+                        TmpDimensionSetEntry."Dimension Set ID" := -1;
+                        TmpDimensionSetEntry.validate("Dimension Code", 'BUDGET_ACCOUNT');
+                        TmpDimensionSetEntry.validate("Dimension Value Code", DIM1);
+                        TmpDimensionSetEntry."Dimension Value ID" := Dimvalue."Dimension Value ID";
+                        if not TmpDimensionSetEntry.INSERT then
+                            TmpDimensionSetEntry.Modify;
+                    END;
+                    GLEntry.validate("Dimension Set ID", DimMgMt.GetDimensionSetID(TmpDimensionSetEntry));
+                    glentry.Modify();
+                    TmpDimensionSetEntry.DeleteAll();
+                    CLEAR(TmpDimensionSetEntry);
+
+                until glentry.Next() = 0;
+        end;
+    end;
     //DEV008 END
     var
         // DEV008 START

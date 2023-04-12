@@ -71,6 +71,9 @@ report 50000 "Drako Sales - Invoice"
             DisplayAdditionalFeeNote)
             {
             }
+            column(Showperiod; Showperiod)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -893,6 +896,7 @@ report 50000 "Drako Sales - Invoice"
                         Format("Period End", 0, '<Day,2>-<Month Text,3>-<Year4>'))
                         {
                         }
+
                         //BFT-001 -- end
                         dataitem("Sales Shipment Buffer";
                         "Integer")
@@ -1435,6 +1439,12 @@ report 50000 "Drako Sales - Invoice"
                                   ToolTip = 'Specifies how many copies of the document to print.';
                               }
                               */
+                    field(Showperiod; Showperiod)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Show Periods';
+
+                    }
                     field(ShowInternalInfo; ShowInternalInfo)
                     {
                         ApplicationArea = Basic, Suite;
@@ -1675,6 +1685,7 @@ report 50000 "Drako Sales - Invoice"
         PrintTIN: Boolean;
 
         reportcaption: Text;
+        Showperiod: Boolean;
     //BFT-001 -- end
     procedure InitLogInteraction()
     begin
