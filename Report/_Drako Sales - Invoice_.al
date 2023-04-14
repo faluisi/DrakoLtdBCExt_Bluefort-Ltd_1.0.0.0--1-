@@ -2339,18 +2339,8 @@ report 50000 "Drako Sales - Invoice"
                     HasIntBank2 := false
                 else
                     HasIntBank2 := true;
-            end
-            else begin
-                // BankDetails[1] := CompanyInfo."Intermediary Bank";
-                // BankDetails[2] := CompanyInfo."Intermediary SWIFT";
-                BankDetails2[3] := CompanyInfo."Bank Name";
-                BankDetails2[4] := CompanyInfo."SWIFT Code";
-                BankDetails2[5] := CompanyInfo.IBAN;
-                BankDetails2[6] := GLSetup."LCY Code";
-                BankDetails2[7] := CompanyInfo."Bank Address";
-                //BankDetails[8] := CompanyInfo."Bank Address 2"
-                HasBank2 := false;
             end;
+
         end
         else
             HasBank2 := false;

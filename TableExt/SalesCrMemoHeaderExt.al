@@ -44,6 +44,7 @@ tableextension 50007 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         field(50004; "Period End"; Date)
         {
         }
+
         field(50007; "LocalCurrAmt"; Text[100])
         {
             caption = 'Local Currency Amount';

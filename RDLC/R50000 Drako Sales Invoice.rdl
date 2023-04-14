@@ -5672,16 +5672,16 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         <Width>3.84457cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>7.73645cm</Width>
+                                        <Width>6.82414cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.97928cm</Width>
+                                        <Width>3.89159cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>2.07538cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>2.05364cm</Width>
+                                        <Width>2.09383cm</Width>
                                       </TablixColumn>
                                     </TablixColumns>
                                     <TablixRows>
@@ -7303,9 +7303,8 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value />
+                                                        <Value>Local Currency Amount</Value>
                                                         <Style>
-                                                          <FontFamily>Tahoma</FontFamily>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -7336,14 +7335,14 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!TotalInclVATLbl.Value</Value>
+                                                        <Value>=Fields!LocalCurrAmt.Value</Value>
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
                                                     <Style>
-                                                      <TextAlign>Right</TextAlign>
+                                                      <TextAlign>Left</TextAlign>
                                                     </Style>
                                                   </Paragraph>
                                                 </Paragraphs>
@@ -7357,10 +7356,40 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <PaddingRight>5pt</PaddingRight>
                                                 </Style>
                                               </Textbox>
-                                              <ColSpan>2</ColSpan>
                                             </CellContents>
                                           </TablixCell>
-                                          <TablixCell />
+                                          <TablixCell>
+                                            <CellContents>
+                                              <Textbox Name="Textbox62">
+                                                <CanGrow>true</CanGrow>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Paragraphs>
+                                                  <Paragraph>
+                                                    <TextRuns>
+                                                      <TextRun>
+                                                        <Value>=Fields!TotalInclVATLbl.Value</Value>
+                                                        <Style>
+                                                          <FontSize>9pt</FontSize>
+                                                        </Style>
+                                                      </TextRun>
+                                                    </TextRuns>
+                                                    <Style>
+                                                      <TextAlign>Right</TextAlign>
+                                                    </Style>
+                                                  </Paragraph>
+                                                </Paragraphs>
+                                                <rd:DefaultName>Textbox62</rd:DefaultName>
+                                                <Style>
+                                                  <Border>
+                                                    <Color>LightGrey</Color>
+                                                    <Style>None</Style>
+                                                  </Border>
+                                                  <PaddingLeft>5pt</PaddingLeft>
+                                                  <PaddingRight>5pt</PaddingRight>
+                                                </Style>
+                                              </Textbox>
+                                            </CellContents>
+                                          </TablixCell>
                                           <TablixCell>
                                             <CellContents>
                                               <Textbox Name="TotalAmountInclVAT1">
@@ -8017,6 +8046,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                 </Style>
                                               </Textbox>
                                               <ColSpan>2</ColSpan>
+                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                           <TablixCell />
@@ -10174,7 +10204,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>Local Currency Amount</Value>
+                                                        <Value />
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
@@ -10207,7 +10237,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!LocalCurrAmt.Value</Value>
+                                                        <Value />
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
@@ -10552,7 +10582,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                   </Filters>
                                   <Top>6.67139cm</Top>
                                   <Height>9.03081cm</Height>
-                                  <Width>19.94494cm</Width>
+                                  <Width>19.98513cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
                                     <Border>
@@ -11316,7 +11346,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Left>0.02331cm</Left>
+            <Left>0.03176cm</Left>
             <Height>20.32579cm</Height>
             <Width>19.98513cm</Width>
             <Style>
@@ -11344,7 +11374,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
           </Border>
         </Style>
       </Body>
-      <Width>20.00844cm</Width>
+      <Width>20.01689cm</Width>
       <Page>
         <PageHeader>
           <Height>8.2962cm</Height>

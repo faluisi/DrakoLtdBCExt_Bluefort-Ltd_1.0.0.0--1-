@@ -36,6 +36,24 @@ pageextension 50025 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 Editable = false;
             }
         }
+        addafter("Company Bank Account Code")
+        {
+            field("Customer Payment Bank Code"; rec."Customer Payment Bank Code")
+            {
+                ApplicationArea = all;
+                Editable = false;
+            }
+            field("Customer Payment Bank Code2"; rec."Customer Payment Bank Code2")
+            {
+                ApplicationArea = all;
+                Editable = false;
+            }
+        }
+        modify("Company Bank Account Code")
+        {
+
+            Visible = false;
+        }
     }
     actions
     {
