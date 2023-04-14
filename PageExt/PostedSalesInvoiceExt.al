@@ -9,24 +9,32 @@ pageextension 50025 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 ApplicationArea = All;
             }
             //DevOps #619 -- begin
-            field("Contract Code"; "Contract Code")
+            field("Contract Code"; rec."Contract Code")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
             //DevOps #619 -- end
             //DEVOPS #622 -- begin
-            field("Period Start"; "Period Start")
+            field("Period Start"; rec."Period Start")
             {
                 ApplicationArea = all;
                 Editable = false;
             }
-            field("Period End"; "Period End")
+            field("Period End"; rec."Period End")
             {
                 ApplicationArea = all;
                 Editable = false;
             }
             //DEVOPS #622 -- end
+        }
+        addlast(General)
+        {
+            field(LocalCurrAmt; rec.LocalCurrAmt)
+            {
+                ApplicationArea = all;
+                Editable = false;
+            }
         }
     }
     actions

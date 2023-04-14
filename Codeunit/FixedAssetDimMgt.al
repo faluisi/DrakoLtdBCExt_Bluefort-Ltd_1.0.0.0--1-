@@ -325,7 +325,7 @@ codeunit 50000 FixedAssetDimMgt
     procedure UpdateSiteDim(CustSite: Record "Customer-Site")
     var
         DimValue_Site: Record "Dimension Value";
-       // ParentChild: Record "Parent Child Relation";
+        ParentChild: Record "Parent Child Relation";
         FASetup: Record "FA Setup";
         companyinfo: Record "Company Information";
     begin
@@ -341,19 +341,19 @@ codeunit 50000 FixedAssetDimMgt
                 DimValue_Site.Name := TrimDimName(CustSite."Site Name");
                 DimValue_Site.Modify();
             end;
-            /*
-                    //update operator
-                    //get parent
-                    ParentChild.Reset();
-                    ParentChild.SetFilter(ParentChild.Child, FASetup."Site Dimension");
-                    if ParentChild.FindFirst() then begin
-                        if DimValue_Site."Parent Dimension" = ParentChild.Parent then begin
-                            if DimValue_Site."Parent Code" <> CustSite.Operator then begin
-                                DimValue_Site."Parent Code" := CustSite.Operator;
-                                DimValue_Site.Modify();
-                            end;
-                        end;
-                    end;*/
+
+            //update operator
+            //get parent
+            ParentChild.Reset();
+            ParentChild.SetFilter(ParentChild.Child, FASetup."Site Dimension");
+            if ParentChild.FindFirst() then begin
+                if DimValue_Site."Parent Dimension" = ParentChild.Parent then begin
+                    if DimValue_Site."Parent Code" <> CustSite.Operator then begin
+                        DimValue_Site."Parent Code" := CustSite.Operator;
+                        DimValue_Site.Modify();
+                    end;
+                end;
+            end;
         end;
         //end;
     end;

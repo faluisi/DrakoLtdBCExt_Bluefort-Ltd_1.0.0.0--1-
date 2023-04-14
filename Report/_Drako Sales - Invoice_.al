@@ -74,6 +74,9 @@ report 50000 "Drako Sales - Invoice"
             column(Showperiod; Showperiod)
             {
             }
+            column(LocalCurrAmt; LocalCurrAmt)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -481,6 +484,46 @@ report 50000 "Drako Sales - Invoice"
                     }
                     column(HasIntBank;
                     HasIntBank)
+                    {
+                    }
+                    column(BankDetails21;
+                    BankDetails2[1])
+                    {
+                    }
+                    column(BankDetails22;
+                    BankDetails2[2])
+                    {
+                    }
+                    column(BankDetails23;
+                    BankDetails2[3])
+                    {
+                    }
+                    column(BankDetails24;
+                    BankDetails2[4])
+                    {
+                    }
+                    column(BankDetails25;
+                    BankDetails2[5])
+                    {
+                    }
+                    column(BankDetails26;
+                    BankDetails2[6])
+                    {
+                    }
+                    column(BankDetails27;
+                    BankDetails2[7])
+                    {
+                    }
+                    column(BankDetails28;
+                    BankDetails2[8])
+                    {
+                    }
+                    column(HasBank2;
+                    HasBank2)
+                    {
+                    }
+                    column(HasIntBank2;
+                    HasIntBank2)
                     {
                     }
                     column(exchRate;
@@ -1485,6 +1528,7 @@ report 50000 "Drako Sales - Invoice"
         begin
             InitLogInteraction;
             LogInteractionEnable := LogInteraction;
+            Showperiod := true;
         end;
     }
     labels
@@ -1676,6 +1720,9 @@ report 50000 "Drako Sales - Invoice"
         BankDetails: array[8] of Text[250];
         HasBank: Boolean;
         HasIntBank: Boolean;
+        BankDetails2: array[8] of Text[250];
+        HasBank2: Boolean;
+        HasIntBank2: Boolean;
         VATLinePrint: Text[10];
         TotalPreVATEUR: Decimal;
         TotalVATEUR: Decimal;
@@ -2276,5 +2323,36 @@ report 50000 "Drako Sales - Invoice"
         end
         else
             HasBank := false;
+        if (Cust."Payment Bank Code2" <> '') then begin
+            PaymentBank.SetFilter("Bank Code", Cust."Payment Bank Code2");
+            if (PaymentBank.FindFirst()) then begin
+                BankDetails2[1] := PaymentBank."Intermediary Bank";
+                BankDetails2[2] := PaymentBank."Intermediary SWIFT";
+                BankDetails2[3] := PaymentBank."Bank Name";
+                BankDetails2[4] := PaymentBank."SWIFT Code";
+                BankDetails2[5] := PaymentBank.IBAN;
+                BankDetails2[6] := PaymentBank.Currency;
+                BankDetails2[7] := PaymentBank."Bank Address";
+                BankDetails2[8] := PaymentBank."Bank Address 2";
+                HasBank2 := true;
+                if ((BankDetails2[1] = '') OR (BankDetails2[2] = '')) then
+                    HasIntBank2 := false
+                else
+                    HasIntBank2 := true;
+            end
+            else begin
+                // BankDetails[1] := CompanyInfo."Intermediary Bank";
+                // BankDetails[2] := CompanyInfo."Intermediary SWIFT";
+                BankDetails2[3] := CompanyInfo."Bank Name";
+                BankDetails2[4] := CompanyInfo."SWIFT Code";
+                BankDetails2[5] := CompanyInfo.IBAN;
+                BankDetails2[6] := GLSetup."LCY Code";
+                BankDetails2[7] := CompanyInfo."Bank Address";
+                //BankDetails[8] := CompanyInfo."Bank Address 2"
+                HasBank2 := false;
+            end;
+        end
+        else
+            HasBank2 := false;
     end;
 }

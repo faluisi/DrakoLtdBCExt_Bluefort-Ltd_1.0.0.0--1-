@@ -22,6 +22,11 @@ tableextension 50001 CustomerExt extends Customer
             DataClassification = ToBeClassified;
             TableRelation = "Payment Bank Accounts"."Bank Code";
         }
+        field(50005; "Payment Bank Code2"; Code[20])//no
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "Payment Bank Accounts"."Bank Code";
+        }
         modify(Name)
         {
             trigger OnAfterValidate()

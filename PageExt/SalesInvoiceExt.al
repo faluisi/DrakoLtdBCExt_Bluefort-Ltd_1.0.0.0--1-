@@ -52,30 +52,39 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
                 end;
             }
             //DevOps #619 -- begin
-            field("Contract Code"; "Contract Code")
+            field("Contract Code"; rec."Contract Code")
             {
                 ApplicationArea = All;
             }
             //DevOps #619 -- end
             //DEVOPS #622 -- begin
-            field("Period Start"; "Period Start")
+            field("Period Start"; rec."Period Start")
             {
                 ApplicationArea = all;
             }
-            field("Period End"; "Period End")
+            field("Period End"; rec."Period End")
             {
                 ApplicationArea = all;
             }
 
-            field("Customer Payment Bank Code"; "Customer Payment Bank Code")
+            field("Customer Payment Bank Code"; rec."Customer Payment Bank Code")
             {
                 ApplicationArea = all;
             }
             //DEVOPS #622 -- end
 
-            field("Billing Statement"; "Billing Statement")
+            field("Billing Statement"; rec."Billing Statement")
             {
                 ApplicationArea = all;
+            }
+
+        }
+        addlast(General)
+        {
+            field(LocalCurrAmt; rec.LocalCurrAmt)
+            {
+                ApplicationArea = all;
+                Editable = false;
             }
         }
     }

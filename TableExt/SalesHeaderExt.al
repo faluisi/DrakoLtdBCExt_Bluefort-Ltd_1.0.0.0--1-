@@ -91,7 +91,24 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
 
 
         }
+        field(50007; "LocalCurrAmt"; Text[100])
+        {
+            caption = 'Local Currency Amount';
 
+        }
+        field(50008; "Customer Payment Bank Code2"; Code[100])
+        {
+
+            FieldClass = "Flowfield";
+            CalcFormula = lookup(Customer."Payment Bank Code2" where("No." = field("Sell-to Customer No.")));
+        }
+
+        field(50009; "Customer Payment Bank Name2"; Code[100])
+        {
+
+            FieldClass = "Flowfield";
+            CalcFormula = lookup(Customer."Payment Bank Code2" where("No." = field("Sell-to Customer No.")));
+        }
     }
     var
         Cust: Record Customer;

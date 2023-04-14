@@ -19,6 +19,7 @@ pageextension 50046 PostedSalesInvoicesExt extends "Posted Sales Invoices"
         {
             Visible = true;
         }
+
     }
     actions
     {

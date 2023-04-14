@@ -4,7 +4,7 @@ pageextension 50001 CustomerCardExt extends "Customer Card"
     {
         addbefore(Name)
         {
-            field("No. 2"; "No. 2")
+            field("No. 2"; rec."No. 2")
             {
                 ApplicationArea = All;
             }
@@ -15,26 +15,30 @@ pageextension 50001 CustomerCardExt extends "Customer Card"
             //{
             //ApplicationArea = all;
             //}
-            field("Corporate Name"; "Corporate Name")
+            field("Corporate Name"; rec."Corporate Name")
             {
                 ApplicationArea = All;
                 Visible = false;
             }
-            field("Customer Since"; "Customer Since")
+            field("Customer Since"; rec."Customer Since")
             {
                 ApplicationArea = All;
             }
         }
         addbefore("VAT Registration No.")
         {
-            field("Separate Halls Inv."; "Separate Halls Inv.")
+            field("Separate Halls Inv."; rec."Separate Halls Inv.")
             {
                 ApplicationArea = All;
                 Caption = 'Separate Halls Inv.';
             }
-            field("Payment Bank Code"; "Payment Bank Code")
+            field("Payment Bank Code"; rec."Payment Bank Code")
             {
                 Caption = 'Payment Bank Account';
+            }
+            field("Payment Bank Code2"; rec."Payment Bank Code2")
+            {
+                Caption = 'Payment Bank Account 2';
             }
         }
 
@@ -73,7 +77,7 @@ pageextension 50001 CustomerCardExt extends "Customer Card"
         OperatorsP: Page "Dimension Values";
         OperatorsXML: XmlPort "Import Operators";
         CurrentCFS: Page "Current Customer FA per Site";
-        FAMH: Record "FA Movement History";
+        // FAMH: Record "FA Movement History";
         companyinfo: Record "Company Information";
         ShowSites: boolean;
 
