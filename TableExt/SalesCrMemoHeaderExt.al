@@ -45,9 +45,25 @@ tableextension 50007 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
         }
 
-        field(50007; "LocalCurrAmt"; Text[100])
+        field(50007; "LocalCurrAmt"; Decimal)
         {
             caption = 'Local Currency Amount';
+
+        }
+        field(50010; "Currency2"; code[10])
+        {
+            caption = 'Local Currency';
+            TableRelation = Currency;
+
+        }
+        field(50011; "BeneficiaryBank"; text[100])
+        {
+            caption = 'Payment Bank Beneficiary ';
+
+        }
+        field(50012; "BeneficiaryBank2"; text[100])
+        {
+            caption = 'Payment Bank Beneficiary 2 ';
 
         }
     }

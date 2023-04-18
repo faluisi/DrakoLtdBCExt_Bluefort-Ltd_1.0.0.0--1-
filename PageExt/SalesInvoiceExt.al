@@ -67,10 +67,7 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
                 ApplicationArea = all;
             }
 
-            field("Customer Payment Bank Code"; rec."Customer Payment Bank Code")
-            {
-                ApplicationArea = all;
-            }
+
             //DEVOPS #622 -- end
 
             field("Billing Statement"; rec."Billing Statement")
@@ -84,8 +81,43 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
             field(LocalCurrAmt; rec.LocalCurrAmt)
             {
                 ApplicationArea = all;
+
+            }
+            field(Currency2; rec.Currency2)
+            {
+                ApplicationArea = all;
+
+            }
+
+        }
+        addafter("Currency Code")
+        {
+            field("Customer Payment Bank Code"; rec."Customer Payment Bank Code")
+            {
+                ApplicationArea = all;
                 Editable = false;
             }
+            field(BeneficiaryBank; BeneficiaryBank)
+            {
+                ApplicationArea = all;
+
+            }
+
+            field("Customer Payment Bank Code2"; rec."Customer Payment Bank Code2")
+            {
+                ApplicationArea = all;
+                Editable = false;
+            }
+            field(BeneficiaryBank2; BeneficiaryBank2)
+            {
+                ApplicationArea = all;
+
+            }
+        }
+        modify("Company Bank Account Code")
+        {
+
+            Visible = false;
         }
     }
     actions

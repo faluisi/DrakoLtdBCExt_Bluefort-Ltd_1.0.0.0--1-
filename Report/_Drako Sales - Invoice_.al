@@ -77,6 +77,24 @@ report 50000 "Drako Sales - Invoice"
             column(LocalCurrAmt; LocalCurrAmt)
             {
             }
+            column(Currency2; Currency2)
+            {
+            }
+            column(Curr1Name; Curr1Name)
+            {
+            }
+            column(Curr2Name; Curr2Name)
+            {
+            }
+            column(BeneficiaryBank; BeneficiaryBank)
+            {
+            }
+            column(BeneficiaryBank2; BeneficiaryBank2)
+            {
+            }
+            column(ForPaymentCaption; ForPaymentCaption)
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -1434,15 +1452,26 @@ report 50000 "Drako Sales - Invoice"
                 g_Customer.SetFilter(g_Customer."No.", "Sales Invoice Header"."Bill-to Customer No.");
                 g_Customer.FindFirst;
                 PrintTIN := false;
+                if currency.get("Currency Code") then
+                    Curr1Name := currency.Description;
+                if currency.get(Currency2) then
+                    Curr2Name := currency.Description;
+                if country.get(g_Customer."Country/Region Code") then
+                    if country.Account = '' then
+                        IBANCaption := 'IBAN'
+                    else
+                        IBANCaption := country.Account;
                 if (g_Customer."Country/Region Code" = 'MX') then begin
                     RFCCaption := 'RFC:';
                     InqEmail := 'collections-mx@fbm.mt';
+
                 end
                 else
                     if (g_Customer."Country/Region Code" = 'PH') then begin
                         RFCCaption := 'TIN:';
                         InqEmail := 'collections-ph@fbm.mt';
                         PrintTIN := true;
+
                     end
                     else begin
                         RFCCaption := 'VAT:';
@@ -1462,6 +1491,7 @@ report 50000 "Drako Sales - Invoice"
 
         //BFT-001
     }
+
     requestpage
     {
         SaveValues = true;
@@ -1534,6 +1564,7 @@ report 50000 "Drako Sales - Invoice"
     labels
     {
     }
+
     trigger OnInitReport()
     begin
         GLSetup.Get;
@@ -1677,6 +1708,7 @@ report 50000 "Drako Sales - Invoice"
         EmailCaption: Label 'Email';
         PhoneCaption: Label 'Phone';
         PaymentCaption: Label 'PLEASE SEND PAYMENT TO:';
+        ForPaymentCaption: Label 'For Payments in';
         SWIFTCaption: Label 'SWIFT: ';
         AccountCaption: Label 'Account';
         BankAddressCaption: Label 'Bank Address: ';
@@ -1684,13 +1716,16 @@ report 50000 "Drako Sales - Invoice"
         TitleCaption: Label 'INVOICE';
         SiteCaption: Label 'Site:';
         IntBankCaption: Label 'Intermediary Bank: ';
-        IBANCaption: Label 'Account: ';
+        IBANCaption: Text;
         BankCurrencyCaption: Label 'Currency: ';
         FurtherTransferCaption: Label 'FOR FURTHER TRANSFER TO BE FOWARDED TO:';
         PeriodStartCaption: Label 'Period Start';
         PeriodEndCaption: Label 'Period End';
         Curr1: Code[10];
         Curr2: Code[10];
+        currency: record Currency;
+        Curr1Name: text;
+        Curr2Name: text;
         Curr1Cptn: Text[10];
         Curr2Cptn: Text[10];
         TotalSubTotalC1: Decimal;
@@ -1730,7 +1765,7 @@ report 50000 "Drako Sales - Invoice"
         VATText: Text[200];
         InqEmail: Text[200];
         PrintTIN: Boolean;
-
+        country: record "Country/Region";
         reportcaption: Text;
         Showperiod: Boolean;
     //BFT-001 -- end
@@ -2290,6 +2325,7 @@ report 50000 "Drako Sales - Invoice"
     var
         PaymentBank: Record "Payment Bank Accounts";
     begin
+
         CompanyInfo.Get();
         GLSetup.Get();
         if (Cust."Payment Bank Code" <> '') then begin
