@@ -48,21 +48,13 @@ pageextension 50025 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 ApplicationArea = all;
                 Editable = false;
             }
-            field(BeneficiaryBank; BeneficiaryBank)
-            {
-                ApplicationArea = all;
 
-            }
             field("Customer Payment Bank Code2"; rec."Customer Payment Bank Code2")
             {
                 ApplicationArea = all;
                 Editable = false;
             }
-            field(BeneficiaryBank2; BeneficiaryBank2)
-            {
-                ApplicationArea = all;
 
-            }
         }
         modify("Company Bank Account Code")
         {

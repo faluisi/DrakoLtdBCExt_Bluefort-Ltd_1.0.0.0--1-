@@ -541,7 +541,7 @@ codeunit 50005 Dimensions
         CLEAR(TmpDimensionSetEntry);
     END;
 
-    [EventSubscriber(ObjectType::codeunit, 80, 'OnAfterPostSalesDoc', '', true, true)]
+    //[EventSubscriber(ObjectType::codeunit, 80, 'OnAfterPostSalesDoc', '', true, true)]
     procedure OnAfterPostSalesDoc(var SalesHeader: Record "Sales Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; SalesShptHdrNo: Code[20]; RetRcpHdrNo: Code[20]; SalesInvHdrNo: Code[20]; SalesCrMemoHdrNo: Code[20]; CommitIsSuppressed: Boolean; InvtPickPutaway: Boolean; var CustLedgerEntry: Record "Cust. Ledger Entry"; WhseShip: Boolean; WhseReceiv: Boolean)
     var
         glentry: record "G/L Entry";
@@ -641,7 +641,7 @@ codeunit 50005 Dimensions
         end;
     end;
 
-    [EventSubscriber(ObjectType::codeunit, 90, 'OnAfterPostPurchaseDoc', '', true, true)]
+    //[EventSubscriber(ObjectType::codeunit, 90, 'OnAfterPostPurchaseDoc', '', true, true)]
     procedure OnAfterPostPurchaseDoc(var PurchaseHeader: Record "Purchase Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; PurchRcpHdrNo: Code[20]; RetShptHdrNo: Code[20]; PurchInvHdrNo: Code[20]; PurchCrMemoHdrNo: Code[20]; CommitIsSupressed: Boolean)
     var
         glentry: record "G/L Entry";
@@ -740,7 +740,7 @@ codeunit 50005 Dimensions
         end;
     end;
 
-    [EventSubscriber(ObjectType::codeunit, 241, 'OnCodeOnAfterItemJnlPostBatchRun', '', true, true)]
+    //[EventSubscriber(ObjectType::codeunit, 241, 'OnCodeOnAfterItemJnlPostBatchRun', '', true, true)]
     procedure OnCodeOnAfterItemJnlPostBatchRun(var ItemJournalLine: Record "Item Journal Line"; var HideDialog: Boolean; SuppressCommit: Boolean)
     var
         genps: record "General Posting Setup";
@@ -804,7 +804,7 @@ codeunit 50005 Dimensions
     end;
 
 
-    [EventSubscriber(ObjectType::codeunit, 5633, 'OnPostLinesOnAfterFAJnlPostLine', '', true, true)]
+    //[EventSubscriber(ObjectType::codeunit, 5633, 'OnPostLinesOnAfterFAJnlPostLine', '', true, true)]
     procedure OnPostLinesOnAfterFAJnlPostLine(var FAJnlLine: Record "FA Journal Line")
     var
         faps: record "FA Posting Group";

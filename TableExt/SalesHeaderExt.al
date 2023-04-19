@@ -115,16 +115,8 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
             TableRelation = Currency;
 
         }
-        field(50011; "BeneficiaryBank"; text[100])
-        {
-            caption = 'Payment Bank Beneficiary ';
 
-        }
-        field(50012; "BeneficiaryBank2"; text[100])
-        {
-            caption = 'Payment Bank Beneficiary 2 ';
 
-        }
     }
     var
         Cust: Record Customer;

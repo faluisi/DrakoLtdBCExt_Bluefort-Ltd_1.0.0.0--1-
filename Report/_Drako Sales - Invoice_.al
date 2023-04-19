@@ -86,10 +86,10 @@ report 50000 "Drako Sales - Invoice"
             column(Curr2Name; Curr2Name)
             {
             }
-            column(BeneficiaryBank; BeneficiaryBank)
+            column(BeneficiaryBank; BenBank)
             {
             }
-            column(BeneficiaryBank2; BeneficiaryBank2)
+            column(BeneficiaryBank2; BenBank2)
             {
             }
             column(ForPaymentCaption; ForPaymentCaption)
@@ -1768,6 +1768,9 @@ report 50000 "Drako Sales - Invoice"
         country: record "Country/Region";
         reportcaption: Text;
         Showperiod: Boolean;
+        BenBank: text[100];
+        BenBank2: text[100];
+
     //BFT-001 -- end
     procedure InitLogInteraction()
     begin
@@ -2331,6 +2334,7 @@ report 50000 "Drako Sales - Invoice"
         if (Cust."Payment Bank Code" <> '') then begin
             PaymentBank.SetFilter("Bank Code", Cust."Payment Bank Code");
             if (PaymentBank.FindFirst()) then begin
+                BenBank := PaymentBank.BeneficiaryBank;
                 BankDetails[1] := PaymentBank."Intermediary Bank";
                 BankDetails[2] := PaymentBank."Intermediary SWIFT";
                 BankDetails[3] := PaymentBank."Bank Name";
@@ -2346,6 +2350,7 @@ report 50000 "Drako Sales - Invoice"
                     HasIntBank := true;
             end
             else begin
+                BenBank := CompanyInfo.Name;
                 // BankDetails[1] := CompanyInfo."Intermediary Bank";
                 // BankDetails[2] := CompanyInfo."Intermediary SWIFT";
                 BankDetails[3] := CompanyInfo."Bank Name";
@@ -2362,6 +2367,7 @@ report 50000 "Drako Sales - Invoice"
         if (Cust."Payment Bank Code2" <> '') then begin
             PaymentBank.SetFilter("Bank Code", Cust."Payment Bank Code2");
             if (PaymentBank.FindFirst()) then begin
+                BenBank2 := PaymentBank.BeneficiaryBank;
                 BankDetails2[1] := PaymentBank."Intermediary Bank";
                 BankDetails2[2] := PaymentBank."Intermediary SWIFT";
                 BankDetails2[3] := PaymentBank."Bank Name";

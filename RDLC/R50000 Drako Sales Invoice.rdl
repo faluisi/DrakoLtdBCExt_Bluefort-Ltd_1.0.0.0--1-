@@ -21,12 +21,12 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>19.98513cm</Width>
+                      <Width>19.98515cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>20.31168cm</Height>
+                      <Height>21.07042cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -5508,6 +5508,7 @@
                                       </FilterValues>
                                     </Filter>
                                   </Filters>
+                                  <Left>0.00002cm</Left>
                                   <Height>6.60879cm</Height>
                                   <Width>7.86485in</Width>
                                   <Style>
@@ -5653,7 +5654,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                       </TablixMember>
                                     </TablixMembers>
                                   </TablixRowHierarchy>
-                                  <Left>0.35262cm</Left>
+                                  <Left>0.35264cm</Left>
                                   <Height>0.42301cm</Height>
                                   <Width>0.56459cm</Width>
                                   <ZIndex>1</ZIndex>
@@ -5672,10 +5673,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         <Width>3.84457cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>6.82414cm</Width>
+                                        <Width>7.24956cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
-                                        <Width>3.89159cm</Width>
+                                        <Width>3.46617cm</Width>
                                       </TablixColumn>
                                       <TablixColumn>
                                         <Width>2.07538cm</Width>
@@ -8131,7 +8132,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                         </TablixCells>
                                       </TablixRow>
                                       <TablixRow>
-                                        <Height>0.40491cm</Height>
+                                        <Height>1.56908cm</Height>
                                         <TablixCells>
                                           <TablixCell>
                                             <CellContents>
@@ -8584,7 +8585,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!ForPaymentCaption.Value &amp; " " &amp;Fields!Curr1.Value &amp;" "&amp;Fields!Curr1Name.Value</Value>
+                                                        <Value>=Fields!ForPaymentCaption.Value &amp; " " &amp;Fields!Curr1.Value &amp;" ("&amp;Fields!Curr1Name.Value &amp;")"</Value>
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
@@ -8619,7 +8620,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>=Fields!ForPaymentCaption.Value &amp; " " &amp;Fields!Currency2.Value &amp;" "&amp;Fields!Curr2Name.Value</Value>
+                                                        <Value>=Fields!ForPaymentCaption.Value &amp; " " &amp;Fields!Currency2.Value &amp;" ("&amp;Fields!Curr2Name.Value &amp; ")"</Value>
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
                                                           <FontWeight>Bold</FontWeight>
@@ -8949,7 +8950,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <PaddingRight>5pt</PaddingRight>
                                                 </Style>
                                               </Textbox>
-                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                           <TablixCell>
@@ -9953,6 +9953,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                         <Value>=Fields!BankDetails6.Value</Value>
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
+                                                          <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -9985,6 +9986,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                         <Value>=Fields!BankDetails26.Value</Value>
                                                         <Style>
                                                           <FontSize>9pt</FontSize>
+                                                          <FontWeight>Bold</FontWeight>
                                                         </Style>
                                                       </TextRun>
                                                     </TextRuns>
@@ -10650,7 +10652,8 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                     </Filter>
                                   </Filters>
                                   <Top>6.67139cm</Top>
-                                  <Height>8.89688cm</Height>
+                                  <Left>0.00002cm</Left>
+                                  <Height>10.06105cm</Height>
                                   <Width>19.98513cm</Width>
                                   <ZIndex>2</ZIndex>
                                   <Style>
@@ -11042,8 +11045,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                       </FilterValues>
                                     </Filter>
                                   </Filters>
-                                  <Top>16.0521cm</Top>
-                                  <Left>0.00844cm</Left>
+                                  <Top>16.8814cm</Top>
                                   <Height>2.06093cm</Height>
                                   <Width>19.97669cm</Width>
                                   <ZIndex>3</ZIndex>
@@ -11320,8 +11322,8 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                       </TablixMember>
                                     </TablixMembers>
                                   </TablixRowHierarchy>
-                                  <Top>18.18359cm</Top>
-                                  <Left>0.00845cm</Left>
+                                  <Top>18.94233cm</Top>
+                                  <Left>0.00847cm</Left>
                                   <Height>2.12809cm</Height>
                                   <Width>19.97668cm</Width>
                                   <ZIndex>4</ZIndex>
@@ -11396,9 +11398,8 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                   </TablixMembers>
                 </TablixRowHierarchy>
                 <DataSetName>DataSet_Result</DataSetName>
-                <Top>0.01411cm</Top>
-                <Height>20.31168cm</Height>
-                <Width>19.98513cm</Width>
+                <Height>21.07042cm</Height>
+                <Width>19.98515cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -11415,9 +11416,10 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
+            <Top>0.01411cm</Top>
             <Left>0.03176cm</Left>
-            <Height>20.32579cm</Height>
-            <Width>19.98513cm</Width>
+            <Height>21.07042cm</Height>
+            <Width>19.98515cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -11436,14 +11438,14 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
             </Style>
           </Line>
         </ReportItems>
-        <Height>20.32579cm</Height>
+        <Height>21.08453cm</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>20.01689cm</Width>
+      <Width>20.01691cm</Width>
       <Page>
         <PageHeader>
           <Height>8.2962cm</Height>
