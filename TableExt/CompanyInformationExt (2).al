@@ -26,6 +26,11 @@ tableextension 50000 CompanyInformationExt extends "Company Information"
 
             caption = 'Enable Site WebServices';
         }
+        field(70002; FBM_Migration; Boolean)
+        {
+
+            caption = 'Enable Migration';
+        }
     }
     var
 }

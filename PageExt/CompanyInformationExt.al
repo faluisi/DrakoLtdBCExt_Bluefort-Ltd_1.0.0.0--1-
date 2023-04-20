@@ -4,21 +4,21 @@ pageextension 50000 CompanyInformationExt extends "Company Information"
     {
         addafter("Bank Account No.")
         {
-            field("Bank Address"; "Bank Address")
+            field("Bank Address"; rec."Bank Address")
             {
                 ApplicationArea = All;
             }
         }
         addafter(GLN)
         {
-            field("Customer Is Operator"; "Customer Is Operator")
+            field("Customer Is Operator"; rec."Customer Is Operator")
             {
                 ApplicationArea = All;
             }
         }
         addafter("VAT Registration No.")
         {
-            field("TIN Number"; "TIN Number")
+            field("TIN Number"; rec."TIN Number")
             {
                 ApplicationArea = All;
             }
@@ -31,6 +31,10 @@ pageextension 50000 CompanyInformationExt extends "Company Information"
                 ApplicationArea = All;
             }
             field(FBM_EnableSiteWS; rec.FBM_EnableSiteWS)
+            {
+                ApplicationArea = All;
+            }
+            field(FBM_Migration; rec.FBM_Migration)
             {
                 ApplicationArea = All;
             }
