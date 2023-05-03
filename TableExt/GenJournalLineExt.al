@@ -16,8 +16,14 @@ tableextension 50012 GenJournalLineExt extends "Gen. Journal Line"
 
 
         }
+        field(50011; Segment; Option)
+        {
+            caption = 'Segment ';
+            OptionMembers = " ",Bingo,Spin;
+
+        }
 
     }
-  
-  var
+
+    var
 }

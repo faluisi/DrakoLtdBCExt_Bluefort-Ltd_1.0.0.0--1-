@@ -589,14 +589,24 @@ codeunit 50000 FixedAssetDimMgt
             //if FASetup."Enable FA Site Tracking" then begin
             //check if contract dimension exists, if not create it
             ContractDim.Reset();
-            if not ContractDim.Get(FASetup."Contract Dimension", Custsite."Contract Code") then begin
-                ContractDim.Reset();
-                ContractDim.Init();
-                ContractDim."Dimension Code" := FASetup."Contract Dimension";
-                ContractDim."Code" := CustSite."Contract Code";
-                ContractDim.Name := CustSite."Contract Code";
-                ContractDim.Insert(true);
-            end;
+            if Custsite."Contract Code" <> '' then
+                if not ContractDim.Get(FASetup."Contract Dimension", Custsite."Contract Code") then begin
+                    ContractDim.Reset();
+                    ContractDim.Init();
+                    ContractDim."Dimension Code" := FASetup."Contract Dimension";
+                    ContractDim."Code" := CustSite."Contract Code";
+                    ContractDim.Name := CustSite."Contract Code";
+                    ContractDim.Insert(true);
+                end;
+            if Custsite."Contract Code2" <> '' then
+                if not ContractDim.Get(FASetup."Contract Dimension", Custsite."Contract Code2") then begin
+                    ContractDim.Reset();
+                    ContractDim.Init();
+                    ContractDim."Dimension Code" := FASetup."Contract Dimension";
+                    ContractDim."Code" := CustSite."Contract Code2";
+                    ContractDim.Name := CustSite."Contract Code2";
+                    ContractDim.Insert(true);
+                end;
             //end;
         end;
     end;

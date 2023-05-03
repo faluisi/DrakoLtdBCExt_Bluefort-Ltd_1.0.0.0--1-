@@ -31,6 +31,11 @@ tableextension 50000 CompanyInformationExt extends "Company Information"
 
             caption = 'Enable Migration';
         }
+        field(70003; FBM_EnableSpin; Boolean)
+        {
+
+            caption = 'Enable Spin';
+        }
     }
     var
 }

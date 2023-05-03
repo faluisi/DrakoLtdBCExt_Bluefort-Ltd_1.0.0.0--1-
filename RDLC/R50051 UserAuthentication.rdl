@@ -232,32 +232,18 @@
               <TablixMembers>
                 <TablixMember />
                 <TablixMember>
-                  <Group Name="Company_Name">
+                  <Group Name="User_Name">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Company_Name.Value</GroupExpression>
+                      <GroupExpression>=Fields!User_Name.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Company_Name.Value</Value>
+                      <Value>=Fields!User_Name.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
-                    <TablixMember>
-                      <Group Name="User_Name">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!User_Name.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!User_Name.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
-                      <TablixMembers>
-                        <TablixMember />
-                      </TablixMembers>
-                    </TablixMember>
+                    <TablixMember />
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>

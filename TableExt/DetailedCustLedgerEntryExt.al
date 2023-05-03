@@ -17,6 +17,12 @@ tableextension 50014 DetailedCustLedgerEntryExt extends "Detailed Cust. Ledg. En
 
 
         }
+        field(50011; Segment; Option)
+        {
+            caption = 'Segment ';
+            OptionMembers = " ",Bingo,Spin;
+
+        }
     }
     var
 }

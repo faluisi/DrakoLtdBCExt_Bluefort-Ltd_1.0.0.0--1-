@@ -79,6 +79,16 @@ table 50001 "Customer-Site"
         {
             DataClassification = ToBeClassified;
         }
+        field(14; "Contract Code2"; Code[4])
+        {
+            //this field was created to be used for indentation of pages making use if this table, if required
+            DataClassification = ToBeClassified;
+
+            trigger OnValidate()
+            begin
+                if "Contract Code" <> '' then FADimMgt.ContractDimension(Rec);
+            end;
+        }
     }
     keys
     {
@@ -91,7 +101,7 @@ table 50001 "Customer-Site"
 
 
     var
-        //FADimMgt: Codeunit FixedAssetDimMgt;
+        FADimMgt: Codeunit FixedAssetDimMgt;
         Text000: Label 'Site Code %1 already exists for Customer %2';
         Text001: Label 'Site code already exists for customer %1!';
         Text002: Label 'You cannot delete this site - it has been used in posted transactions!';

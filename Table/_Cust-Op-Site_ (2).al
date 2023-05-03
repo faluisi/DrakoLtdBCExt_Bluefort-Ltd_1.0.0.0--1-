@@ -32,6 +32,12 @@ table 50006 "Cust-Op-Site"
         {
             Clustered = true;
         }
+
+        key(key1; "Site Code 2")
+        {
+
+
+        }
     }
     var
     trigger OnInsert()

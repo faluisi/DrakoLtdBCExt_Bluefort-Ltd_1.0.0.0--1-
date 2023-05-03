@@ -11771,9 +11771,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
               <Height>10.1pt</Height>
               <Width>7.85484cm</Width>
               <ZIndex>11</ZIndex>
-              <Visibility>
-                <Hidden>true</Hidden>
-              </Visibility>
               <Style>
                 <Border>
                   <Style>None</Style>

@@ -56,12 +56,18 @@ tableextension 50007 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
             TableRelation = Currency;
 
         }
-        field(50011; "BeneficiaryBank"; text[100])
+        field(50011; Segment; Option)
+        {
+            caption = 'Segment ';
+            OptionMembers = " ",Bingo,Spin;
+
+        }
+        field(50111; "BeneficiaryBank"; text[100])
         {
             caption = 'Payment Bank Beneficiary ';
 
         }
-        field(50012; "BeneficiaryBank2"; text[100])
+        field(50112; "BeneficiaryBank2"; text[100])
         {
             caption = 'Payment Bank Beneficiary 2 ';
 

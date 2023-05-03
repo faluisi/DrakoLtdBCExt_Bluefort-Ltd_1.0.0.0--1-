@@ -1,85 +1,101 @@
 page 50001 "Customer - Site"
 {
-  PageType = List;
-  //ApplicationArea = All;
-  //UsageCategory = Lists;
-  SourceTable = "Customer-Site";
+    PageType = List;
+    //ApplicationArea = All;
+    //UsageCategory = Lists;
+    SourceTable = "Customer-Site";
 
-  layout
-  {
-    area(Content)
+    layout
     {
-      repeater(GroupName)
-      {
-        field("Site Code";rec."Site Code")
+        area(Content)
         {
-          ApplicationArea = All;
-          Caption = 'Site Code';
-        }
-        field("Site Name";rec."Site Name")
-        {
-          ApplicationArea = All;
-          Caption = 'Site Name';
-        }
-        field(Address;rec.Address)
-        {
-          ApplicationArea = All;
-        }
-        field("Address 2";rec."Address 2")
-        {
-          ApplicationArea = All;
-        }
-        field(City;rec.City)
-        {
-          ApplicationArea = All;
-        }
-        field("Post Code";rec."Post Code")
-        {
-          ApplicationArea = All;
-        }
-        field("Country/Region Code";rec."Country/Region Code")
-        {
-          ApplicationArea = All;
-        }
-        /*field(Operator; Operator)
+            repeater(GroupName)
+            {
+                field("Site Code"; rec."Site Code")
                 {
                     ApplicationArea = All;
-                    Caption = 'Operator';
-                    
-                    trigger OnLookup(var Text: Text): Boolean
-                    begin
-                        DimensionValue.reset;
-                        FASetup.Get();
+                    Caption = 'Site Code';
+                }
+                field("Site Name"; rec."Site Name")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Site Name';
+                }
+                field(Address; rec.Address)
+                {
+                    ApplicationArea = All;
+                }
+                field("Address 2"; rec."Address 2")
+                {
+                    ApplicationArea = All;
+                }
+                field(City; rec.City)
+                {
+                    ApplicationArea = All;
+                }
+                field("Post Code"; rec."Post Code")
+                {
+                    ApplicationArea = All;
+                }
+                field("Country/Region Code"; rec."Country/Region Code")
+                {
+                    ApplicationArea = All;
+                }
+                /*field(Operator; Operator)
+                        {
+                            ApplicationArea = All;
+                            Caption = 'Operator';
 
-                        DimensionValue.SetFilter(DimensionValue."Dimension Code", FASetup."Operator Dimension");
-                        DimensionValue.SetFilter(DimensionValue."Parent Code", Rec."Customer No.");
+                            trigger OnLookup(var Text: Text): Boolean
+                            begin
+                                DimensionValue.reset;
+                                FASetup.Get();
 
-                        if page.RunModal(537, DimensionValue) = Action::LookupOK then
-                            Validate(rec.Operator, DimensionValue."Code");
+                                DimensionValue.SetFilter(DimensionValue."Dimension Code", FASetup."Operator Dimension");
+                                DimensionValue.SetFilter(DimensionValue."Parent Code", Rec."Customer No.");
+
+                                if page.RunModal(537, DimensionValue) = Action::LookupOK then
+                                    Validate(rec.Operator, DimensionValue."Code");
 
 
-                    end;
-                }*/
-        //DevOps #619 -- begin
-        
-        field(Contact;rec.Contact)
-        {
-          ApplicationArea = all;
+                            end;
+                        }*/
+                //DevOps #619 -- begin
+
+                field(Contact; rec.Contact)
+                {
+                    ApplicationArea = all;
+                }
+                field("Contract Code"; rec."Contract Code")
+                {
+                    ApplicationArea = all;
+                }
+
+                field("Contract Code2"; rec."Contract Code2")
+                {
+                    ApplicationArea = all;
+                    visible = EnableSpin;
+                }
+                //DevOps #619 -- end
+            }
         }
-        field("Contract Code";rec."Contract Code")
+        area(Factboxes)
         {
-          ApplicationArea = all;
         }
-      //DevOps #619 -- end
-      }
     }
-    area(Factboxes)
+    actions
     {
     }
-  }
-  actions
-  {
-  }
-  var DimensionValue: Record "Dimension Value";
-  FASetup: Record "FA Setup";
+    trigger
+    OnAfterGetRecord()
+    begin
+        compinfo.get;
+        EnableSpin := compinfo.FBM_EnableSpin;
+    end;
+
+    var
+        DimensionValue: Record "Dimension Value";
+        FASetup: Record "FA Setup";
+        EnableSpin: Boolean;
+        compinfo: record "Company Information";
 }

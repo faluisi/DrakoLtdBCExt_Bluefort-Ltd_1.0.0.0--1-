@@ -28,10 +28,10 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
             begin
                 CustSite.Reset();
                 if CustSite.Get("Sell-to Customer No.", Site) then begin
-                    if CustSite."Contract Code" <> '' then begin
-                        Rec.Validate("Contract Code", CustSite."Contract Code");
-                        Rec.Modify();
-                    end;
+                    // if CustSite."Contract Code" <> '' then begin
+                    //     Rec.Validate("Contract Code", CustSite."Contract Code");
+                    //     Rec.Modify();
+                    // end;
                 end;
 
                 SalesLineRec.Reset();
@@ -43,6 +43,15 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
                         SalesLineRec.Site := Rec.Site;
                         SalesLineRec.Modify();
                     until SalesLineRec.Next() = 0;
+
+                if (CustSite."Contract Code" <> '') and (CustSite."Contract Code" = '') then begin
+                    Segment := Segment::Bingo;
+                    "Contract Code" := CustSite."Contract Code";
+                end;
+                if (CustSite."Contract Code" = '') and (CustSite."Contract Code" <> '') then begin
+                    Segment := Segment::Spin;
+                    "Contract Code" := CustSite."Contract Code2";
+                end;
             end;
             //DevOps #619 -- end
         }
@@ -55,6 +64,7 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
             begin
             end;
         }
+
         //DevOps #619 -- end
         //DEVOPS #622 -- begin
         field(50002; "Period Start"; Date)
@@ -115,7 +125,35 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
             TableRelation = Currency;
 
         }
+        field(50011; Segment; Option)
+        {
+            caption = 'Segment ';
+            OptionMembers = " ",Bingo,Spin;
+            trigger
 
+            OnValidate()
+            begin
+                if CustSite.Get("Sell-to Customer No.", Site) then begin
+                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code" = '') then begin
+                        Segment := Segment::Bingo;
+                        "Contract Code" := CustSite."Contract Code";
+                    end;
+                    if (CustSite."Contract Code" = '') and (CustSite."Contract Code" <> '') then begin
+                        Segment := Segment::Spin;
+                        "Contract Code" := CustSite."Contract Code2";
+                    end;
+
+                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code" <> '') then begin
+                        if segment = Segment::Bingo then
+                            "Contract Code" := CustSite."Contract Code";
+                        if segment = Segment::Spin then
+                            "Contract Code" := CustSite."Contract Code2";
+
+                    end;
+                end;
+            end;
+
+        }
 
     }
     var

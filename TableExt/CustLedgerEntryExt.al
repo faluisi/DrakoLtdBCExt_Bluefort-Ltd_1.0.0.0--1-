@@ -17,6 +17,12 @@ tableextension 50013 CustLedgerEntryExt extends "Cust. Ledger Entry"
 
 
         }
+        field(50011; Segment; Option)
+        {
+            caption = 'Segment ';
+            OptionMembers = " ",Bingo,Spin;
+
+        }
     }
 
 }
