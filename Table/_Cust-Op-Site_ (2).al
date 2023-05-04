@@ -25,6 +25,20 @@ table 50006 "Cust-Op-Site"
         {
             DataClassification = ToBeClassified;
         }
+        FIELD(100; "Site Name"; text[250])
+        {
+            FieldClass = FlowField;
+            CalcFormula = lookup("Customer-Site"."Site Name" where("Customer No." = field("Customer No."), "Site Code" = field("Site Code")));
+        }
+        FIELD(101; "Site Address"; text[250])
+        {
+            FieldClass = FlowField;
+            CalcFormula = lookup("Customer-Site".Address where("Customer No." = field("Customer No."), "Site Code" = field("Site Code")));
+        }
+        field(102; Subsidiary; Text[3])
+        {
+            DataClassification = ToBeClassified;
+        }
     }
     keys
     {

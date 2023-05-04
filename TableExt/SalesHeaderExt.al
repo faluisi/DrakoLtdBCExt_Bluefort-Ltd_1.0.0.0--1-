@@ -134,16 +134,16 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
             OnValidate()
             begin
                 if CustSite.Get("Sell-to Customer No.", Site) then begin
-                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code" = '') then begin
+                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code2" = '') then begin
                         Segment := Segment::Bingo;
                         "Contract Code" := CustSite."Contract Code";
                     end;
-                    if (CustSite."Contract Code" = '') and (CustSite."Contract Code" <> '') then begin
+                    if (CustSite."Contract Code" = '') and (CustSite."Contract Code2" <> '') then begin
                         Segment := Segment::Spin;
                         "Contract Code" := CustSite."Contract Code2";
                     end;
 
-                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code" <> '') then begin
+                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code2" <> '') then begin
                         if segment = Segment::Bingo then
                             "Contract Code" := CustSite."Contract Code";
                         if segment = Segment::Spin then

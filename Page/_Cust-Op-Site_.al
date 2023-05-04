@@ -43,6 +43,10 @@ page 50007 "Cust-Op-Site"
                 {
                     ApplicationArea = All;
                 }
+                field("Site Address"; "Site Address")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
         area(Factboxes)

@@ -46,11 +46,12 @@ page 50033 FBM_SiteAdjustCode
                         repeat
                             site.Reset();
                             site.ChangeCompany(companies.Name);
-                            site.SetRange("Site Name", sitename);
+                            site.SetRange("Site Name", rec."Site Name");
                             if site.FindFirst() then begin
                                 tsite.TransferFields(site, true);
                                 tsite.Insert();
                             end;
+                            cos.Reset();
                             cos.ChangeCompany(companies.Name);
                             cos.setrange("Customer No.", site."Customer No.");
                             cos.SetRange("Site Code", site."Site Code");
@@ -61,7 +62,7 @@ page 50033 FBM_SiteAdjustCode
                             end;
                         until companies.Next() = 0;
                         IF PAGE.RUNMODAL(50034, tsite) = ACTION::LookupOK THEN BEGIN
-
+                            tcos.Reset();
                             tcos.SetRange("Customer No.", tsite."Customer No.");
                             tcos.SetRange("Site Code", tsite."Site Code");
                             tcos.SetFilter("Site Code 2", '<>%1', '');
@@ -69,15 +70,17 @@ page 50033 FBM_SiteAdjustCode
                                 Text := tcos."Site Code 2";
                             EXIT(TRUE);
                         end;
+                        clear(tsite);
+                        Clear(tcos);
                     end;
 
                 }
-                field(sitename; sitename)
+                field("Site Name"; rec."Site Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
                 }
-                field(siteaddress; siteaddress)
+                field("Site Address"; rec."Site Address")
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -101,10 +104,8 @@ page 50033 FBM_SiteAdjustCode
 
     begin
 
-        if site.get(rec."Customer No.", rec."Site Code") then begin
-            sitename := site."Site Name";
-            siteaddress := site.Address;
-        end;
+        rec.CalcFields("Site Name");
+        rec.CalcFields("Site Address");
 
     end;
 

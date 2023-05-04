@@ -4,7 +4,7 @@ page 50034 FBM_SiteLookup
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
-    SourceTable = "Cust-Op-Site";
+    SourceTable = "Customer-Site";
 
 
     layout
@@ -13,18 +13,15 @@ page 50034 FBM_SiteLookup
         {
             repeater(Group)
             {
-                field("Site Code 2"; rec."Site Code 2")
+                field("Site Code"; "Site Code")
                 {
                     ApplicationArea = All;
                 }
-                field(sitename; sitename)
+                field(code2; code2)
                 {
                     ApplicationArea = All;
                 }
-                field(siteaddress; siteaddress)
-                {
-                    ApplicationArea = All;
-                }
+
             }
         }
 
@@ -32,17 +29,19 @@ page 50034 FBM_SiteLookup
     trigger
     OnAfterGetRecord()
     var
-        site: record "Customer-Site";
+        cos: record "Cust-Op-Site";
     begin
-        if site.get(Rec."Customer No.", rec."Site Code") then begin
-            sitename := site."Site Name";
-            siteaddress := site.Address;
+        cos.SetRange("Customer No.", rec."Customer No.");
+        cos.SetRange("Site Code", rec."Site Code");
+        if cos.FindFirst() then begin
+            code2 := cos."Site Code 2";
+
 
         end;
 
     end;
 
     var
-        sitename: Text;
-        siteaddress: Text;
+        code2: Text;
+
 }
