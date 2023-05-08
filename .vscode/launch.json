@@ -110,6 +110,24 @@
       "enableLongRunningSqlStatements": true,
       "longRunningSqlStatementsThreshold": 500,
       "numberOfSqlStatements": 10
+  },
+  {
+    "name": "Debug",
+    "type": "al",
+    "request": "launch",
+    "server": "http://svrd-c13",
+    "serverInstance": "bc220",
+    "port": 7089,
+    "authentication": "UserPassword",
+    "startupObjectId": 22,
+    "breakOnError": true,
+    "breakOnRecordWrite": false,
+    "launchBrowser": true,
+    "enableSqlInformationDebugger": true,
+    "enableLongRunningSqlStatements": true,
+    "longRunningSqlStatementsThreshold": 500,
+    "numberOfSqlStatements": 10,
+    "schemaUpdateMode": "ForceSync"
   }
      
   ]

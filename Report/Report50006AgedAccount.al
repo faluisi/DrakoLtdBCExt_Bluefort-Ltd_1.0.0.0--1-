@@ -399,6 +399,8 @@ report 50015 "Aged Accounts Receivable New"
                         { }
                         column(CustomerSite; VarCustomerSite)
                         { }
+                        column(segment; CustLedgEntryEndingDate.Segment)
+                        { }
                         trigger OnAfterGetRecord()
                         var
                             PeriodIndex: Integer;

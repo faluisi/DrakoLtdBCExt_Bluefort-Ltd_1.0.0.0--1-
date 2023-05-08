@@ -44,11 +44,11 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
                         SalesLineRec.Modify();
                     until SalesLineRec.Next() = 0;
 
-                if (CustSite."Contract Code" <> '') and (CustSite."Contract Code" = '') then begin
+                if (CustSite."Contract Code" <> '') and (CustSite."Contract Code2" = '') then begin
                     Segment := Segment::Bingo;
                     "Contract Code" := CustSite."Contract Code";
                 end;
-                if (CustSite."Contract Code" = '') and (CustSite."Contract Code" <> '') then begin
+                if (CustSite."Contract Code" = '') and (CustSite."Contract Code2" <> '') then begin
                     Segment := Segment::Spin;
                     "Contract Code" := CustSite."Contract Code2";
                 end;

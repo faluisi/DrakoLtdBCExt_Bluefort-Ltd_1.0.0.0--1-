@@ -55,6 +55,11 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
             field("Contract Code"; rec."Contract Code")
             {
                 ApplicationArea = All;
+                Editable = false;
+            }
+            field(Segment; rec.Segment)
+            {
+                ApplicationArea = All;
             }
             //DevOps #619 -- end
             //DEVOPS #622 -- begin

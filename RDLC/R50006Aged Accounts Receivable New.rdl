@@ -8280,6 +8280,9 @@ End Function
         <Field Name="CustomerSite">
           <DataField>CustomerSite</DataField>
         </Field>
+        <Field Name="segment">
+          <DataField>segment</DataField>
+        </Field>
         <Field Name="CurrNo">
           <DataField>CurrNo</DataField>
         </Field>
