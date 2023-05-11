@@ -20,7 +20,7 @@ table 50001 "Customer-Site"
             trigger OnValidate()
             var
             begin
-                //FADimMgt.ModifySiteDim(xRec, Rec);
+                FADimMgt.ModifySiteDim(xRec, Rec);
             end;
         }
         field(4; Operator; Code[20])
@@ -68,7 +68,7 @@ table 50001 "Customer-Site"
 
             trigger OnValidate()
             begin
-                //if "Contract Code" <> '' then FADimMgt.ContractDimension(Rec);
+                if "Contract Code" <> '' then FADimMgt.ContractDimension(Rec);
             end;
         }
         field(12; Contact; Text[250])
@@ -86,7 +86,7 @@ table 50001 "Customer-Site"
 
             trigger OnValidate()
             begin
-                if "Contract Code" <> '' then FADimMgt.ContractDimension(Rec);
+                if "Contract Code2" <> '' then FADimMgt.ContractDimension(Rec);
             end;
         }
     }
@@ -111,13 +111,13 @@ table 50001 "Customer-Site"
     begin
         //check for unique site code
         CheckUniqueSite(Rec."Site Code");
-        //FADimMgt.CreateSiteDim(Rec);
-        //UpdateCustOpSite(Rec);
+        FADimMgt.CreateSiteDim(Rec);
+        UpdateCustOpSite(Rec);
     end;
 
     trigger OnModify()
     begin
-        //FADimMgt.UpdateSiteDim(Rec);
+        FADimMgt.UpdateSiteDim(Rec);
     end;
 
     trigger OnDelete()
@@ -144,7 +144,7 @@ table 50001 "Customer-Site"
 
     trigger OnRename()
     begin
-        //FADimMgt.RenameSiteDim(xRec, Rec);
+        FADimMgt.RenameSiteDim(xRec, Rec);
     end;
 
     procedure CheckUniqueSite(SiteCode: Code[20])

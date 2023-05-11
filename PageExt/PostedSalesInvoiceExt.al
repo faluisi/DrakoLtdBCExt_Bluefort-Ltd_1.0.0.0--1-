@@ -4,7 +4,11 @@ pageextension 50025 PostedSalesInvoiceExt extends "Posted Sales Invoice"
     {
         addafter("External Document No.")
         {
-            field(Site; Site)
+            field(Site; rec.Site)
+            {
+                ApplicationArea = All;
+            }
+            field(Segment; rec.Segment)
             {
                 ApplicationArea = All;
             }
@@ -12,7 +16,7 @@ pageextension 50025 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             field("Contract Code"; rec."Contract Code")
             {
                 ApplicationArea = All;
-                Editable = false;
+                //Editable = false;
             }
             //DevOps #619 -- end
             //DEVOPS #622 -- begin

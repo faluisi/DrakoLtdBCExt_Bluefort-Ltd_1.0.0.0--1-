@@ -4,7 +4,11 @@ pageextension 50018 FixedAssetListExt extends "Fixed Asset List"
     {
         addafter("No.")
         {
-            field("Serial No."; "Serial No.")
+            field("Serial No."; rec."Serial No.")
+            {
+                ApplicationArea = all;
+            }
+            field(Is_EGM; rec.Is_EGM)
             {
                 ApplicationArea = all;
             }

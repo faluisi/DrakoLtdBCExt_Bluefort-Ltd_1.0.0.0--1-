@@ -6,6 +6,36 @@ tableextension 50003 SalesInvoiceHederExt extends "Sales Invoice Header"
         {
             Caption = 'Site';
             TableRelation = "Cust-Op-Site"."Site Code";
+            trigger OnValidate()
+            begin
+                CustSite.Reset();
+                if CustSite.Get("Sell-to Customer No.", Site) then begin
+                    // if CustSite."Contract Code" <> '' then begin
+                    //     Rec.Validate("Contract Code", CustSite."Contract Code");
+                    //     Rec.Modify();
+                    // end;
+                end;
+
+                SalesLineRec.Reset();
+                SalesLineRec.SetRange("Document No.", Rec."No.");
+                SalesLineRec.SetRange("Document Type", SalesLineRec."Document Type"::Invoice);
+                // SalesLineRec.SetRange(Type, SalesLineRec.Type::Item);
+                IF SalesLineRec.FindSet() THEN
+                    repeat
+                        SalesLineRec.Site := Rec.Site;
+                        SalesLineRec.Modify();
+                    until SalesLineRec.Next() = 0;
+
+                if (CustSite."Contract Code" <> '') and (CustSite."Contract Code2" = '') then begin
+                    Segment := Segment::Bingo;
+                    "Contract Code" := CustSite."Contract Code";
+                end;
+                if (CustSite."Contract Code" = '') and (CustSite."Contract Code2" <> '') then begin
+                    Segment := Segment::Spin;
+                    "Contract Code" := CustSite."Contract Code2";
+                end;
+            end;
+            //DevOps #619 -- end
         }
         //DevOps #619 -- begin
         field(50001; "Contract Code"; Code[4])
@@ -80,8 +110,36 @@ tableextension 50003 SalesInvoiceHederExt extends "Sales Invoice Header"
         {
             caption = 'Segment ';
             OptionMembers = " ",Bingo,Spin;
+            trigger
+
+            OnValidate()
+            begin
+                if CustSite.Get("Sell-to Customer No.", Site) then begin
+                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code2" = '') then begin
+                        Segment := Segment::Bingo;
+                        "Contract Code" := CustSite."Contract Code";
+                    end;
+                    if (CustSite."Contract Code" = '') and (CustSite."Contract Code2" <> '') then begin
+                        Segment := Segment::Spin;
+                        "Contract Code" := CustSite."Contract Code2";
+                    end;
+
+                    if (CustSite."Contract Code" <> '') and (CustSite."Contract Code2" <> '') then begin
+                        if segment = Segment::Bingo then
+                            "Contract Code" := CustSite."Contract Code";
+                        if segment = Segment::Spin then
+                            "Contract Code" := CustSite."Contract Code2";
+
+                    end;
+                end;
+            end;
 
         }
     }
     var
+        Cust: Record Customer;
+        SalesLineRec: Record "Sales Line";
+        Text000: Label 'This customer requires Separate Halls Invoicing.';
+        Text001: Label 'This customer requires one invoice for all Halls.';
+        CustSite: Record "Customer-Site";
 }

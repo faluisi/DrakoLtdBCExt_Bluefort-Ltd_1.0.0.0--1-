@@ -14,6 +14,9 @@ query 50003 "Curr. Exch. Rate"
             column(Exchange_Rate_Amount; "Exchange Rate Amount")
             {
             }
+            column(SystemModifiedAt; SystemModifiedAt)
+            {
+            }
         }
     }
 }

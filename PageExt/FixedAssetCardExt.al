@@ -8,6 +8,18 @@ pageextension 50019 FixedAssetCardExt extends "Fixed Asset Card"
             {
                 ApplicationArea = all;
             }
+            field(Status; rec.Status)
+            {
+                ApplicationArea = all;
+            }
+        }
+        addafter("FA Subclass Code")
+        {
+            field(Is_EGM; rec.Is_EGM)
+            {
+                ApplicationArea = all;
+            }
+
         }
 
         addafter("Responsible Employee")

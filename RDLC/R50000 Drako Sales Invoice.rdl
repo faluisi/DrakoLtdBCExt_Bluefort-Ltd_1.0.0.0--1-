@@ -8806,6 +8806,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BankDetails21</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -8976,6 +8979,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BankDetails22</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -9317,6 +9323,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BeneficiaryBank2</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -9487,6 +9496,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BankDetails23</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -9657,6 +9669,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BankDetails24</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -9827,6 +9842,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BankDetails25</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -9999,6 +10017,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BankDetails26</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -10193,6 +10214,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>BankDetails27</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -10203,6 +10227,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                 </Style>
                                               </Textbox>
                                               <ColSpan>3</ColSpan>
+                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                           <TablixCell />

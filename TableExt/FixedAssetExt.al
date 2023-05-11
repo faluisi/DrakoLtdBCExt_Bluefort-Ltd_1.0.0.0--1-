@@ -40,6 +40,13 @@ tableextension 50016 FixedAssetExt extends "Fixed Asset"
             Caption = 'FA Status';
 
         }
+        field(50007; Is_EGM; Boolean)
+        {
+            Caption = 'Is EGM';
+            FieldClass = FlowField;
+            CalcFormula = lookup("FA Subclass".EGM where(code = field("FA Subclass Code")));
+
+        }
 
 
     }
