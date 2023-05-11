@@ -60,22 +60,7 @@
       "schemaUpdateMode": "ForceSync"
       
   },
-    {
-      "type": "al",
-            "request": "launch",
-            "name": "Your own server",
-            "server": "http://localhost:1478",
-            "serverInstance": "BC150",
-            "authentication": "Windows",
-            "startupObjectId": 22,
-            "startupObjectType": "Page",
-            "breakOnError": true,
-            "launchBrowser": true,
-            "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true,
-            "port": 5005,
-            "schemaUpdateMode": "ForceSync"
-    },
+    
     {
       "name": "Debug",
       "type": "al",
@@ -115,7 +100,7 @@
     "name": "Debug",
     "type": "al",
     "request": "launch",
-    "server": "http://svrd-c13",
+    "server": "http://192.168.103.125",
     "serverInstance": "bc220",
     "port": 7089,
     "authentication": "UserPassword",

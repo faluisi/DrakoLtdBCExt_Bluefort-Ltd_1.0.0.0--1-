@@ -8633,6 +8633,9 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   </Paragraph>
                                                 </Paragraphs>
                                                 <rd:DefaultName>Textbox118</rd:DefaultName>
+                                                <Visibility>
+                                                  <Hidden>=IIf(Fields!Currency2.Value = "", TRUE, FALSE)</Hidden>
+                                                </Visibility>
                                                 <Style>
                                                   <Border>
                                                     <Color>LightGrey</Color>
@@ -11448,7 +11451,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
       <Width>20.01691cm</Width>
       <Page>
         <PageHeader>
-          <Height>8.2962cm</Height>
+          <Height>8.45495cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -12369,6 +12372,37 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 </Border>
               </Style>
             </Line>
+            <Textbox Name="Textbox17">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!Segment.Value, "DataSet_Result") +" / "+First(Fields!Contract_Code.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>7.71384cm</Top>
+              <Left>11.3456cm</Left>
+              <Height>0.57221cm</Height>
+              <Width>8.30378cm</Width>
+              <ZIndex>35</ZIndex>
+              <Visibility>
+                <Hidden>=Not(Fields!HasSite.Value)</Hidden>
+              </Visibility>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -12570,6 +12604,12 @@ BgYdYZSFgYGBgUFJGGVhYGBgYFASRlkYGBgYGJSEURYGBgYGBiVhlIWBgYGBQUkYZWFgYGBgUAKM/R/5
         </Field>
         <Field Name="ForPaymentCaption">
           <DataField>ForPaymentCaption</DataField>
+        </Field>
+        <Field Name="Segment">
+          <DataField>Segment</DataField>
+        </Field>
+        <Field Name="Contract_Code">
+          <DataField>Contract_Code</DataField>
         </Field>
         <Field Name="HomePage">
           <DataField>HomePage</DataField>

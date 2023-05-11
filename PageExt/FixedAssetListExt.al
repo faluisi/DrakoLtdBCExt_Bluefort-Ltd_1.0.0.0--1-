@@ -12,7 +12,7 @@ pageextension 50018 FixedAssetListExt extends "Fixed Asset List"
 
         addafter("FA Class Code")
         {
-            field("Fa Posting Group Depr"; "Fa Posting Group Depr")
+            field("Fa Posting Group Depr"; rec."Fa Posting Group Depr")
             {
                 ApplicationArea = all;
             }

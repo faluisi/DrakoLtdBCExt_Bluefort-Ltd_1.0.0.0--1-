@@ -35,6 +35,11 @@ tableextension 50016 FixedAssetExt extends "Fixed Asset"
             FieldClass = FlowField;
             CalcFormula = lookup("FA Depreciation Book"."FA Posting Group" where("FA No." = field("No."), "Depreciation Book Code" = filter('COMPANY')));
         }
+        field(50006; Status; Enum "FA Status")
+        {
+            Caption = 'FA Status';
+
+        }
 
 
     }

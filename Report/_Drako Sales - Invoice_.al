@@ -95,6 +95,12 @@ report 50000 "Drako Sales - Invoice"
             column(ForPaymentCaption; ForPaymentCaption)
             {
             }
+            column(Segment; Segment)
+            {
+            }
+            column(Contract_Code; "Contract Code")
+            {
+            }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
