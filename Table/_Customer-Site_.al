@@ -176,7 +176,7 @@ table 50001 "Customer-Site"
                 end;
             end;
         end;
-        COS.Insert();
+
         //end;
         //end;
     end;

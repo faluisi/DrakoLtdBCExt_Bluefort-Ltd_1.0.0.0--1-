@@ -1,4 +1,4 @@
-tableextension 50034 FASubclssesExit extends "FA Subclass"
+tableextension 50134 FASubclssesExit extends "FA Subclass"
 {
     fields
     {

@@ -1,4 +1,4 @@
-pageextension 50052 FASubclass extends "FA Subclasses"
+pageextension 50152 FASubclass extends "FA Subclasses"
 {
     layout
     {
