@@ -1,21 +1,21 @@
 pageextension 50009 PurchQuoteSubformExt extends "Purchase Quote Subform"
 {
-  layout
-  {
-    modify("VAT Prod. Posting Group")
+    layout
     {
-    Visible = true;
+        modify("VAT Prod. Posting Group")
+        {
+            Visible = true;
+        }
+        addafter("VAT Prod. Posting Group")
+        {
+            field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
+            {
+                ApplicationArea = all;
+            }
+        }
     }
-    addafter("VAT Prod. Posting Group")
+    actions
     {
-      field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
-      {
-        ApplicationArea = all;
-      }
     }
-  }
-  actions
-  {
-  }
-  var
+    var
 }

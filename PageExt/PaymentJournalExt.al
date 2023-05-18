@@ -13,7 +13,7 @@ pageextension 50045 PaymentJournalExt extends "Payment Journal"
         }
         addafter("Bal. Account No.")
         {
-            field("Check No. PHL"; rec."Check No. PHL")
+            field("Check No. PHL"; rec."Check No. PHL")//restore
             {
                 ApplicationArea = all;
             }
