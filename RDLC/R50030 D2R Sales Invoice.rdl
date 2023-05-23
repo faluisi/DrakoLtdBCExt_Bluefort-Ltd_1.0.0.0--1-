@@ -1812,7 +1812,6 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <PaddingBottom>2pt</PaddingBottom>
                                                 </Style>
                                               </Textbox>
-                                              <rd:Selected>true</rd:Selected>
                                             </CellContents>
                                           </TablixCell>
                                         </TablixCells>
@@ -4283,7 +4282,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value>                                                                                 Phone:   </Value>
+                                                        <Value>                                                                                   Phone:   </Value>
                                                         <Style />
                                                       </TextRun>
                                                       <TextRun>
@@ -4569,6 +4568,22 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                                     <PaddingBottom>2pt</PaddingBottom>
                                   </Style>
                                 </Textbox>
+                                <Image Name="Image1">
+                                  <Source>Database</Source>
+                                  <Value>=Fields!signature_pic.Value</Value>
+                                  <MIMEType>image/jpeg</MIMEType>
+                                  <Sizing>FitProportional</Sizing>
+                                  <Top>17.08947cm</Top>
+                                  <Left>6.14829cm</Left>
+                                  <Height>2.24812cm</Height>
+                                  <Width>5.25639cm</Width>
+                                  <ZIndex>10</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Style>
@@ -5822,6 +5837,9 @@ End Function
         </Field>
         <Field Name="DisplayAdditionalFeeNote">
           <DataField>DisplayAdditionalFeeNote</DataField>
+        </Field>
+        <Field Name="signature_pic">
+          <DataField>signature_pic</DataField>
         </Field>
         <Field Name="HomePage">
           <DataField>HomePage</DataField>

@@ -3,7 +3,7 @@ report 50030 "D2R Sales - Invoice"
     DefaultLayout = RDLC;
     RDLCLayout = './RDLC/R50030 D2R Sales Invoice.rdl';
     Caption = 'Sales Invoice';
-    Permissions = TableData "Sales Shipment Buffer" = rimd;
+    Permissions = TableData "Sales Shipment Buffer" = rimd, tabledata "Sales Invoice Header" = rimd;
     PreviewMode = PrintLayout;
 
     dataset
@@ -82,6 +82,9 @@ report 50030 "D2R Sales - Invoice"
             }
             column(DisplayAdditionalFeeNote;
             DisplayAdditionalFeeNote)
+            {
+            }
+            column(signature_pic; signature_pic)
             {
             }
             dataitem(CopyLoop;
@@ -1420,10 +1423,24 @@ report 50030 "D2R Sales - Invoice"
                     OutputNo := 1;
                 end;
             }
+
+
             trigger OnAfterGetRecord()
             var
                 Handled: Boolean;
+                mediaid: Guid;
             begin
+                if usersetup.get("Sales Invoice Header"."User ID") then
+                begin
+                    mediaid := usersetup."Signature PHL".Item(1);
+                    "Sales Invoice Header".signature_pic.Insert(mediaid);
+                    "Sales Invoice Header".Modify();
+                end;
+                //FOR Index := 1 to "Sales Invoice Header".signature_pic.COUNT DO BEGIN
+                IF TenantMedia.GET("Sales Invoice Header".signature_pic.Item(1)) THEN BEGIN
+                    TenantMedia.CALCFIELDS(Content);
+                END;
+                // END;
                 glentry.SetRange("Document No.", "Sales Invoice Header"."No.");
                 if glentry.FindFirst() then begin end;
                 CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
@@ -1720,7 +1737,11 @@ report 50030 "D2R Sales - Invoice"
         user: record User;
         prepby: Text;
         apprby: Text;
-    //BFT-001 -- end
+        //BFT-001 -- end
+        usersetup: record "User Setup";
+        index: integer;
+        TenantMedia: record "Tenant Media";
+
     procedure InitLogInteraction()
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';

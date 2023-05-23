@@ -36,6 +36,15 @@ pageextension 50026 PostedSalesCrMemoExt extends "Posted Sales Credit Memo"
                 Editable = false;
             }
         }
+        addlast(factboxes)
+        {
+
+            part(signature; Factbox_SCH)
+            {
+
+                SubPageLink = "No." = field("No.");
+            }
+        }
     }
     actions
     {

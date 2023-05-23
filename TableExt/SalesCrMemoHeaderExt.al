@@ -62,6 +62,12 @@ tableextension 50007 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
             OptionMembers = " ",Bingo,Spin;
 
         }
+        field(50012; signature_pic; MediaSet)
+        {
+            caption = 'Signature';
+
+
+        }
         field(50111; "BeneficiaryBank"; text[100])
         {
             caption = 'Payment Bank Beneficiary ';

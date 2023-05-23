@@ -2,6 +2,22 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
 {
     layout
     {
+        modify("Sell-to Customer No.")
+        {
+            trigger
+            OnAfterValidate()
+            var
+                mediaid: Guid;
+            begin
+                if usersetup.get(UserId) then begin
+                    mediaid := usersetup."Signature PHL".Item(1);
+                    rec.signature_pic.Insert(mediaid);
+                    rec.Modify();
+
+                end;
+
+            end;
+        }
         addafter("External Document No.")
         {
             field("Posting No."; rec."Posting No.")
@@ -71,7 +87,10 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
             {
                 ApplicationArea = all;
             }
-
+            field(signature_pic; rec.signature_pic)
+            {
+                ApplicationArea = all;
+            }
 
             //DEVOPS #622 -- end
 
@@ -115,9 +134,22 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
 
             Visible = false;
         }
+        addlast(factboxes)
+        {
+
+            part(signature; Factbox_SI)
+            {
+
+                SubPageLink = "No." = field("No.");
+            }
+        }
+
     }
+
+
     actions
     {
     }
     var
+        usersetup: record "User Setup";
 }

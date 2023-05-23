@@ -153,6 +153,13 @@ tableextension 50006 SalesHaderExt extends "Sales Header"
                 end;
             end;
 
+
+        }
+        field(50012; signature_pic; MediaSet)
+        {
+            caption = 'Signature';
+
+
         }
 
     }

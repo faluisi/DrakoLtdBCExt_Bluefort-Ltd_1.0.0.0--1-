@@ -96,6 +96,12 @@ tableextension 50003 SalesInvoiceHederExt extends "Sales Invoice Header"
             TableRelation = Currency;
 
         }
+        field(50012; signature_pic; MediaSet)
+        {
+            caption = 'Signature';
+
+
+        }
         field(50111; "BeneficiaryBank"; text[100])
         {
             caption = 'Payment Bank Beneficiary ';

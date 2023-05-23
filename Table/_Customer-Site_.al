@@ -23,6 +23,12 @@ table 50001 "Customer-Site"
                 FADimMgt.ModifySiteDim(xRec, Rec);
             end;
         }
+        field(33; "Site Name 2"; Text[250])
+        {
+            DataClassification = ToBeClassified;
+
+
+        }
         field(4; Operator; Code[20])
         {
             DataClassification = ToBeClassified;

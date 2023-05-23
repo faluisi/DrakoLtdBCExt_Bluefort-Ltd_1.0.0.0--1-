@@ -44,6 +44,7 @@ pageextension 50025 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 ApplicationArea = all;
                 Editable = false;
             }
+
         }
         addafter("Currency Code")
         {
@@ -64,6 +65,15 @@ pageextension 50025 PostedSalesInvoiceExt extends "Posted Sales Invoice"
         {
 
             Visible = false;
+        }
+        addlast(factboxes)
+        {
+
+            part(signature; Factbox_SIH)
+            {
+
+                SubPageLink = "No." = field("No.");
+            }
         }
     }
     actions

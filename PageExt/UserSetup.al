@@ -1,17 +1,18 @@
 pageextension 50044 UserSetup extends "User Setup"
 {
-  layout
-  {
-    addafter("Time Sheet Admin.")
+    layout
     {
-      field("See LCY in Journals";"See LCY in Journals")
-      {
-        ApplicationArea = All;
-      }
+        addafter("Time Sheet Admin.")
+        {
+            field("See LCY in Journals"; rec."See LCY in Journals")
+            {
+                ApplicationArea = All;
+            }
+
+        }
     }
-  }
-  actions
-  {
-  }
-  var
+    actions
+    {
+    }
+    var
 }
