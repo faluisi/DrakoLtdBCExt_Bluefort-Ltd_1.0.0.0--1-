@@ -38,7 +38,11 @@ pageextension 50000 CompanyInformationExt extends "Company Information"
             {
                 ApplicationArea = All;
             }
-            field(FBM_EnableSpin; FBM_EnableSpin)
+            field(FBM_EnableSpin; rec.FBM_EnableSpin)
+            {
+                ApplicationArea = All;
+            }
+            field(FBM_EnableAppr; rec.FBM_EnableAppr)
             {
                 ApplicationArea = All;
             }

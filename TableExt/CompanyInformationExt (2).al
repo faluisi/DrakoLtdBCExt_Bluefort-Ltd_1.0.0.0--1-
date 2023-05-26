@@ -36,6 +36,11 @@ tableextension 50000 CompanyInformationExt extends "Company Information"
 
             caption = 'Enable Spin';
         }
+        field(70004; FBM_EnableAppr; Boolean)
+        {
+
+            caption = 'Enable Approvals';
+        }
     }
     var
 }

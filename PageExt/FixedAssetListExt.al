@@ -37,11 +37,11 @@ pageextension 50018 FixedAssetListExt extends "Fixed Asset List"
 
                     trigger OnAction()
                     begin
-                        Clear(FAMH);
-                        Clear(FAMHP);
-                        FAMH.SetFilter(FAMH."FA No.", Rec."No.");
-                        FAMHP.SetTableView(FAMH);
-                        FAMHP.RunModal();
+                        // Clear(FAMH);
+                        // Clear(FAMHP);
+                        // FAMH.SetFilter(FAMH."FA No.", Rec."No.");
+                        // FAMHP.SetTableView(FAMH);
+                        // FAMHP.RunModal();
                     end;
                 }
                 action("Import Movement History - Direct")
@@ -94,10 +94,10 @@ pageextension 50018 FixedAssetListExt extends "Fixed Asset List"
         }
     }
     var
-        FAMHP: Page "FA Movement History";
-        FAMH: Record "FA Movement History";
-        ImportFAMHCIP: XmlPort "Import FAMH - Cust Is Op";
-        ImportFAMHCNP: XmlPort "Import FAMH - Cust Not Op";
+        // FAMHP: Page "FA Movement History";
+        // FAMH: Record "FA Movement History";
+        // ImportFAMHCIP: XmlPort "Import FAMH - Cust Is Op";
+        // ImportFAMHCNP: XmlPort "Import FAMH - Cust Not Op";
         FADimP: Page "Default Dimensions";
         DefaultDims: Record "Default Dimension";
         FADefDims: Record "Default Dimension";

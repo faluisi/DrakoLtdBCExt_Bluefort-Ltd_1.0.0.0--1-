@@ -421,7 +421,7 @@ codeunit 50000 FixedAssetDimMgt
     procedure AssignFADimension()
     var
         FA: Record "Fixed Asset";
-        FAMH: Record "FA Movement History";
+        //FAMH: Record "FA Movement History";
         DefDim_FA: Record "Default Dimension";
         Customer: Record Customer;
         FASetup: Record "FA Setup";
@@ -433,82 +433,82 @@ codeunit 50000 FixedAssetDimMgt
         FASetup.Get();
         if FASetup."Enable FA Site Tracking" then begin
             if FA.FindFirst() then begin
-                repeat begin
-                    FAMH.Reset();
-                    FAMH.setfilter(FAMH."FA No.", FA."No.");
-                    FAMH.SetCurrentKey("Entry No.");
-                    if FAMH.FindLast() then begin
-                        //assign dimensions as default dims. to FA record
-                        //get site code
-                        SDimVal.Reset();
-                        SDimVal.SetFilter(SDimVal."Dimension Code", FASetup."Site Dimension");
-                        SDimVal.SetFilter(SDimVal.Name, FAMH.Site);
-                        if SDimVal.FindFirst() then begin
-                            DefDim_FA.Reset();
-                            DefDim_FA.SetFilter(DefDim_FA."Table ID", '5600');
-                            DefDim_FA.SetFilter(DefDim_FA."Dimension Code", FASetup."Site Dimension");
-                            DefDim_FA.SetFilter(DefDim_FA."No.", FA."No.");
-                            if not DefDim_FA.FindFirst() then begin
-                                DefDim_FA.Init();
-                                DefDim_FA."Table ID" := 5600;
-                                DefDim_FA."No." := FA."No.";
-                                DefDim_FA."Dimension Code" := FASetup."Site Dimension";
-                                DefDim_FA."Dimension Value Code" := SDimVal.Code;
-                                DefDim_FA.Insert();
-                            end
-                            else begin
-                                DefDim_FA."Dimension Value Code" := SDimVal.Code;
-                                DefDim_FA.Modify();
-                            end;
-                        end;
-                        //get customer & operator from corporate name
-                        Customer.Reset();
-                        Customer.SetFilter(Customer.Name, FAMH."Customer Name");
-                        if Customer.FindFirst() then begin
-                            DefDim_FA.Reset();
-                            DefDim_FA.SetFilter(DefDim_FA."Table ID", '5600');
-                            DefDim_FA.SetFilter(DefDim_FA."Dimension Code", FASetup."Customer Dimension");
-                            DefDim_FA.SetFilter(DefDim_FA."No.", FA."No.");
-                            if not DefDim_FA.FindFirst() then begin
-                                //customer
-                                DefDim_FA.Init();
-                                DefDim_FA."Table ID" := 5600;
-                                DefDim_FA."No." := FA."No.";
-                                DefDim_FA."Dimension Code" := FASetup."Customer Dimension";
-                                DefDim_FA."Dimension Value Code" := Customer."No.";
-                                DefDim_FA.Insert();
-                            end
-                            else begin
-                                DefDim_FA."Dimension Value Code" := Customer."No.";
-                                DefDim_FA.Modify();
-                            end;
-                            //operator
-                            ODimVal.Reset();
-                            ODimVal.SetFilter(ODimVal."Dimension Code", FASetup."Operator Dimension");
-                            ODimVal.SetFilter(ODimVal.Name, FAMH."Corporate Name");
-                            IF ODimVal.FindFirst() then begin
-                                DefDim_FA.Reset();
-                                DefDim_FA.SetFilter(DefDim_FA."Table ID", '5600');
-                                DefDim_FA.SetFilter(DefDim_FA."Dimension Code", FASetup."Operator Dimension");
-                                DefDim_FA.SetFilter(DefDim_FA."No.", FA."No.");
-                                if not DefDim_FA.FindFirst() then begin
-                                    DefDim_FA.Init();
-                                    DefDim_FA."Table ID" := 5600;
-                                    DefDim_FA."No." := FA."No.";
-                                    DefDim_FA."Dimension Code" := FASetup."Operator Dimension";
-                                    DefDim_FA."Dimension Value Code" := ODimVal.Code; //since in FBM scenario, customer = operator
-                                    DefDim_FA.Insert();
-                                end
-                                else begin
-                                    DefDim_FA."Dimension Value Code" := ODimVal.Code;
-                                    DefDim_FA.Modify();
-                                end;
-                            end;
+                // repeat begin
+                // FAMH.Reset();
+                // FAMH.setfilter(FAMH."FA No.", FA."No.");
+                // FAMH.SetCurrentKey("Entry No.");
+                // if FAMH.FindLast() then begin
+                //assign dimensions as default dims. to FA record
+                //get site code
+                SDimVal.Reset();
+                SDimVal.SetFilter(SDimVal."Dimension Code", FASetup."Site Dimension");
+                // SDimVal.SetFilter(SDimVal.Name, FAMH.Site);
+                if SDimVal.FindFirst() then begin
+                    DefDim_FA.Reset();
+                    DefDim_FA.SetFilter(DefDim_FA."Table ID", '5600');
+                    DefDim_FA.SetFilter(DefDim_FA."Dimension Code", FASetup."Site Dimension");
+                    DefDim_FA.SetFilter(DefDim_FA."No.", FA."No.");
+                    if not DefDim_FA.FindFirst() then begin
+                        DefDim_FA.Init();
+                        DefDim_FA."Table ID" := 5600;
+                        DefDim_FA."No." := FA."No.";
+                        DefDim_FA."Dimension Code" := FASetup."Site Dimension";
+                        DefDim_FA."Dimension Value Code" := SDimVal.Code;
+                        DefDim_FA.Insert();
+                    end
+                    else begin
+                        DefDim_FA."Dimension Value Code" := SDimVal.Code;
+                        DefDim_FA.Modify();
+                    end;
+                end;
+                //get customer & operator from corporate name
+                Customer.Reset();
+                // Customer.SetFilter(Customer.Name, FAMH."Customer Name");
+                if Customer.FindFirst() then begin
+                    DefDim_FA.Reset();
+                    DefDim_FA.SetFilter(DefDim_FA."Table ID", '5600');
+                    DefDim_FA.SetFilter(DefDim_FA."Dimension Code", FASetup."Customer Dimension");
+                    DefDim_FA.SetFilter(DefDim_FA."No.", FA."No.");
+                    if not DefDim_FA.FindFirst() then begin
+                        //customer
+                        DefDim_FA.Init();
+                        DefDim_FA."Table ID" := 5600;
+                        DefDim_FA."No." := FA."No.";
+                        DefDim_FA."Dimension Code" := FASetup."Customer Dimension";
+                        DefDim_FA."Dimension Value Code" := Customer."No.";
+                        DefDim_FA.Insert();
+                    end
+                    else begin
+                        DefDim_FA."Dimension Value Code" := Customer."No.";
+                        DefDim_FA.Modify();
+                    end;
+                    //operator
+                    ODimVal.Reset();
+                    ODimVal.SetFilter(ODimVal."Dimension Code", FASetup."Operator Dimension");
+                    // ODimVal.SetFilter(ODimVal.Name, FAMH."Corporate Name");
+                    IF ODimVal.FindFirst() then begin
+                        DefDim_FA.Reset();
+                        DefDim_FA.SetFilter(DefDim_FA."Table ID", '5600');
+                        DefDim_FA.SetFilter(DefDim_FA."Dimension Code", FASetup."Operator Dimension");
+                        DefDim_FA.SetFilter(DefDim_FA."No.", FA."No.");
+                        if not DefDim_FA.FindFirst() then begin
+                            DefDim_FA.Init();
+                            DefDim_FA."Table ID" := 5600;
+                            DefDim_FA."No." := FA."No.";
+                            DefDim_FA."Dimension Code" := FASetup."Operator Dimension";
+                            DefDim_FA."Dimension Value Code" := ODimVal.Code; //since in FBM scenario, customer = operator
+                            DefDim_FA.Insert();
+                        end
+                        else begin
+                            DefDim_FA."Dimension Value Code" := ODimVal.Code;
+                            DefDim_FA.Modify();
                         end;
                     end;
                 end;
-                until (FA.Next = 0);
             end;
+            // end;
+            // until (FA.Next = 0);
+            // end;
         end;
     end;
 

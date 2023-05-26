@@ -95,11 +95,11 @@ pageextension 50019 FixedAssetCardExt extends "Fixed Asset Card"
 
                     trigger OnAction()
                     begin
-                        Clear(FAMH);
-                        Clear(FAMHP);
-                        FAMH.SetFilter(FAMH."FA No.", Rec."No.");
-                        FAMHP.SetTableView(FAMH);
-                        FAMHP.RunModal();
+                        // Clear(FAMH);
+                        // Clear(FAMHP);
+                        // FAMH.SetFilter(FAMH."FA No.", Rec."No.");
+                        // FAMHP.SetTableView(FAMH);
+                        // FAMHP.RunModal();
                     end;
                 }
             }
@@ -131,12 +131,12 @@ pageextension 50019 FixedAssetCardExt extends "Fixed Asset Card"
         }
     }
     var
-        FAMHP: Page "FA Movement History";
-        FAMH: Record "FA Movement History";
+        // FAMHP: Page "FA Movement History";
+        // FAMH: Record "FA Movement History";
         FADimP: Page "Default Dimensions";
         DefaultDims: Record "Default Dimension";
         FAMHEntryNo: Integer;
-        FAMHInfo: Record "FA Movement History";
+        // FAMHInfo: Record "FA Movement History";
         LastMovementDate: Date;
         LastMovementSite: Code[250];
         LastMovementOpName: Text[150];
@@ -153,7 +153,7 @@ pageextension 50019 FixedAssetCardExt extends "Fixed Asset Card"
         Clear(LastMovementDate);
         Clear(LastMovementOpName);
         clear(LastMovementRemarks);
-        FAMHInfo.Reset();
+        // FAMHInfo.Reset();
         FAMHEntryNo := GetLatestMovement(Rec."No.");
         if FAMHEntryNo = 0 then begin
             LastMovementDate := 0D;
@@ -164,28 +164,28 @@ pageextension 50019 FixedAssetCardExt extends "Fixed Asset Card"
             OperatoreCode := '';
         end
         else begin
-            if FAMHInfo.Get(FAMHEntryNo) then begin
-                LastMovementDate := FAMHInfo.Date;
-                LastMovementOpName := FAMHInfo."Corporate Name";
-                LastMovementSite := FAMHInfo.Site;
-                LastMovementRemarks := FAMHInfo.Remarks;
-                SiteCode := FAMHInfo."Site Code";
-                OperatoreCode := FAMHInfo."Operator Code";
-            end;
+            // if FAMHInfo.Get(FAMHEntryNo) then begin
+            //     LastMovementDate := FAMHInfo.Date;
+            //     LastMovementOpName := FAMHInfo."Corporate Name";
+            //     LastMovementSite := FAMHInfo.Site;
+            //     LastMovementRemarks := FAMHInfo.Remarks;
+            //     SiteCode := FAMHInfo."Site Code";
+            //     OperatoreCode := FAMHInfo."Operator Code";
+            // end;
         end;
         GetAcquisitionDate(Rec);
     end;
 
     procedure GetLatestMovement(FANo: Code[20]) EntryNo: Integer
     var
-        MoveHistory: Record "FA Movement History";
+    // MoveHistory: Record "FA Movement History";
     begin
-        MoveHistory.SetCurrentKey(Date);
-        MoveHistory.SetFilter(MoveHistory."FA No.", FANo);
-        if MoveHistory.FindLast() then
-            EntryNo := MoveHistory."Entry No."
-        else
-            EntryNo := 0;
+        // MoveHistory.SetCurrentKey(Date);
+        // MoveHistory.SetFilter(MoveHistory."FA No.", FANo);
+        // if MoveHistory.FindLast() then
+        //     EntryNo := MoveHistory."Entry No."
+        // else
+        //     EntryNo := 0;
     end;
 
     procedure GetAcquisitionDate(FA: Record "Fixed Asset")

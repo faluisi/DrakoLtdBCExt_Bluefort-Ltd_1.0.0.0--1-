@@ -1,7 +1,7 @@
 report 50041 FBM_Check
 {
     DefaultLayout = RDLC;
-    RDLCLayout = './rdlc.R50041_FBM_Check.rdl';
+    RDLCLayout = './rdlc/R50041_FBM_Check.rdl';
     Caption = 'Check';
     Permissions = TableData "Bank Account" = m;
 

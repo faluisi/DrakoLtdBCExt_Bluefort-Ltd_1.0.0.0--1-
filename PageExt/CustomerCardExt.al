@@ -76,7 +76,7 @@ pageextension 50001 CustomerCardExt extends "Customer Card"
         Operators: Record "Dimension Value";
         OperatorsP: Page "Dimension Values";
         OperatorsXML: XmlPort "Import Operators";
-        CurrentCFS: Page "Current Customer FA per Site";
+        // CurrentCFS: Page "Current Customer FA per Site";
         // FAMH: Record "FA Movement History";
         companyinfo: Record "Company Information";
         ShowSites: boolean;
