@@ -8,10 +8,10 @@ pageextension 50003 SalesOrderSubformExt extends "Sales Order Subform"
         }
         addafter("VAT Prod. Posting Group")
         {
-            field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
-            {
-                ApplicationArea = all;
-            }
+            // field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
+            // {
+            //     ApplicationArea = all;
+            // }
             //DEVOPS #622 -- begin
             field(Site; Site)
             {

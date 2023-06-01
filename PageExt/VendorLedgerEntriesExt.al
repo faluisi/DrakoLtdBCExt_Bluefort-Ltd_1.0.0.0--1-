@@ -5,10 +5,10 @@ pageextension 50048 VendorLedgerEntriesExt extends "Vendor Ledger Entries"
         addafter("Posting Date")
         {
             //DEVOPS #742 -- begin
-            field("Document Date"; "Document Date")
-            {
-                ApplicationArea = All;
-            }
+            // field("Document Date"; "Document Date")
+            // {
+            //     ApplicationArea = All;
+            // }
             //DEVOPS #742 -- end
         }
     }

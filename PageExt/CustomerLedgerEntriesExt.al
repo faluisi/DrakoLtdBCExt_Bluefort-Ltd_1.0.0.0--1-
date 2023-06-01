@@ -5,10 +5,10 @@ pageextension 50037 CustomerLedgerEntriesExt extends "Customer Ledger Entries"
         addafter("Posting Date")
         {
             //DEVOPS #742 -- begin
-            field("Document Date"; rec."Document Date")
-            {
-                ApplicationArea = All;
-            }
+            // field("Document Date"; rec."Document Date")
+            // {
+            //     ApplicationArea = All;
+            // }
             //DEVOPS #742 -- end
         }
         //DEVOPS #622 -- begin

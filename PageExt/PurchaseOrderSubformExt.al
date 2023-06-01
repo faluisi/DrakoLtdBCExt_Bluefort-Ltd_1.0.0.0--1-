@@ -12,10 +12,10 @@ pageextension 50005 PurchaseOrderSubformExt extends "Purchase Order Subform"
         }
         addafter("VAT Prod. Posting Group")
         {
-            field("Gen. Prod. Posting Group"; rec."Gen. Prod. Posting Group")
-            {
-                ApplicationArea = all;
-            }
+            // field("Gen. Prod. Posting Group"; rec."Gen. Prod. Posting Group")
+            // {
+            //     ApplicationArea = all;
+            // }
 
         }
     }

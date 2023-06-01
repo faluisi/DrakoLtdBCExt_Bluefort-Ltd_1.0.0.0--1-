@@ -4,14 +4,14 @@ pageextension 50011 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
     {
         addafter("Variant Code")
         {
-            field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
-            {
-                ApplicationArea = all;
-            }
-            field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
-            {
-                ApplicationArea = all;
-            }
+            // field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
+            // {
+            //     ApplicationArea = all;
+            // }
+            // field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
+            // {
+            //     ApplicationArea = all;
+            // }
             //DEVOPS #622 -- begin
             field("Period Start"; "Period Start")
             {

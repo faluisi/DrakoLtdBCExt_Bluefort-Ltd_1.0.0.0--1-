@@ -13,7 +13,7 @@
   
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "20.0.0.0",
+  "application": "22.0.0.0",
   "dependencies": [
     {
       "id": "abc622d1-0d07-40e3-9518-9a9adc77322a",
@@ -34,6 +34,6 @@
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "9.0",
+  "runtime": "11.0",
   "target": "OnPrem"
 }
