@@ -2,6 +2,17 @@ pageextension 50001 CustomerCardExt extends "Customer Card"
 {
     layout
     {
+        addafter("VAT Registration No.")
+        {
+            field("Group Customer"; "Group")
+            {
+                ApplicationArea = All;
+            }
+            field("SubGroup Customer"; "SubGroup")
+            {
+                ApplicationArea = All;
+            }
+        }
         addbefore(Name)
         {
             field("No. 2"; rec."No. 2")

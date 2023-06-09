@@ -2,6 +2,22 @@ pageextension 50022 GeneralJournalExt extends "General Journal"
 {
     layout
     {
+        addafter("Document No.")
+        {
+            field("Line No."; "Line No.")
+            {
+                ApplicationArea = All;
+                Editable = false;
+            }
+        }
+        addafter("Amount")
+        {
+            field("Amount LCY"; "Amount (LCY)")
+            {
+                ApplicationArea = All;
+                Editable = false;
+            }
+        }
         modify(ShortcutDimCode3)
         {
             trigger OnLookup(var Text: Text): Boolean

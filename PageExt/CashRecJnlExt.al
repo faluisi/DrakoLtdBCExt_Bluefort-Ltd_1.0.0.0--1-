@@ -2,6 +2,23 @@ pageextension 50021 CashRecJnlExt extends "Cash Receipt Journal"
 {
     layout
     {
+        addafter("Document No.")
+        {
+            field("Line No."; "Line No.")
+            {
+                ApplicationArea = All;
+                Editable = false;
+            }
+        }
+        addafter("Amount")
+        {
+            field("Amount LCY"; "Amount (LCY)")
+            {
+                ApplicationArea = All;
+                Editable = false;
+            }
+        }
+
         // Add changes to page layout here
         modify(ShortcutDimCode3)
         {

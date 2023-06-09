@@ -26,10 +26,15 @@ pageextension 50037 CustomerLedgerEntriesExt extends "Customer Ledger Entries"
             {
                 ApplicationArea = All;
             }
+
+
+            field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
+            {
+                ApplicationArea = All;
+                Editable = false;
+            }
         }
     }
-    actions
-    {
-    }
-    var
+
+
 }
