@@ -8,14 +8,16 @@ pageextension 50024 SalesInvoiceExt extends "Sales Invoice"
             OnAfterValidate()
             var
                 mediaid: Guid;
+                index: integer;
             begin
-                if usersetup.get(UserId) then begin
-                    mediaid := usersetup."Signature PHL".Item(1);
-                    rec.signature_pic.Insert(mediaid);
-                    rec.Modify();
+                FOR Index := 1 to usersetup."Signature PHL".COUNT DO BEGIN
+                    if usersetup.get(UserId) then begin
+                        mediaid := usersetup."Signature PHL".Item(1);
+                        rec.signature_pic.Insert(mediaid);
+                        rec.Modify();
 
+                    end;
                 end;
-
             end;
         }
         addafter("External Document No.")

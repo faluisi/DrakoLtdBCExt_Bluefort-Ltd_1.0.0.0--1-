@@ -7,7 +7,7 @@
       "type": "al",
       "request": "launch",
       "name": "live",
-      "server": "http://10.0.0.4",
+      "server": "http://10.0.0.4/bc220",
       "serverInstance": "devLive",
       "port": 2005,
       "authentication": "UserPassword",
@@ -17,7 +17,7 @@
       "launchBrowser": true,
       "enableLongRunningSqlStatements": true,
       "enableSqlInformationDebugger": true,
-      
+      "schemaUpdateMode": "ForceSync"
       
       
   }, 
@@ -27,8 +27,8 @@
     "type": "al",
     "request": "launch",
     "server": "http://10.0.0.4/devtest",
-    "serverInstance": "Dev",
-    "port": 4004,
+    "serverInstance": "DevTest",
+    "port": 2215,
     "authentication": "UserPassword",
     "startupObjectId": 22,
     "breakOnError": true,

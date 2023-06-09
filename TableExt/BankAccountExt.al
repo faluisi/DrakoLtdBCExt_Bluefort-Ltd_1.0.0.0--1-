@@ -7,6 +7,10 @@ tableextension 50030 BankAccount extends "Bank Account"
             caption = 'Check Layout';
             TableRelation = "Custom Report Layout" where("Report ID" = const(50041));
         }
+
+
+        // Add changes to table fields here
+
     }
 
 

@@ -20,13 +20,19 @@
       "name": "Philippine Localization",
       "version": "1.0.0.32",
       "publisher": "PASI"
+    },
+    {
+      "id": "c3ef51a2-70cb-4126-9f65-465f9bd1c01b",
+  "name": "Onetech",
+  "publisher": "Default publisher",
+  "version": "1.0.2.0"
     }
     
   ],
   "idRanges": [
     {
       "from": 50000,
-      "to": 50199
+      "to": 60199
     }
   ],
   "resourceExposurePolicy": {

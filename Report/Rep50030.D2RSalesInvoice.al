@@ -1430,17 +1430,18 @@ report 50030 "D2R Sales - Invoice"
                 Handled: Boolean;
                 mediaid: Guid;
             begin
-                if usersetup.get("Sales Invoice Header"."User ID") then
-                begin
-                    mediaid := usersetup."Signature PHL".Item(1);
-                    "Sales Invoice Header".signature_pic.Insert(mediaid);
-                    "Sales Invoice Header".Modify();
+                if usersetup.get("Sales Invoice Header"."User ID") then begin
+                    FOR Index := 1 to usersetup."Signature PHL".COUNT DO BEGIN
+                        mediaid := usersetup."Signature PHL".Item(1);
+                        "Sales Invoice Header".signature_pic.Insert(mediaid);
+                        "Sales Invoice Header".Modify();
+                    end;
                 end;
-                //FOR Index := 1 to "Sales Invoice Header".signature_pic.COUNT DO BEGIN
-                IF TenantMedia.GET("Sales Invoice Header".signature_pic.Item(1)) THEN BEGIN
-                    TenantMedia.CALCFIELDS(Content);
+                FOR Index := 1 to "Sales Invoice Header".signature_pic.COUNT DO BEGIN
+                    IF TenantMedia.GET("Sales Invoice Header".signature_pic.Item(1)) THEN BEGIN
+                        TenantMedia.CALCFIELDS(Content);
+                    END;
                 END;
-                // END;
                 glentry.SetRange("Document No.", "Sales Invoice Header"."No.");
                 if glentry.FindFirst() then begin end;
                 CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
