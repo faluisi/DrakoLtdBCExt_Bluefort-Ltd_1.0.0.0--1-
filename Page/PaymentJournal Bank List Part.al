@@ -75,20 +75,20 @@ page 50070 "PaymentJournal Bank List Part2"
                     DrillDown = true;
 
                 }
-                field("Approval Batch Amount2"; "Approval Batch Amount2")
-                {
-                    ApplicationArea = Basic, Suite;
-                    DrillDown = true;
-                    Visible = false;
+                // field("Approval Batch Amount2"; "Approval Batch Amount2")
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     DrillDown = true;
+                //     Visible = false;
 
-                }
+                // }
 
-                field("Projected Balance"; "Balance" + "Approval Batch Amount2")
-                {
-                    ApplicationArea = Basic, Suite;
-                    DrillDown = true;
+                // field("Projected Balance"; "Balance" + "Approval Batch Amount2")
+                // {
+                //     ApplicationArea = Basic, Suite;
+                //     DrillDown = true;
 
-                }
+                // }
             }
         }
     }

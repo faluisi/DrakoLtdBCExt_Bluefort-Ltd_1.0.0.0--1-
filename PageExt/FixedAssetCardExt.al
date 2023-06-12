@@ -91,37 +91,37 @@ pageextension 50019 FixedAssetCardExt extends "Fixed Asset Card"
                 group(Site)
                 {
 
-                    field(Location; Location)
+                    field(Location; rec.Location)
                     {
                         Caption = 'Location';
                         Editable = false;
                         ApplicationArea = all;
                     }
-                    field(Hall; Hall)
+                    field(Hall; rec.Hall)
                     {
                         Caption = 'Hall';
                         Editable = false;
                         ApplicationArea = all;
                     }
-                    field(Group; Group)
+                    field(Group; rec.Group)
                     {
                         Caption = 'Group';
                         ApplicationArea = all;
                         Editable = false;
                     }
-                    field("Hall Status"; "Hall Status")
+                    field("Hall Status"; rec."Hall Status")
                     {
                         Caption = 'Hall Status';
                         ApplicationArea = all;
                         Editable = false;
                     }
-                    field("Operator Name"; "Operator Name")
+                    field("Operator Name"; rec."Operator Name")
                     {
                         Caption = 'Operator Name';
                         ApplicationArea = all;
                         Editable = false;
                     }
-                    field("Business Name"; "Business Name")
+                    field("Business Name"; rec."Business Name")
                     {
                         Caption = 'Business Name';
                         ApplicationArea = all;
