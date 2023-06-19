@@ -13,26 +13,4 @@ tableextension 50019 ItemExt extends Item
         myInt: Integer;
 }
 
-pageextension 50051 ItemCardExt extends "Item Card"
-{
-    layout
-    {
-        addafter("Description")
-        {
-            field("Description 2"; "Description 2")
-            {
-                ApplicationArea = all;
-            }
-
-        }
-    }
-
-    actions
-    {
-        // Add changes to page actions here
-    }
-
-    var
-        myInt: Integer;
-}
 

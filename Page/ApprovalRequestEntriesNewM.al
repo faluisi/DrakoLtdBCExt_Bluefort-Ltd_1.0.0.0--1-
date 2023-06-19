@@ -1,4 +1,4 @@
-page 50088 "Approval Request Entries NewM"
+/* page 50088 "Approval Request Entries NewM"
 {
 
     ApplicationArea = Suite;
@@ -506,4 +506,4 @@ page 50088 "Approval Request Entries NewM"
 
 
 
-}
+} */

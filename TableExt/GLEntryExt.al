@@ -11,6 +11,12 @@ tableextension 50011 GLEntryExt extends "G/L Entry"
         {
             DataClassification = ToBeClassified;
         }
+        field(50002; Site; Code[20])
+        {
+            TableRelation = "Cust-Op-Site"."Site Code";
+
+
+        }
         field(50011; Segment; Option)
         {
             caption = 'Segment ';

@@ -64,63 +64,63 @@ page 50063 "Aged Accounts by Months"
 
                 field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 { }
-                field("Current Month"; "Current Month")
+                field("FBM_Current Month_FF"; rec."FBM_Current Month_FF")
                 {
                     BlankZero = true;
                 }
-                field("1 Month"; "1 Month")
+                field("FBM_1 Month_FF"; rec."FBM_1 Month_FF")
                 {
                     BlankZero = true;
                 }
-                field("2 Months"; "2 Months")
+                field("FBM_2 Months_FF"; rec."FBM_2 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("3 Months"; "3 Months")
+                field("FBM_3 Months_FF"; rec."FBM_3 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("4 Months"; "4 Months")
+                field("FBM_4 Months_FF"; rec."FBM_4 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("5 Months"; "5 Months")
+                field("FBM_5 Months_FF"; rec."FBM_5 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("6 Months"; "6 Months")
+                field("FBM_6 Months_FF"; rec."FBM_6 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("7 Months"; "7 Months")
+                field("7 Months"; rec."FBM_7 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("8 Months"; "8 Months")
+                field("8 Months"; rec."FBM_8 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("9 Months"; "9 Months")
+                field("9 Months"; rec."FBM_9 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("10 Months"; "10 Months")
+                field("10 Months"; rec."FBM_10 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("11 Months"; "11 Months")
+                field("11 Months"; rec."FBM_11 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("12 Months"; "12 Months")
+                field("12 Months"; rec."FBM_12 Months_FF")
                 {
                     BlankZero = true;
                 }
-                field("Amounts Not Due"; "Amounts Not Due")
+                field("Amounts Not Due"; rec."FBM_Amounts Not Due_FF")
                 {
                     Caption = 'Amounts Not Due';
                 }
-                field("Total Balance"; "Current Month" + "1 Month" + "2 Months" + "3 Months" + "4 Months" + "5 Months" + "6 Months" + "7 Months" + "8 Months" + "9 Months" + "10 Months" + "11 Months" + "12 Months")
+                field("Total Balance"; rec."FBM_Current Month_FF" + rec."FBM_1 Month_FF" + rec."FBM_2 Months_FF" + rec."FBM_3 Months_FF" + rec."FBM_4 Months_FF" + rec."FBM_5 Months_FF" + rec."FBM_6 Months_FF" + rec."FBM_7 Months_FF" + rec."FBM_8 Months_FF" + rec."FBM_9 Months_FF" + rec."FBM_10 Months_FF" + rec."FBM_11 Months_FF" + rec."FBM_12 Months_FF")
                 {
                     Caption = 'Total Balance';
                 }
@@ -190,59 +190,59 @@ page 50063 "Aged Accounts by Months"
         //Period7 := CALCDATE('<+1D+CM>',StartDate);
         Period0 := CALCDATE('<CM>', StartDate);
         Period7 := CALCDATE('<+1D>', StartDate);
-        SETFILTER("Future Date Filter", '>%1', Period0);
+        SETFILTER("FBM_Future Date Filter", '>%1', Period0);
 
 
         //Used to calculate the Current Month entries (from 1st day of Month to Today)
         Period1 := CALCDATE('<-CM>', StartDate);
-        SETRANGE("0D Date Filter", Period1, Period0);
+        SETRANGE("FBM_0D Date Filter", Period1, Period0);
 
         //+1 Months (Whole Month)
         Period2 := CALCDATE('<-1M-CM>', Period1);
-        SETRANGE("30D Date Filter", Period2, Period1 - 1);
+        SETRANGE("FBM_30D Date Filter", Period2, Period1 - 1);
 
         //+2 Months (Whole Month)
         Period3 := CALCDATE('<-1M-CM>', Period2);
-        SETRANGE("60D Date Filter", Period3, Period2 - 1);
+        SETRANGE("FBM_60D Date Filter", Period3, Period2 - 1);
 
         //+3 Months (Whole Month)
         Period4 := CALCDATE('<-1M-CM>', Period3);
-        SETRANGE("90D Date Filter", Period4, Period3 - 1);
+        SETRANGE("FBM_90D Date Filter", Period4, Period3 - 1);
 
         //+4 Months (Whole Month)
         Period5 := CALCDATE('<-1M-CM>', Period4);
-        SETRANGE("120D Date Filter", Period5, Period4 - 1);
+        SETRANGE("FBM_120D Date Filter", Period5, Period4 - 1);
 
         //+5 Months (Whole Month)
         Period6 := CALCDATE('<-1M-CM>', Period5);
-        SETRANGE("150D Date Filter", Period6, Period5 - 1);
+        SETRANGE("FBM_150D Date Filter", Period6, Period5 - 1);
 
         //+6 Months (Whole Month)
         Period7 := CALCDATE('<-1M-CM>', Period6);
-        SETRANGE("180D Date Filter", Period7, Period6 - 1);
+        SETRANGE("FBM_180D Date Filter", Period7, Period6 - 1);
 
         //+7 Months (Whole Month)
         Period8 := CALCDATE('<-1M-CM>', Period7);
-        SETRANGE("210D Date Filter", Period8, Period7 - 1);
+        SETRANGE("FBM_210D Date Filter", Period8, Period7 - 1);
 
         //+8 Months (Whole Month)
         Period9 := CALCDATE('<-1M-CM>', Period8);
-        SETRANGE("240D Date Filter", Period9, Period8 - 1);
+        SETRANGE("FBM_240D Date Filter", Period9, Period8 - 1);
 
         //+9 Months (Whole Month)
         Period10 := CALCDATE('<-1M-CM>', Period9);
-        SETRANGE("270D Date Filter", Period10, Period9 - 1);
+        SETRANGE("FBM_270D Date Filter", Period10, Period9 - 1);
 
         //+10 Months (Whole Month)
         Period11 := CALCDATE('<-1M-CM>', Period10);
-        SETRANGE("300D Date Filter", Period11, Period10 - 1);
+        SETRANGE("FBM_300D Date Filter", Period11, Period10 - 1);
 
         //+11 Months (Whole Month)
         Period12 := CALCDATE('<-1M-CM>', Period11);
-        SETRANGE("330D Date Filter", Period12, Period11 - 1);
+        SETRANGE("FBM_330D Date Filter", Period12, Period11 - 1);
 
         //Entries dated more than 12 Months
-        SETRANGE("360D Date Filter", 0D, Period12 - 1);
+        SETRANGE("FBM_360D Date Filter", 0D, Period12 - 1);
 
         ////SETRANGE("NotDue Date Filter",StartDate,31129999D);
 
@@ -341,25 +341,25 @@ page 50063 "Aged Accounts by Months"
                 Amt := 0;
 
             1:
-                Amt := "Current Month";
+                Amt := rec."FBM_Current Month_FF";
 
             2:
-                Amt := "Current Month" + "1 Month";
+                Amt := rec."FBM_Current Month_FF" + rec."FBM_1 Month_FF";
 
             3:
-                Amt := "Current Month" + "1 Month" + "2 Months";
+                Amt := rec."FBM_Current Month_FF" + rec."FBM_1 Month_FF" + rec."FBM_2 Months_FF";
 
             4:
-                Amt := "Current Month" + "1 Month" + "2 Months" + "3 Months";
+                Amt := rec."FBM_Current Month_FF" + rec."FBM_1 Month_FF" + rec."FBM_2 Months_FF" + rec."FBM_3 Months_FF";
 
             5:
-                Amt := "Current Month" + "1 Month" + "2 Months" + "3 Months" + "4 Months";
+                Amt := rec."FBM_Current Month_FF" + rec."FBM_1 Month_FF" + rec."FBM_2 Months_FF" + rec."FBM_3 Months_FF" + rec."FBM_4 Months_FF";
 
             6:
-                Amt := "Current Month" + "1 Month" + "2 Months" + "3 Months" + "4 Months" + "5 Months";
+                Amt := rec."FBM_Current Month_FF" + rec."FBM_1 Month_FF" + rec."FBM_2 Months_FF" + rec."FBM_3 Months_FF" + rec."FBM_4 Months_FF" + rec."FBM_5 Months_FF";
 
             7:
-                Amt := "Current Month" + "1 Month" + "2 Months" + "3 Months" + "4 Months" + "5 Months" + "6 Months";
+                Amt := rec."FBM_Current Month_FF" + rec."FBM_1 Month_FF" + rec."FBM_2 Months_FF" + rec."FBM_3 Months_FF" + rec."FBM_4 Months_FF" + rec."FBM_5 Months_FF" + rec."FBM_6 Months_FF";
         END;
 
         EXIT(Amt);

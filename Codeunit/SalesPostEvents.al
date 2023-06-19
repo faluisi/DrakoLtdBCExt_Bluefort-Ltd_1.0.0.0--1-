@@ -68,6 +68,7 @@ codeunit 50003 SalesPostEvents
         GenJournalLine."Period Start" := SalesHeader."Period Start";
         GenJournalLine."Period End" := SalesHeader."Period End";
         GenJournalLine.Segment := SalesHeader.Segment;
+        GenJournalLine.Site := SalesHeader.Site;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitGLEntry', '', true, true)]
@@ -78,6 +79,7 @@ codeunit 50003 SalesPostEvents
         GLEntry."Period End" := GenJournalLine."Period End";
 
         GLEntry.Segment := GenJournalLine.Segment;
+        GLEntry.site := GenJournalLine.Site;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterHandleAddCurrResidualGLEntry', '', true, true)]
@@ -87,6 +89,7 @@ codeunit 50003 SalesPostEvents
         GLEntry2."Period Start" := GenJournalLine."Period Start";
         GLEntry2."Period End" := GenJournalLine."Period End";
         GLEntry2.Segment := GenJournalLine.Segment;
+        GLEntry2.Site := GenJournalLine.Site;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertGLEntryBuffer', '', true, true)]
@@ -101,6 +104,7 @@ codeunit 50003 SalesPostEvents
         TempGLEntryBuf."Period Start" := GenJournalLine."Period Start";
         TempGLEntryBuf."Period End" := GenJournalLine."Period End";
         TempGLEntryBuf.Segment := GenJournalLine.Segment;
+        TempGLEntryBuf.Site := GenJournalLine.site;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Cust. Ledger Entry", 'OnAfterCopyCustLedgerEntryFromGenJnlLine', '', true, true)]
@@ -110,6 +114,7 @@ codeunit 50003 SalesPostEvents
         CustLedgerEntry."Period Start" := GenJournalLine."Period Start";
         CustLedgerEntry."Period End" := GenJournalLine."Period End";
         CustLedgerEntry.Segment := GenJournalLine.Segment;
+        CustLedgerEntry.site := GenJournalLine.Site;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInitCustLedgEntry', '', true, true)]
@@ -119,6 +124,7 @@ codeunit 50003 SalesPostEvents
         CustLedgerEntry."Period Start" := GenJournalLine."Period Start";
         CustLedgerEntry."Period End" := GenJournalLine."Period End";
         CustLedgerEntry.Segment := GenJournalLine.Segment;
+        CustLedgerEntry.Site := GenJournalLine.Site;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeInsertDtldCustLedgEntry', '', true, true)]
@@ -128,6 +134,8 @@ codeunit 50003 SalesPostEvents
     begin
         DtldCustLedgEntry."Period Start" := GenJournalLine."Period Start";
         DtldCustLedgEntry."Period End" := GenJournalLine."Period End";
+        DtldCustLedgEntry.Segment := GenJournalLine.Segment;
+        DtldCustLedgEntry.Site := GenJournalLine.Site;
     end;
     //DevOps #622 -- end 
 }

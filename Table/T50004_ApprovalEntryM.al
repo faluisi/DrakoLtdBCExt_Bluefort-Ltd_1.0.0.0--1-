@@ -1,4 +1,4 @@
-table 50004 ApprovalEntryM
+/* table 50004 ApprovalEntryM
 {
     Caption = 'Approval Entry Multicompany';
     ReplicateData = true;
@@ -465,3 +465,4 @@ table 50004 ApprovalEntryM
     end;
 }
 
+ */

@@ -1,4 +1,4 @@
-page 60117 FBM_PaymentApprovalM_CO
+/* page 60117 FBM_PaymentApprovalM_CO
 {
     ApplicationArea = All;
     Caption = 'Payment Approval Multicompany';
@@ -412,3 +412,4 @@ page 60117 FBM_PaymentApprovalM_CO
         end;
     end;
 }
+ */

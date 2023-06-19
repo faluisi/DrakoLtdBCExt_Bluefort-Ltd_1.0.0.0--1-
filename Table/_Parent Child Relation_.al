@@ -1,4 +1,4 @@
-table 50003 "Parent Child Relation"
+/* table 50003 "Parent Child Relation"
 {
     DataClassification = ToBeClassified;
 
@@ -25,4 +25,4 @@ table 50003 "Parent Child Relation"
 
 
 
-}
+} */
