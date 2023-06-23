@@ -71,6 +71,7 @@ tableextension 50003 SalesInvoiceHederExt extends "Sales Invoice Header"
         {
 
 
+
         }
         field(50007; "LocalCurrAmt"; Decimal)
         {

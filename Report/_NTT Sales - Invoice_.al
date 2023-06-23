@@ -82,6 +82,9 @@ report 50002 "NTT Sales - Invoice"
             DisplayAdditionalFeeNote)
             {
             }
+            column(titletxt; titletxt)
+            {
+            }
             dataitem(CopyLoop;
             "Integer")
             {
@@ -1375,6 +1378,10 @@ report 50002 "NTT Sales - Invoice"
             var
                 Handled: Boolean;
             begin
+                if "Sales Invoice Header"."Billing Statement" then
+                    titletxt := billinvtxt
+                else
+                    titletxt := salinvtxt;
                 CurrReport.Language := Language.GetLanguageIdOrDefault("Language Code");
                 FormatSiteAddress("Sales Invoice Header");
                 FormatAddressFields("Sales Invoice Header");
@@ -1688,7 +1695,11 @@ report 50002 "NTT Sales - Invoice"
 
         nonvatsales: Decimal;
         vatsales: Decimal;
-    //BFT-001 -- end
+        //BFT-001 -- end
+        salinvtxt: label 'SALES INVOICE';
+        billinvtxt: label 'BILLING INVOICE';
+        titletxt: Text;
+
     procedure InitLogInteraction()
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';

@@ -22,7 +22,7 @@ table 50000 TermsConditions
         }
         field(10; DocType; Option)
         {
-            OptionMembers = SI,PO;
+            OptionMembers = SI,PO,CM;
             caption = 'Document Type';
         }
     }

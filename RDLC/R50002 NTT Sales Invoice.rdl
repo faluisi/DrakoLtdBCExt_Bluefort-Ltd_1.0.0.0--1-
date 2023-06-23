@@ -5542,6 +5542,9 @@ BgYdYZSFgYGBgUFJGGVhYGBgYFASRlkYGBgYGJSEURYGBgYGBiVhlIWBgYGBQUkYZWFgYGBgUAKM/R/5
         <Field Name="DisplayAdditionalFeeNote">
           <DataField>DisplayAdditionalFeeNote</DataField>
         </Field>
+        <Field Name="titletxt">
+          <DataField>titletxt</DataField>
+        </Field>
         <Field Name="HomePage">
           <DataField>HomePage</DataField>
         </Field>

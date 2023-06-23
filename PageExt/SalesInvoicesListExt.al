@@ -6,7 +6,7 @@ pageextension 50053 SalesInvoicesListExt extends "Sales Invoice List"
         {
 
 
-            field("Billing Statement"; "Billing Statement")
+            field("Billing Statement"; rec."Billing Statement")
             {
                 ApplicationArea = all;
             }

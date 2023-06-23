@@ -87,6 +87,9 @@ report 50030 "D2R Sales - Invoice"
             column(signature_pic; signature_pic)
             {
             }
+            column(titletxt; titletxt)
+            {
+            }
             dataitem(CopyLoop;
             "Integer")
             {
@@ -1430,6 +1433,10 @@ report 50030 "D2R Sales - Invoice"
                 Handled: Boolean;
                 mediaid: Guid;
             begin
+                if "Sales Invoice Header"."Billing Statement" then
+                    titletxt := billinvtxt
+                else
+                    titletxt := salinvtxt;
                 if usersetup.get("Sales Invoice Header"."User ID") then begin
                     FOR Index := 1 to usersetup."Signature PHL".COUNT DO BEGIN
                         mediaid := usersetup."Signature PHL".Item(1);
@@ -1742,6 +1749,9 @@ report 50030 "D2R Sales - Invoice"
         usersetup: record "User Setup";
         index: integer;
         TenantMedia: record "Tenant Media";
+        salinvtxt: label 'SALES INVOICE';
+        billinvtxt: label 'BILLING INVOICE';
+        titletxt: Text;
 
     procedure InitLogInteraction()
     begin

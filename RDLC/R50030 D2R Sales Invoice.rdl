@@ -4695,7 +4695,7 @@ Cstr(Fields!VATIDNoCaption.Value)+ Chr(177) + Cstr(Fields!SiteAddr1.Value) + Chr
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>SALES INVOICE</Value>
+                      <Value>=First(Fields!titletxt.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -5840,6 +5840,9 @@ End Function
         </Field>
         <Field Name="signature_pic">
           <DataField>signature_pic</DataField>
+        </Field>
+        <Field Name="titletxt">
+          <DataField>titletxt</DataField>
         </Field>
         <Field Name="HomePage">
           <DataField>HomePage</DataField>

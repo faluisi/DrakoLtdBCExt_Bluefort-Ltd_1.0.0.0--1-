@@ -14,12 +14,7 @@
   "platform": "1.0.0.0",
   "application": "22.0.0.0",
   "dependencies": [
-    {
-    "id": "e6857996-833b-464e-91d1-e5102f622d69",
-  "name": "FBM_CORE",
-  "publisher": "FBM Group",
-  "version": "1.0.0.0"
-},
+    
     {
       "id": "abc622d1-0d07-40e3-9518-9a9adc77322a",
       "name": "Philippine Localization",
